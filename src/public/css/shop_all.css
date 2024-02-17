@@ -1,0 +1,55 @@
+.search-area__space {
+    display: flex;
+    background: white;
+    height: 40px;
+    width: 515px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px gray;
+    padding-top: 8px;
+}
+
+.select {
+    width: 100px;
+    height: 27px;
+    border: none;
+    outline: none;
+    border-right: solid 1.5px #dcdcdc;
+    padding-left: 7px;
+}
+
+.search-button__flame {
+    position: relative;
+}
+
+.search__button {
+    border: none;
+    background: none;
+    color: #dcdcdc;
+    cursor: pointer;
+    position: absolute;
+    top: -27px;
+    left: 210px;
+}
+
+.search {
+    width: 250px;
+    height: 34px;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: -32px;
+    left: 250px;
+}
+
+.shop-all__flame {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop-flame {
+    width: 250px;
+    height: 230px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px gray;
+}

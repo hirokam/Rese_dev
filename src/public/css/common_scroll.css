@@ -1,0 +1,50 @@
+body {
+    background: #dcdcdc;
+}
+
+header {
+    margin: 50px 100px 0 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    margin: 25px 100px 0 100px;
+}
+
+.header__left {
+    display: flex;
+}
+
+.menu__button {
+    background: #0066ff;
+    color: white;
+    height: 28px;
+    width: 28px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px gray;
+    position: relative;
+}
+
+.menu__button span {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 100,
+        'GRAD' -25,
+        'opsz' 20;
+    position: absolute;
+    top: 1px;
+    left: 2.5px;
+    color: white;
+}
+
+.app-title__space {
+    padding-left: 16px;
+}
+
+.app-title {
+    color: #0066ff;
+    font-weight: 600;
+    font-size: 24px;
+}

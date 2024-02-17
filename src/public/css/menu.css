@@ -1,0 +1,55 @@
+body {
+    height: 100vh;
+}
+
+header {
+    height: 15%;
+    margin: 50px 0 0 100px;
+}
+
+main {
+    height: 85%;
+    padding: 75px;
+}
+
+.close__button {
+    background: #0066ff;
+    color: white;
+    height: 28px;
+    width: 28px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px gray;
+    position: relative;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 100,
+        'GRAD' 0,
+        'opsz' 20;
+    position: absolute;
+    top: 1.5px;
+    left: 2px;
+}
+
+.content__menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu__group {
+    text-align: center;
+}
+
+.content__inner {
+    margin-bottom: 25px;
+}
+
+.inner__button {
+    border: none;
+    background: none;
+    color: #0066ff;
+    font-size: 30px;
+}

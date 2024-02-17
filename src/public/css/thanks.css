@@ -1,0 +1,35 @@
+.content__flame {
+    margin-top: 15px;
+    width: 350px;
+    height: 235px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 1.5px 1.5px 5px gray;
+}
+
+.message-space {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.message {
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.button-space {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.button {
+    font-size: 12px;
+    background: #0066ff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    width: 90px;
+    height: 25px;
+}
