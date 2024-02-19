@@ -26,7 +26,7 @@ main {
     position: relative;
 }
 
-.menu__button span {
+.menu__button .material-symbols-outlined {
     font-variation-settings:
         'FILL' 0,
         'wght' 100,

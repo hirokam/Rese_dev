@@ -40,8 +40,8 @@
     outline: none;
 }
 
-.icon__email span,
-.icon__password span {
+.icon__email .material-symbols-outlined,
+.icon__password .material-symbols-outlined {
     font-variation-settings:
         'FILL' 1,
         'wght' 400,

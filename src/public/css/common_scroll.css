@@ -9,7 +9,7 @@ header {
 }
 
 main {
-    margin: 25px 100px 0 100px;
+    margin: 25px 95px 0 95px;
 }
 
 .header__left {
@@ -27,7 +27,7 @@ main {
     position: relative;
 }
 
-.menu__button span {
+.menu__button .material-symbols-outlined {
     font-variation-settings:
         'FILL' 0,
         'wght' 100,

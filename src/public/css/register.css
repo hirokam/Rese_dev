@@ -45,9 +45,9 @@
     outline: none;
 }
 
-.icon__user span,
-.icon__email span,
-.icon__password span {
+.icon__user .material-symbols-outlined,
+.icon__email .material-symbols-outlined,
+.icon__password .material-symbols-outlined {
     font-variation-settings:
         'FILL' 1,
         'wght' 400,

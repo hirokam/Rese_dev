@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="inner__password">
-                <div class="icon__key">
+                <div class="icon__password">
                     <span class="material-symbols-outlined">enhanced_encryption</span>
                 </div>
                 <div class="writing-space__password">

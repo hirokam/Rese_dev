@@ -31,8 +31,5 @@ class AuthController extends Controller
         return view('done');
     }
 
-    public function shopAll()
-    {
-        return view('shop_all');
-    }
+
 }
