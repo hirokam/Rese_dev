@@ -12,9 +12,12 @@
 <body>
     <header>
         <div class="header__close">
-            <button class="close__button">
-                <span class="material-symbols-outlined">close</span>
-            </button>
+            <form action="/">
+            @csrf
+                <button class="close__button">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </form>
         </div>
     </header>
 
@@ -25,7 +28,9 @@
                     <ul>
                         @if (Auth::check())
                         <li class="content__inner">
-                            <button class="inner__button">Home</button>
+                            <form action="/" method="get">
+                                <button class="inner__button">Home</button>
+                            </form>
                         </li>
                         <li class="content__inner">
                             <form action="/logout" method="post">
@@ -38,13 +43,19 @@
                         </li>
                         @else
                         <li class="content__inner">
-                            <button class="inner__button">Home</button>
+                            <form action="/">
+                                <button class="inner__button">Home</button>
+                            </form>
                         </li>
                         <li class="content__inner">
-                            <button class="inner__button">Registration</button>
+                            <form action="/register">
+                                <button class="inner__button">Registration</button>
+                            </form>
                         </li>
                         <li class="content__inner">
-                            <button class="inner__button">Login</button>
+                            <form action="/login">
+                                <button class="inner__button">Login</button>
+                            </form>
                         </li>
                         @endif
                     </ul>

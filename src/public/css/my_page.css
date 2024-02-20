@@ -1,0 +1,92 @@
+.grid__parent {
+    display: grid;
+    height: auto;
+    grid-template-columns: 2fr 3fr;
+}
+
+.reservation-status__flame {
+    grid-column: 1/2;
+    margin: 90px 0 0 25px;
+}
+
+.reservation-status__header {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.reservation-status__inner-flame {
+    margin: 20px 0;
+    padding: 25px 0 0 25px;
+    width: 400px;
+    height: 270px;
+    background: #0066ff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px gray;
+    position: relative;
+}
+
+.reservation-status__inner-header {
+    display: flex;
+}
+
+.reservation-icon .material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 100,
+        'GRAD' -25,
+        'opsz' 20;
+    color: white;
+    font-size: 35px;
+}
+
+.reservation-number__inner {
+    color: white;
+    line-height: 35px;
+    padding-left: 25px;
+}
+
+.shop-info,
+.date-info,
+.time-info,
+.number-info {
+    display: flex;
+    margin: 15px 0;
+    position: relative;
+}
+
+.info__header {
+    color: white;
+    font-weight: normal;
+    margin: 0;
+}
+
+.shop,
+.date,
+.time,
+.number {
+    position: absolute;
+        left: 110px;
+    color: white;
+}
+
+.reservation-cancel {
+    position: absolute;
+        top: 30px;
+        right: 30px;
+}
+
+.reservation-cancel .material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 200,
+        'opsz' 20;
+    color: white;
+}
+
+.favorite__flame {
+    grid-column: 2/3;
+    margin: 0 0 0 90px;
+    background: blue;
+}

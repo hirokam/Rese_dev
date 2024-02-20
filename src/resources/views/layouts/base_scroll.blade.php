@@ -14,9 +14,11 @@
     <header>
         <div class="header__left">
             <div class="header__menu">
-                <button class="menu__button">
-                    <span class="material-symbols-outlined">menu</span>
-                </button>
+                <form action="/menu">
+                    <button class="menu__button">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </form>
             </div>
             <div class="app-title__space">
                 <span class="app-title">Rese</span>

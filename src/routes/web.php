@@ -17,13 +17,15 @@ use App\Http\Controllers\ShopController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
+    Route::get('/menu', [AuthController::class, 'menu']);
 });
 
 
-Route::get('/menu', [AuthController::class, 'menu']);
-Route::get('/login', [AuthController::class, 'login']);
-Route::get('/register', [AuthController::class, 'register']);
+
+
 Route::get('/thanks', [AuthController::class, 'thanks']);
 Route::get('/done', [AuthController::class, 'done']);
 
 Route::post('/detail/:shop_id={shop_id?}', [ShopController::class, 'shopDetail']);
+
+Route::get('/mypage', [AuthController::class, 'myPage']);

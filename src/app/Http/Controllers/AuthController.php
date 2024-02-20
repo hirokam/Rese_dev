@@ -18,14 +18,9 @@ class AuthController extends Controller
         return view('menu');
     }
 
-    public function login()
+    public function logout()
     {
         return view('auth.login');
-    }
-
-    public function register()
-    {
-        return view('auth.register');
     }
 
     public function thanks()
@@ -38,5 +33,8 @@ class AuthController extends Controller
         return view('done');
     }
 
-
+    public function myPage()
+    {
+        return view('my_page');
+    }
 }
