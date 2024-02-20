@@ -45,13 +45,13 @@
             <div class="reservation__flame">
                 <h2 class="reservation-header">予約</h2>
                 <div class="date__flame">
-                    <input type="date" class="input_date">
+                    <input type="date" class="input_date" value="input">
                 </div>
                 <div class="time__flame">
-                    <input type="select" class="input_time">
+                    <input type="time" class="input_time">
                 </div>
                 <div class="people__flame">
-                    <input type="select" class="input_people">
+                    <input type="number" class="input_people">
                 </div>
                 <div class="reservation-info__flame"></div>
                 <div class="info__inner">
