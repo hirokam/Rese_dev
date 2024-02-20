@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shop;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+    public function index()
+    {
+        $shops = Shop::all();
+        return view('shop_all', compact('shops'));
+    }
+
     public function menu()
     {
         return view('menu');

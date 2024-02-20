@@ -23,15 +23,30 @@
             <div class="menu__group">
                 <nav>
                     <ul>
+                        @if (Auth::check())
                         <li class="content__inner">
                             <button class="inner__button">Home</button>
                         </li>
                         <li class="content__inner">
-                            <button class="inner__button">Logout</button>
+                            <form action="/logout" method="post">
+                            @csrf
+                                <button class="inner__button">Logout</button>
+                            </form>
                         </li>
                         <li class="content__inner">
                             <button class="inner__button">Mypage</button>
                         </li>
+                        @else
+                        <li class="content__inner">
+                            <button class="inner__button">Home</button>
+                        </li>
+                        <li class="content__inner">
+                            <button class="inner__button">Registration</button>
+                        </li>
+                        <li class="content__inner">
+                            <button class="inner__button">Login</button>
+                        </li>
+                        @endif
                     </ul>
                 </nav>
             </div>
