@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Shop;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -35,6 +36,7 @@ class AuthController extends Controller
 
     public function myPage()
     {
-        return view('my_page');
+        $user_name = Auth::user()->name;
+        return view('my_page', compact('user_name'));
     }
 }

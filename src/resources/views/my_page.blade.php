@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="favorite__flame">
-            <span class="user-name">testさん</span>
+            <span class="user-name">{{ $user_name }}さん</span>
             <div class="favorite__header">
                 <span class="header-title">お気に入り店舗</span>
             </div>
