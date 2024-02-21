@@ -30,7 +30,7 @@
 <div class="shop-all__flame">
     @foreach ($shops as $shop)
     <div class="shop__flame">
-        <div class="shop-date">
+        <div class="shop-data">
             <div class="shop-image__flame">
                 <img src="{{ $shop->picture_url }}" alt="店舗イメージ" class="shop-image">
             </div>

@@ -44,7 +44,6 @@
 .shop-all__flame {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
 }
 
 /* 各ショップ情報 */

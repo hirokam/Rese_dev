@@ -19,7 +19,7 @@
     margin: 20px 0;
     padding: 25px 0 0 25px;
     width: 400px;
-    height: 270px;
+    height: 230px;
     background: #0066ff;
     border-radius: 5px;
     box-shadow: 2px 2px 5px gray;
@@ -37,13 +37,14 @@
         'GRAD' -25,
         'opsz' 20;
     color: white;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .reservation-number__inner {
     color: white;
-    line-height: 35px;
+    line-height: 30px;
     padding-left: 25px;
+    font-size: 13px;
 }
 
 .shop-info,
@@ -52,6 +53,7 @@
 .number-info {
     display: flex;
     margin: 15px 0;
+    font-size: 13px;
     position: relative;
 }
 
@@ -66,7 +68,7 @@
 .time,
 .number {
     position: absolute;
-        left: 110px;
+        left: 90px;
     color: white;
 }
 
@@ -87,6 +89,32 @@
 
 .favorite__flame {
     grid-column: 2/3;
-    margin: 0 0 0 90px;
-    background: blue;
+    margin: 30px 0 0 90px;
+}
+
+.user-name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.favorite__header {
+    margin-top: 20px;
+}
+
+.header-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.favorite-shop-all {
+    display: flex;
+    padding-top: 22px
+}
+
+.shop__flame {
+    width: 250px;
+    height: 230px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px gray;
 }

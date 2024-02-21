@@ -41,7 +41,36 @@
             </div>
         </div>
         <div class="favorite__flame">
-
+            <span class="user-name">testさん</span>
+            <div class="favorite__header">
+                <span class="header-title">お気に入り店舗</span>
+            </div>
+            <div class="favorite-shop-all">
+                <div class="shop__flame">
+                    <div class="shop-data">
+                        <!-- <div class="shop-image__flame">
+                            <img src="" alt="店舗イメージ" class="shop-image">
+                        </div>
+                        <h2 class="shop-name"></h2>
+                        <div class="shop__area-genre">
+                            <h3 class="shop-area">#</h3>
+                            <h3 class="shop-genre">#</h3>
+                        </div>
+                        <div class="shop__detail-favorite">
+                            <form action="/detail/:shop_id=" method="post">
+                            @csrf
+                                <input type="hidden" value="">
+                                <button class="detail">詳しくみる</button>
+                            </form>
+                            <form action="">
+                            @csrf
+                                <input type="hidden" value="">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </form>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
