@@ -18,7 +18,7 @@ class CreateFavoriteShopsTable extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('shop_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
-            $table->softDeletes();
+            $table->boolean('is_active')->comment('1:true,0:false');
         });
     }
 

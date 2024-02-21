@@ -45,10 +45,10 @@
                     <input type="hidden" value="{{ $shop->id }}">
                     <button class="detail">詳しくみる</button>
                 </form>
-                <form action="">
+                <form action="/create_favorite" method="post">
                 @csrf
-                    <input type="hidden" value="{{ $shop->id }}">
-                    <span class="material-symbols-outlined">favorite</span>
+                    <input type="hidden" name="shop_id" value="{{ $shop->id }}">
+                    <button class="material-symbols-outlined">favorite</button>
                 </form>
             </div>
         </div>

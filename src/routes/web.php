@@ -18,10 +18,11 @@ use App\Http\Controllers\ShopController;
 Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
     Route::get('/menu', [AuthController::class, 'menu']);
+    
 });
 
 
-
+Route::post('/create_favorite', [ShopController::class, 'createFavorite']);
 
 Route::get('/thanks', [AuthController::class, 'thanks']);
 Route::get('/done', [AuthController::class, 'done']);

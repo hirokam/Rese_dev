@@ -9,6 +9,8 @@ class FavoriteShop extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['user_id', 'shop_id','is_active'];
+
     public function user()
     {
         return $this->belongsTo(user::class);
