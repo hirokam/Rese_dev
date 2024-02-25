@@ -18,7 +18,7 @@ use App\Http\Controllers\ShopController;
 Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
     Route::get('/menu', [AuthController::class, 'menu']);
-    
+    Route::post('/detail/:shop_id={shop_id?}', [ShopController::class, 'shopDetail']);
 });
 
 
@@ -27,6 +27,6 @@ Route::post('/create_favorite', [ShopController::class, 'createFavorite']);
 Route::get('/thanks', [AuthController::class, 'thanks']);
 Route::get('/done', [AuthController::class, 'done']);
 
-Route::post('/detail/:shop_id={shop_id?}', [ShopController::class, 'shopDetail']);
+Route::get('/mypage', [ShopController::class, 'myPage']);
 
-Route::get('/mypage', [AuthController::class, 'myPage']);
+Route::post('/search', [AuthController::class, 'search']);

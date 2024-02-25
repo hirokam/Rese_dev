@@ -30,6 +30,7 @@ class ShopController extends Controller
                 'is_active' => true,
             ]);
             return redirect('/');
+            // return view('shop_all', compact('favorite_existence'));
         }else{
             if($favorite_existence->is_active) {
                 $favorite_existence->update(['is_active' => false]);
@@ -37,6 +38,13 @@ class ShopController extends Controller
                 $favorite_existence->update(['is_active' => true]);
             }
             return redirect('/');
+            // return view('shop_all', compact('favorite_existence'));
         }
+    }
+
+    public function myPage()
+    {
+        $user_name = Auth::user()->name;
+        return view('my_page', compact('user_name'));
     }
 }

@@ -15,6 +15,7 @@
     outline: none;
     border-right: solid 1.5px #dcdcdc;
     padding-left: 7px;
+    cursor: pointer;
 }
 
 .search-button__flame {
@@ -78,7 +79,7 @@
 
 .shop-area,
 .shop-genre {
-    margin: 0;
+    margin: 0 3px 0 0;
     font-weight: normal;
     font-size: 10px;
 }
@@ -100,7 +101,11 @@
     cursor: pointer;
 }
 
-.shop__detail-favorite .material-symbols-outlined {
+.favorite {
+    position: relative;
+}
+
+.favorite__nonactive .material-symbols-outlined {
     font-variation-settings:
         'FILL' 1,
         'wght' 100,
@@ -111,4 +116,19 @@
     cursor: pointer;
     border: none;
     background: none;
+}
+
+.favorite__active .material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 100,
+        'GRAD' 200,
+        'opsz' 20;
+    font-size: 35px;
+    color: red;
+    cursor: pointer;
+    border: none;
+    background: none;
+    position: absolute;
+        top: 0;
 }
