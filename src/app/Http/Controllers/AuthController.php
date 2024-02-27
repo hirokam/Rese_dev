@@ -24,7 +24,6 @@ class AuthController extends Controller
         }
 
         return view('shop_all', compact('shops', 'unique_areas', 'unique_genres', 'records_existence'));
-        // return view('shop_all', compact('shops', 'favorite_existence'));
     }
 
     public function search(Request $request)

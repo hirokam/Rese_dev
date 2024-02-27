@@ -20,7 +20,7 @@ class ShopController extends Controller
     public function createFavorite(Request $request)
     {
         $shop_id = $request->input('shop_id');
-        $user_id = Auth::user()->id;
+        $user_id = Auth::id();
 
         $favorite_existence = FavoriteShop::where('user_id', $user_id)->where('shop_id', $shop_id)->first();
         if(!$favorite_existence){
@@ -45,6 +45,10 @@ class ShopController extends Controller
     public function myPage()
     {
         $user_name = Auth::user()->name;
-        return view('my_page', compact('user_name'));
+        $shops = Shop::all();
+        $user_id = Auth::id();
+        $favorites = FavoriteShop::where('user_id', $user_id)->where('is_active', 1)->get();
+        
+        return view('my_page', compact('user_name', 'favorites'));
     }
 }

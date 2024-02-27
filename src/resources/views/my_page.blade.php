@@ -46,30 +46,36 @@
                 <span class="header-title">お気に入り店舗</span>
             </div>
             <div class="favorite-shop-all">
+                @foreach ($favorites as $favorite)
                 <div class="shop__flame">
                     <div class="shop-data">
-                        <!-- <div class="shop-image__flame">
-                            <img src="" alt="店舗イメージ" class="shop-image">
+                        <div class="shop-image__flame">
+                            <img src="{{ $favorite->shop->picture_url }}" alt="店舗イメージ" class="shop-image">
                         </div>
-                        <h2 class="shop-name"></h2>
+                        <h2 class="shop-name">{{ $favorite->shop->shop_name }}</h2>
                         <div class="shop__area-genre">
-                            <h3 class="shop-area">#</h3>
-                            <h3 class="shop-genre">#</h3>
+                            <h3 class="shop-area">#{{ $favorite->shop->area }}</h3>
+                            <h3 class="shop-genre">#{{ $favorite->shop->genre }}</h3>
                         </div>
                         <div class="shop__detail-favorite">
                             <form action="/detail/:shop_id=" method="post">
                             @csrf
-                                <input type="hidden" value="">
+                                <input type="hidden" value="{{ $favorite->shop->id }}">
                                 <button class="detail">詳しくみる</button>
                             </form>
-                            <form action="">
+                            <form action="/create_favorite" method="post" class="favorite">
                             @csrf
-                                <input type="hidden" value="">
-                                <span class="material-symbols-outlined">favorite</span>
+                                <input type="hidden" name="shop_id" value="{{ $favorite->shop->id }}">
+                                <div class="favorite-hart">
+                                    <div class="favorite__active">
+                                        <button class="material-symbols-outlined">favorite</button>
+                                    </div>
+                                </div>
                             </form>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>

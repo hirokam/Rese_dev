@@ -78,5 +78,26 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const inputDate = document.querySelector('.input_date');
+        const inputTime = document.querySelector('.input_time');
+        const inputPeople = document.querySelector('.input_people');
+        const dateOutput = document.querySelector('.date');
+        const timeOutput = document.querySelector('.time');
+        const numberOutput = document.querySelector('.number');
+
+        inputDate.addEventListener('input', () => {
+            dateOutput.textContent = inputDate.value;
+        });
+
+        inputTime.addEventListener('input', () => {
+            timeOutput.textContent = inputTime.value;
+        });
+
+        inputPeople.addEventListener('input', () => {
+            numberOutput.textContent = inputPeople.value;
+        });
+    </script>
 </body>
 </html>
