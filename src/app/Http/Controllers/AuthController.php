@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
-// use App\Models\FavoriteShop;
+use App\Models\FavoriteShop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,9 +14,16 @@ class AuthController extends Controller
         $shops = Shop::all();
         $unique_areas = array_unique($shops->pluck('area')->toArray());
         $unique_genres = array_unique($shops->pluck('genre')->toArray());
-        // $favorite_existence = FavoriteShop::all();
 
-        return view('shop_all', compact('shops', 'unique_areas', 'unique_genres'));
+        $user_id = Auth::id();
+        $records_existence = FavoriteShop::where('user_id', $user_id)->get();
+
+        foreach ($shops as $shop) {
+            $record = $records_existence->where('shop_id', $shop->id)->first();
+            $shop->is_favorite = $record ? $record->is_active : false;
+        }
+
+        return view('shop_all', compact('shops', 'unique_areas', 'unique_genres', 'records_existence'));
         // return view('shop_all', compact('shops', 'favorite_existence'));
     }
 

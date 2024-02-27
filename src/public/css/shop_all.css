@@ -74,7 +74,7 @@
 
 .shop__area-genre {
     display: flex;
-    margin: 0 0 0 15px;
+    margin: 3px 0 0 15px;
 }
 
 .shop-area,
@@ -88,7 +88,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 13px 15px 0 15px;
+    margin: 5px 15px 0 15px;
 }
 
 .detail {
@@ -99,23 +99,6 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.favorite {
-    position: relative;
-}
-
-.favorite__nonactive .material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 1,
-        'wght' 100,
-        'GRAD' 200,
-        'opsz' 20;
-    font-size: 35px;
-    color: #efefef;
-    cursor: pointer;
-    border: none;
-    background: none;
 }
 
 .favorite__active .material-symbols-outlined {
@@ -129,6 +112,17 @@
     cursor: pointer;
     border: none;
     background: none;
-    position: absolute;
-        top: 0;
+}
+
+.favorite__nonactive .material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 100,
+        'GRAD' 200,
+        'opsz' 20;
+    font-size: 35px;
+    color: #efefef;
+    cursor: pointer;
+    border: none;
+    background: none;
 }

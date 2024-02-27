@@ -51,13 +51,20 @@
                         @csrf
                             <input type="hidden" value="{{ $shop->id }}">
                             <button class="detail">詳しくみる</button>
-                        </form>
                         <form action="/create_favorite" method="post" class="favorite">
                         @csrf
                             <input type="hidden" name="shop_id" value="{{ $shop->id }}">
-                            <div class="favorite__nonactive">
-                                <button class="material-symbols-outlined">favorite</button>
-                            </div>
+                                <div class="favorite-hart">
+                                @if($shop->is_favorite)
+                                    <div class="favorite__active">
+                                        <button class="material-symbols-outlined">favorite</button>
+                                    </div>
+                                @else
+                                    <div class="favorite__nonactive">
+                                        <button class="material-symbols-outlined">favorite</button>
+                                    </div>
+                                @endif
+                                </div>
                         </form>
                     </div>
                 </div>
@@ -77,6 +84,7 @@
                         <h3 class="shop-area">#{{ $shop->area }}</h3>
                         <h3 class="shop-genre">#{{ $shop->genre }}</h3>
                     </div>
+                    @if($shop->is_favorite)
                     <div class="shop__detail-favorite">
                         <form action="/detail/:shop_id={{ $shop->id }}" method="post">
                         @csrf
@@ -86,11 +94,31 @@
                         <form action="/create_favorite" method="post" class="favorite">
                         @csrf
                             <input type="hidden" name="shop_id" value="{{ $shop->id }}">
-                            <div class="favorite__nonactive">
-                                <button class="material-symbols-outlined">favorite</button>
+                            <div class="favorite-hart">
+                                <div class="favorite__active">
+                                    <button class="material-symbols-outlined">favorite</button>
+                                </div>
                             </div>
                         </form>
                     </div>
+                    @else
+                    <div class="shop__detail-favorite">
+                        <form action="/detail/:shop_id={{ $shop->id }}" method="post">
+                        @csrf
+                            <input type="hidden" value="{{ $shop->id }}">
+                            <button class="detail">詳しくみる</button>
+                        </form>
+                        <form action="/create_favorite" method="post" class="favorite">
+                        @csrf
+                            <input type="hidden" name="shop_id" value="{{ $shop->id }}">
+                            <div class="favorite-hart">
+                                <div class="favorite__nonactive">
+                                    <button class="material-symbols-outlined">favorite</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    @endif
                 </div>
             </div>
         @endforeach
