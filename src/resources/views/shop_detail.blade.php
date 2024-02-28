@@ -44,37 +44,41 @@
         <div class="reservation-group">
             <div class="reservation__flame">
                 <h2 class="reservation-header">予約</h2>
-                <div class="date__flame">
-                    <input type="date" class="input_date" value="input">
-                </div>
-                <div class="time__flame">
-                    <input type="time" class="input_time">
-                </div>
-                <div class="people__flame">
-                    <input type="number" class="input_people">
-                </div>
-                <div class="reservation-info__flame"></div>
-                <div class="info__inner">
-                    <div class="shop-info">
-                        <h4 class="info__header">Shop</h4>
-                        <span class="shop">{{ $shop_detail->shop_name }}</span>
+                <form action="/reservation" method="post">
+                @csrf
+                    <input type="hidden" name="shop_id" value="{{ $shop_id }}">
+                    <div class="date__flame">
+                        <input type="date" name="reservation_date" class="input_date" value="input">
                     </div>
-                    <div class="date-info">
-                        <h4 class="info__header">Date</h4>
-                        <span class="date"></span>
+                    <div class="time__flame">
+                        <input type="time" name="reservation_time" class="input_time">
                     </div>
-                    <div class="time-info">
-                        <h4 class="info__header">Time</h4>
-                        <span class="time"></span>
+                    <div class="people__flame">
+                        <input type="number" name="reservation_number" class="input_people">
                     </div>
-                    <div class="number-info">
-                        <h4 class="info__header">Number</h4>
-                        <span class="number"></span>
+                    <div class="reservation-info__flame"></div>
+                    <div class="info__inner">
+                        <div class="shop-info">
+                            <h4 class="info__header">Shop</h4>
+                            <span class="shop">{{ $shop_detail->shop_name }}</span>
+                        </div>
+                        <div class="date-info">
+                            <h4 class="info__header">Date</h4>
+                            <span class="date"></span>
+                        </div>
+                        <div class="time-info">
+                            <h4 class="info__header">Time</h4>
+                            <span class="time"></span>
+                        </div>
+                        <div class="number-info">
+                            <h4 class="info__header">Number</h4>
+                            <span class="number"></span>
+                        </div>
                     </div>
-                </div>
-                <div class="reservation-button__flame">
-                    <button class="reservation__button">予約する</button>
-                </div>
+                    <div class="reservation-button__flame">
+                        <button class="reservation__button">予約する</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

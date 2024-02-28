@@ -30,3 +30,5 @@ Route::get('/done', [AuthController::class, 'done']);
 Route::get('/mypage', [ShopController::class, 'myPage']);
 
 Route::post('/search', [AuthController::class, 'search']);
+
+Route::post('/reservation', [ShopController::class, 'reservation']);

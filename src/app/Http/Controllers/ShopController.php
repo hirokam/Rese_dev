@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Shop;
 use App\Models\FavoriteShop;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class ShopController extends Controller
     public function shopDetail(Request $request, $shop_id)
     {
         $shop_detail = Shop::find($shop_id);
-        return view('shop_detail', compact('shop_detail'));
+        return view('shop_detail', compact('shop_detail', 'shop_id'));
     }
 
     public function createFavorite(Request $request)
@@ -30,7 +31,6 @@ class ShopController extends Controller
                 'is_active' => true,
             ]);
             return redirect('/');
-            // return view('shop_all', compact('favorite_existence'));
         }else{
             if($favorite_existence->is_active) {
                 $favorite_existence->update(['is_active' => false]);
@@ -38,7 +38,6 @@ class ShopController extends Controller
                 $favorite_existence->update(['is_active' => true]);
             }
             return redirect('/');
-            // return view('shop_all', compact('favorite_existence'));
         }
     }
 
@@ -50,5 +49,20 @@ class ShopController extends Controller
         $favorites = FavoriteShop::where('user_id', $user_id)->where('is_active', 1)->get();
         
         return view('my_page', compact('user_name', 'favorites'));
+    }
+
+    public function reservation(Request $request)
+    {
+        $reservation_info = $request->all();
+        $user_id = Auth::id();
+        $reservation = Reservation::create([
+            'user_id' => $user_id,
+            'shop_id' => $request->shop_id,
+            'reservation_date' => $request->reservation_date,
+            'reservation_time' => $request->reservation_time,
+            'reservation_number' => $request->reservation_number,
+        ]);
+
+        return view('done');
     }
 }
