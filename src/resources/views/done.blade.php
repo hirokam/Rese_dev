@@ -10,7 +10,7 @@
             <span class="message">ご予約ありがとうございます</span>
         </div>
         <div class="button-space">
-            <button class="button">戻る</button>
+            <a href="/"><button class="button">戻る</button></a>
         </div>
     </div>
 @endsection

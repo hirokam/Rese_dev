@@ -8,6 +8,7 @@
     <div class="grid__parent">
         <div class="reservation-status__flame">
             <h2 class="reservation-status__header">予約状況</h2>
+            @foreach ($reservations as $reservation)
             <div class="reservation-status__inner-flame">
                 <div class="reservation-status__inner-header">
                     <div class="reservation-icon">
@@ -20,25 +21,26 @@
                 <div class="status__inner">
                     <div class="shop-info">
                         <h4 class="info__header">Shop</h4>
-                        <span class="shop">仙人</span>
+                        <span class="shop">{{ $reservation->shop->shop_name }}</span>
                     </div>
                     <div class="date-info">
                         <h4 class="info__header">Date</h4>
-                        <span class="date">2021-04-01</span>
+                        <span class="date">{{ $reservation->reservation_date }}</span>
                     </div>
                     <div class="time-info">
                         <h4 class="info__header">Time</h4>
-                        <span class="time">17:00</span>
+                        <span class="time">{{ $reservation->reservation_time }}</span>
                     </div>
                     <div class="number-info">
                         <h4 class="info__header">Number</h4>
-                        <span class="number">1人</span>
+                        <span class="number">{{ $reservation->reservation_number }}人</span>
                     </div>
                 </div>
                 <div class="reservation-cancel">
                     <span class="material-symbols-outlined">cancel</span>
                 </div>
             </div>
+            @endforeach
         </div>
         <div class="favorite__flame">
             <span class="user-name">{{ $user_name }}さん</span>
