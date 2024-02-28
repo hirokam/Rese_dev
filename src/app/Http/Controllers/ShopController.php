@@ -44,7 +44,7 @@ class ShopController extends Controller
     public function myPage()
     {
         $user_id = Auth::id();
-        $reservations = Reservation::where('user_id', $user_id)->get();
+        $reservations = Reservation::where('user_id', $user_id)->orderBy('reservation_date', 'asc')->orderBy('reservation_time', 'asc')->get();
         $user_name = Auth::user()->name;
         $shops = Shop::all();
         $favorites = FavoriteShop::where('user_id', $user_id)->where('is_active', 1)->get();

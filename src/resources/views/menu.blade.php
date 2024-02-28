@@ -39,7 +39,7 @@
                             </form>
                         </li>
                         <li class="content__inner">
-                            <button class="inner__button">Mypage</button>
+                            <a href="/mypage"><button class="inner__button">Mypage</button></a>
                         </li>
                         @else
                         <li class="content__inner">

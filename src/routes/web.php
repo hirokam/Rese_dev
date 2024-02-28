@@ -18,17 +18,17 @@ use App\Http\Controllers\ShopController;
 Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
     Route::get('/menu', [AuthController::class, 'menu']);
+    Route::get('/mypage', [ShopController::class, 'myPage']);
     Route::post('/detail/:shop_id={shop_id?}', [ShopController::class, 'shopDetail']);
+    Route::post('/create_favorite', [ShopController::class, 'createFavorite']);
+    Route::post('/reservation', [ShopController::class, 'reservation']);
+    Route::get('/done', [AuthController::class, 'done']);
 });
 
-
-Route::post('/create_favorite', [ShopController::class, 'createFavorite']);
+Route::get('/', [AuthController::class, 'index']);
+Route::get('/menu', [AuthController::class, 'menu']);
+Route::post('/detail/:shop_id={shop_id?}', [ShopController::class, 'shopDetail']);
 
 Route::get('/thanks', [AuthController::class, 'thanks']);
-Route::get('/done', [AuthController::class, 'done']);
-
-Route::get('/mypage', [ShopController::class, 'myPage']);
 
 Route::post('/search', [AuthController::class, 'search']);
-
-Route::post('/reservation', [ShopController::class, 'reservation']);

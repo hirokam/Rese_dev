@@ -8,14 +8,14 @@
     <div class="grid__parent">
         <div class="reservation-status__flame">
             <h2 class="reservation-status__header">予約状況</h2>
-            @foreach ($reservations as $reservation)
+            @foreach ($reservations as $index => $reservation)
             <div class="reservation-status__inner-flame">
                 <div class="reservation-status__inner-header">
                     <div class="reservation-icon">
                         <span class="material-symbols-outlined">nest_clock_farsight_analog</span>
                     </div>
                     <div class="reservation-number">
-                        <span class="reservation-number__inner">予約1</span>
+                        <span class="reservation-number__inner">予約{{ $index + 1 }}</span>
                     </div>
                 </div>
                 <div class="status__inner">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="time-info">
                         <h4 class="info__header">Time</h4>
-                        <span class="time">{{ $reservation->reservation_time }}</span>
+                        <span class="time">{{ \Carbon\Carbon::parse($reservation->reservation_time)->format('H:i') }}</span>
                     </div>
                     <div class="number-info">
                         <h4 class="info__header">Number</h4>
