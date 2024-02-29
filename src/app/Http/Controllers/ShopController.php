@@ -66,4 +66,10 @@ class ShopController extends Controller
 
         return view('done');
     }
+
+    public function remove(Request $request)
+    {
+        $reservation = Reservation::where('user_id', $request->user_id)->where('shop_id', $request->shop_id)->where('reservation_date', $request->reservation_date)->where('reservation_time', $request->reservation_time)->first()->delete();
+        return redirect('/mypage');
+    }
 }

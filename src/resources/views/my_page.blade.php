@@ -18,27 +18,33 @@
                         <span class="reservation-number__inner">予約{{ $index + 1 }}</span>
                     </div>
                 </div>
-                <div class="status__inner">
-                    <div class="shop-info">
-                        <h4 class="info__header">Shop</h4>
-                        <span class="shop">{{ $reservation->shop->shop_name }}</span>
+                <form action="/delete" method="post">
+                @method('DELETE')
+                @csrf
+                    <div class="status__inner">
+                        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                        <input type="hidden" name="shop_id" value="{{ $reservation->shop->id }}">
+                        <div class="shop-info">
+                            <h4 class="info__header">Shop</h4>
+                            <input class="shop" value="{{ $reservation->shop->shop_name }}" readonly>
+                        </div>
+                        <div class="date-info">
+                            <h4 class="info__header">Date</h4>
+                            <input class="date" name="reservation_date" value="{{ $reservation->reservation_date }}" readonly>
+                        </div>
+                        <div class="time-info">
+                            <h4 class="info__header">Time</h4>
+                            <input class="time" name="reservation_time" value="{{ \Carbon\Carbon::parse($reservation->reservation_time)->format('H:i') }}" readonly>
+                        </div>
+                        <div class="number-info">
+                            <h4 class="info__header">Number</h4>
+                            <input class="number" value="{{ $reservation->reservation_number }}人" readonly>
+                        </div>
                     </div>
-                    <div class="date-info">
-                        <h4 class="info__header">Date</h4>
-                        <span class="date">{{ $reservation->reservation_date }}</span>
+                    <div class="reservation-cancel">
+                        <button class="material-symbols-outlined">cancel</button>
                     </div>
-                    <div class="time-info">
-                        <h4 class="info__header">Time</h4>
-                        <span class="time">{{ \Carbon\Carbon::parse($reservation->reservation_time)->format('H:i') }}</span>
-                    </div>
-                    <div class="number-info">
-                        <h4 class="info__header">Number</h4>
-                        <span class="number">{{ $reservation->reservation_number }}人</span>
-                    </div>
-                </div>
-                <div class="reservation-cancel">
-                    <span class="material-symbols-outlined">cancel</span>
-                </div>
+                </form>
             </div>
             @endforeach
         </div>

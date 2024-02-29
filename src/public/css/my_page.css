@@ -70,6 +70,9 @@
     position: absolute;
         left: 90px;
     color: white;
+    background: none;
+    outline: none;
+    border: none;
 }
 
 .reservation-cancel {
@@ -85,6 +88,9 @@
         'GRAD' 200,
         'opsz' 20;
     color: white;
+    background: none;
+    cursor: pointer;
+    border: none;
 }
 
 .favorite__flame {

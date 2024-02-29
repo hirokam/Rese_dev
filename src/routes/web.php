@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/create_favorite', [ShopController::class, 'createFavorite']);
     Route::post('/reservation', [ShopController::class, 'reservation']);
     Route::get('/done', [AuthController::class, 'done']);
+    Route::delete('/delete', [ShopController::class, 'remove']);
 });
 
 Route::get('/', [AuthController::class, 'index']);
