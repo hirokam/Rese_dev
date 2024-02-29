@@ -41,6 +41,19 @@ class ShopController extends Controller
         }
     }
 
+    public function myPageDeleteFavorite(Request $request)
+    {
+        $shop_id = $request->input('shop_id');
+        $user_id = Auth::id();
+
+        $favorite_existence = FavoriteShop::where('user_id', $user_id)->where('shop_id', $shop_id)->first();
+        if($favorite_existence->is_active) {
+            $favorite_existence->update(['is_active' => false]);
+            }
+        
+        return redirect('/mypage');
+    }
+
     public function myPage()
     {
         $user_id = Auth::id();
@@ -70,6 +83,7 @@ class ShopController extends Controller
     public function remove(Request $request)
     {
         $reservation = Reservation::where('user_id', $request->user_id)->where('shop_id', $request->shop_id)->where('reservation_date', $request->reservation_date)->where('reservation_time', $request->reservation_time)->first()->delete();
+
         return redirect('/mypage');
     }
 }
