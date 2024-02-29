@@ -7,6 +7,8 @@ use App\Models\FavoriteShop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Log;
+
 class AuthController extends Controller
 {
     public function index()
@@ -28,12 +30,27 @@ class AuthController extends Controller
 
     public function search(Request $request)
     {
-        $input_area = $request->input('area');
-        $input_genre = $request->input('genre');
-        $input_text = $request->input('text');
-        // $shops = Shop::where('area', $input_area)->Where('genre', $input_genre)->Where('shop_name', 'LIKE',"%{$input_text}%")->get();
-        // $shops = Shop::where('area', $input_area)->Where('genre', $input_genre)->get();
-        // $shop_name =Shop::where('shop_name', 'LIKE', "%{$input_text}%");
+        // $shops_query = Shop::query();
+
+        // if ($input_area) {
+        //     $shops_query->where('area', $input_area);
+        // }
+
+        // if ($input_genre) {
+        //     $shops_query->where('genre', $input_genre);
+        // }
+
+        // $shops = $shops_query->get();
+        $shops = Shop::where('area', $request->area)->Where('genre', $request->genre)->Where('shop_name', 'LIKE',"%{$request->text}%")->get();
+
+        $user_id = Auth::id();
+        $records_existence = FavoriteShop::where('user_id', $user_id)->get();
+
+        foreach ($shops as $shop) {
+            $record = $records_existence->where('shop_id', $shop->id)->first();
+            $shop->is_favorite = $record ? $record->is_active : false;
+        }
+
         $request->session()->put('search_results', $shops);
 
         return redirect('/');
