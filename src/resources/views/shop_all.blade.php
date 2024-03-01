@@ -15,8 +15,8 @@
                         <option>{{ $area }}</option>
                     @endforeach
                 </select>
-                <select type="submit" name="genre" id="" class="select">
-                    <option>All genre</option>
+                <select name="genre" id="" class="select">
+                    <option value="">All genre</option>
                     @foreach ($unique_genres as $genre)
                         <option>{{ $genre }}</option>
                     @endforeach
