@@ -30,20 +30,6 @@ class AuthController extends Controller
 
     public function search(Request $request)
     {
-        //1.全体の表示はできるが、エリア、ジャンルの検索をかけるとエラー。
-        // if ($request->area) {
-        //     $shops = Shop::where('area', $request->area);
-        // }else{
-        //     $shops = Shop::all();
-        // }
-
-        // if ($request->genre) {
-        //     $shops = Shop::where('genre', $request->genre);
-        // }else{
-        //     $shops = Shop::all();
-        // }
-
-        //2.全網羅構文
         if($request->area) {
             if($request->genre) {
                 if($request->text) {
@@ -73,21 +59,7 @@ class AuthController extends Controller
                 }
             }
         };
-        
-        //3.エリア検索は格納されているが表示されない。ジャンル検索は可能。テキストではPODのシリアル化は許可されていないとエラー。
-        // if($request->area)
-        //     $shops = Shop::where('area', $request->area)->get();
-        // ここでデバックしたら値はちゃんと格納されていたが表示されない。
-        // dd($shops);
-        // if($request->genre)
-        //     $shops = Shop::where('genre', $request->genre)->get();
-        // if($request->text)
-        //     $shops = Shop::where('shop_name', 'LIKE',"%{$request->text}%");
 
-        //4.エリア・ジャンルの検索およびエリア・ジャンル・テキストでの検索可。
-        // $shops = Shop::where('area', $request->area)->Where('genre', $request->genre)->Where('shop_name', 'LIKE',"%{$request->text}%")->get();
-        // dd($shops);
-        
         $user_id = Auth::id();
         $records_existence = FavoriteShop::where('user_id', $user_id)->get();
 

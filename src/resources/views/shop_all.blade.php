@@ -37,6 +37,7 @@
     <div class="shop-all__flame">
         @foreach (session('search_results') as $shop)
             <div class="shop__flame">
+                <!-- {{ $shop->is_favorite }} -->
                 <div class="shop-data">
                     <div class="shop-image__flame">
                         <img src="{{ $shop->picture_url }}" alt="店舗イメージ" class="shop-image">
@@ -89,6 +90,7 @@
     <div class="shop-all__flame">
         @foreach ($shops as $shop)
             <div class="shop__flame">
+                <!-- {{ $shop->is_favorite }} -->
                 <div class="shop-data">
                     <div class="shop-image__flame">
                         <img src="{{ $shop->picture_url }}" alt="店舗イメージ" class="shop-image">
