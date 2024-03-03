@@ -18,52 +18,6 @@ class ShopController extends Controller
         return view('shop_detail', compact('shop_detail', 'shop_id'));
     }
 
-    public function createFavorite(Request $request)
-    {
-        $shop_id = $request->input('shop_id');
-        $user_id = Auth::id();
-
-        $favorite_existence = FavoriteShop::where('user_id', $user_id)->where('shop_id', $shop_id)->first();
-        if(!$favorite_existence){
-            $info = FavoriteShop::create ([
-                'user_id' => $user_id,
-                'shop_id' => $shop_id,
-                'is_active' => true,
-            ]);
-            // return redirect('/');
-        }else{
-            if($favorite_existence->is_active) {
-                $favorite_existence->update(['is_active' => false]);
-            }else{
-                $favorite_existence->update(['is_active' => true]);
-            }
-            // return redirect('/');
-        }
-
-        // $record_existence = FavoriteShop::where('user_id', $user_id)->get();
-        // $shops = $request->session()->get('search_results');
-
-        // foreach (session('search_results') as $shop) {
-        //     $record = $record_existence->where('shop_id', $shop_id)->first();
-        //     $shop->is_favorite = $record ? $record->is_active : false;
-        // }
-
-        return redirect('/');
-    }
-
-    public function myPageDeleteFavorite(Request $request)
-    {
-        $shop_id = $request->input('shop_id');
-        $user_id = Auth::id();
-
-        $favorite_existence = FavoriteShop::where('user_id', $user_id)->where('shop_id', $shop_id)->first();
-        if($favorite_existence->is_active) {
-            $favorite_existence->update(['is_active' => false]);
-            }
-        
-        return redirect('/mypage');
-    }
-
     public function myPage()
     {
         $user_id = Auth::id();
@@ -73,27 +27,5 @@ class ShopController extends Controller
         $favorites = FavoriteShop::where('user_id', $user_id)->where('is_active', 1)->get();
         
         return view('my_page', compact('reservations', 'user_name', 'favorites'));
-    }
-
-    public function reservation(Request $request)
-    {
-        $reservation_info = $request->all();
-        $user_id = Auth::id();
-        $reservation = Reservation::create([
-            'user_id' => $user_id,
-            'shop_id' => $request->shop_id,
-            'reservation_date' => $request->reservation_date,
-            'reservation_time' => $request->reservation_time,
-            'reservation_number' => $request->reservation_number,
-        ]);
-
-        return view('done');
-    }
-
-    public function remove(Request $request)
-    {
-        $reservation = Reservation::where('user_id', $request->user_id)->where('shop_id', $request->shop_id)->where('reservation_date', $request->reservation_date)->where('reservation_time', $request->reservation_time)->first()->delete();
-
-        return redirect('/mypage');
     }
 }
