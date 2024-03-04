@@ -10,7 +10,7 @@
             <span class="message">会員登録ありがとうございます</span>
         </div>
         <div class="button-space">
-            <form action="/login" method="get">
+            <form action="/" method="get">
                 <button class="button">ログインする</button>
             </form>
         </div>

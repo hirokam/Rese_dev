@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\FavoriteShopsController;
-use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +16,8 @@ use App\Http\Controllers\ReservationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::view('thanks', 'thanks')->name('thanks');
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
@@ -36,5 +38,3 @@ Route::get('/menu', [AuthController::class, 'menu']);
 Route::post('/detail/:shop_id={shop_id?}', [ShopController::class, 'shopDetail']);
 
 Route::post('/search', [AuthController::class, 'search']);
-
-Route::get('/thanks', [AuthController::class, 'thanks']);
