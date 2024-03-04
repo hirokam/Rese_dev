@@ -75,6 +75,20 @@
     border: none;
 }
 
+.reservation-update {
+    position: absolute;
+    top: 30px;
+    right: 85px;
+}
+
+.update {
+    background: white;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px gray;
+    cursor: pointer;
+}
+
 .reservation-cancel {
     position: absolute;
         top: 30px;

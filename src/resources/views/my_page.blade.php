@@ -18,12 +18,7 @@
                         <span class="reservation-number__inner">予約{{ $index + 1 }}</span>
                     </div>
                 </div>
-                <form action="/delete" method="post">
-                @method('DELETE')
-                @csrf
                     <div class="status__inner">
-                        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                        <input type="hidden" name="shop_id" value="{{ $reservation->shop->id }}">
                         <div class="shop-info">
                             <h4 class="info__header">Shop</h4>
                             <input class="shop" value="{{ $reservation->shop->shop_name }}" readonly>
@@ -41,9 +36,27 @@
                             <input class="number" value="{{ $reservation->reservation_number }}人" readonly>
                         </div>
                     </div>
-                    <div class="reservation-cancel">
-                        <button class="material-symbols-outlined">cancel</button>
-                    </div>
+                    <form action="/update" method="POST">
+                    @csrf
+                        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                        <input type="hidden" name="shop_id" value="{{ $reservation->shop->id }}">
+                        <input type="hidden" name="reservation_date" value="{{ $reservation->reservation_date }}">
+                        <input type="hidden" name="reservation_time" value="{{$reservation->reservation_time}}">
+                        <div class="reservation-update">
+                            <button class="update">予約変更</button>
+                        </div>
+                    </form>
+                    <form action="/delete" method="POST">
+                    @method('DELETE')
+                    @csrf
+                        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                        <input type="hidden" name="shop_id" value="{{ $reservation->shop->id }}">
+                        <input type="hidden" name="reservation_date" value="{{ $reservation->reservation_date }}">
+                        <input type="hidden" name="reservation_time" value="{{$reservation->reservation_time}}">
+                        <div class="reservation-cancel">
+                            <button class="material-symbols-outlined">cancel</button>
+                        </div>
+                    </form>
                 </form>
             </div>
             @endforeach

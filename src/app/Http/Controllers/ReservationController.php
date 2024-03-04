@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
-        public function reservation(Request $request)
+    public function reservation(Request $request)
     {
         $reservation_info = $request->all();
         $user_id = Auth::id();
@@ -21,6 +21,22 @@ class ReservationController extends Controller
         ]);
 
         return view('done');
+    }
+
+    public function updateView(Request $request)
+    {
+        $reservation = Reservation::where('user_id', $request->user_id)->where('shop_id', $request->shop_id)->where('reservation_date', $request->reservation_date)->where('reservation_time', $request->reservation_time)->first();
+
+        return view('reservation_update', compact('reservation'));
+    }
+
+    public function update(Request $request)
+    {
+        $update_info = $request->all();
+        unset($update_info['_token']);
+        Reservation::find($request->id)->update($update_info);
+
+        return view('update_done');
     }
 
     public function remove(Request $request)
