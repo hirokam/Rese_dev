@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="header__close">
-            <form action="/close" method="get">
+            <form action="/close" method="post">
             @csrf
                 <button class="close__button">
                     <span class="material-symbols-outlined">close</span>

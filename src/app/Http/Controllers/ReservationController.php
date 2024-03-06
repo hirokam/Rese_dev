@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shop;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
+    public function shopDetail(Request $request, $shop_id)
+    {
+        $shop_detail = Shop::find($shop_id);
+        return view('shop_detail', compact('shop_detail', 'shop_id'));
+    }
+
     public function reservation(Request $request)
     {
         $reservation_info = $request->all();
