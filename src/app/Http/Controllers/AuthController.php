@@ -78,7 +78,17 @@ class AuthController extends Controller
         return view('menu');
     }
 
+    public function closeMenu()
+    {
+        return back();
+    }
+
     public function logout()
+    {
+        return view('auth.login');
+    }
+
+    public function login()
     {
         return view('auth.login');
     }

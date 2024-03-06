@@ -22,6 +22,7 @@ Route::view('thanks', 'thanks')->name('thanks');
 Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
     Route::get('/menu', [AuthController::class, 'menu']);
+    Route::get('/close', [AuthController::class, 'closeMenu']);
     Route::get('/mypage', [ShopController::class, 'myPage']);
     Route::post('/detail/:shop_id={shop_id?}', [ShopController::class, 'shopDetail']);
     Route::post('/create_favorite', [FavoriteShopsController::class, 'createFavorite']);
@@ -33,8 +34,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/delete_favorite', [FavoriteShopsController::class, 'myPageDeleteFavorite']);
 });
 
+Route::get('/login', [AuthController::class, 'login']);
 Route::get('/', [AuthController::class, 'index']);
 Route::get('/menu', [AuthController::class, 'menu']);
+Route::get('/close', [AuthController::class, 'closeMenu']);
 Route::post('/detail/:shop_id={shop_id?}', [ShopController::class, 'shopDetail']);
 
 Route::post('/search', [AuthController::class, 'search']);
