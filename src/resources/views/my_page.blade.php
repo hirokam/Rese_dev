@@ -7,6 +7,16 @@
 @section('content')
     <div class="grid__parent">
         <div class="reservation-status__flame">
+            <form action="/visited" method="post">
+            @csrf
+                <nav class="nav__visited">
+                    <ul>
+                        <li class="list__visited">
+                            <button class="visited-button">行ったお店</button>
+                        </li>
+                    </ul>
+                </nav>
+            </form>
             <h2 class="reservation-status__header">予約状況</h2>
             @foreach ($reservations as $index => $reservation)
             <div class="reservation-status__inner-flame">

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Shop;
 use App\Models\FavoriteShop;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 use Illuminate\Support\Facades\Log;
 
@@ -72,4 +74,18 @@ class ShopController extends Controller
 
         return redirect('/');
     }
+
+    public function visitedShop()
+    {
+        $user_id = Auth::id();
+        $current_date_time = Carbon::now();
+        $visited_shops = Reservation::where('user_id', $user_id)->where('reservation_date', '<', $current_date_time->toDateString())->get();
+
+        return view('visited_shops', compact('visited_shops'));
+    }
+
+    // public function review(Request $request)
+    // {
+
+    // }
 }
