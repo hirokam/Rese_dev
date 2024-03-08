@@ -1,0 +1,74 @@
+body{
+    background: #dcdcdc;
+    position: relative;
+}
+
+.review__flame {
+    margin-top: 150px;
+    width: 550px;
+    height: 400px;
+    background: white;
+    position: absolute;
+        left: 50%;
+    transform: translate(-50%);
+    border-radius: 5px;
+    position: relative;
+}
+
+.shop_image {
+    width: 550px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.shop-name__flame {
+    margin: 10px 5px 0px;
+    padding: 5px 15px;
+    border-bottom: solid;
+}
+
+.shop-name {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.shop-name__after {
+    margin-left: 15px;
+}
+
+.review__under-flame {
+    display: flex;
+}
+
+.star-rating__flame {
+    margin: 10px 0 0 30px;
+}
+
+.star {
+    font-size: 15px;
+    color: #fabf14;
+    padding-left: 5px;
+}
+
+.comment__flame {
+    margin: 10px 0 0 50px;
+}
+
+.comment {
+    resize: none;
+    outline: none;
+}
+
+.button__flame {
+    display: flex;
+    justify-content: right;
+}
+
+.cancel {
+    margin: 5px 15px;
+    font-size: 14px;
+    position: absolute;
+        bottom: 2.5%;
+        right: 20%;
+}

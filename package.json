@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "vue": "^3.4.21",
+    "vue-star-rating": "^1.7.0"
+  },
+  "scripts": {
+    "dev": "npm run dev"
+  }
+}

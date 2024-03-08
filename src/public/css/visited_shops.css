@@ -15,6 +15,7 @@
 
 .visited-shops {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .visited-shop__flame {
@@ -24,6 +25,7 @@
     border-radius: 5px;
     box-shadow: 1px 1px 5px gray;
     margin: 10px 5px;
+    position: relative;
 }
 
 .shop-image {
@@ -82,3 +84,13 @@
     background: none;
 }
 
+.review__flame {
+    position: absolute;
+        bottom: 33%;
+        right: 5%;
+    font-size: 12px;
+}
+
+.button__review {
+    cursor: pointer;
+}

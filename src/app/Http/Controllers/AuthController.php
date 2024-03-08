@@ -27,6 +27,17 @@ class AuthController extends Controller
         return view('my_page', compact('reservations', 'user_name', 'favorites'));
     }
 
+    public function visitedShop()
+    {
+        $user_id = Auth::id();
+        $current_date_time = Carbon::now();
+        $visited_shops = Reservation::where('user_id', $user_id)->where('reservation_date', '<', $current_date_time->toDateString())->get();
+
+        return view('visited_shops', compact('visited_shops'));
+    }
+
+    
+
 
 
 

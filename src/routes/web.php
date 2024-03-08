@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\FavoriteShopsController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ShopReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/done', [AuthController::class, 'done']);
     Route::delete('/delete', [ReservationController::class, 'remove']);
     Route::post('/delete_favorite', [FavoriteShopsController::class, 'myPageDeleteFavorite']);
-    Route::post('/visited', [ShopController::class, 'visitedShop']);
+    Route::get('/visited', [AuthController::class, 'visitedShop']);
+    Route::post('/visited', [AuthController::class, 'visitedShop']);
+    Route::post('review_form', [ShopReviewController::class, 'review']);
+    Route::post('review_post', [ShopReviewController::class, 'reviewCreate']);
 });
 
 Route::get('/login', [AuthController::class, 'login']);

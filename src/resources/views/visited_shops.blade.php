@@ -34,6 +34,13 @@
                         <button class="material-symbols-outlined">favorite</button>
                     </div>
                 </div>
+                <div class="review__flame">
+                    <form action="review_form" method="post">
+                    @csrf
+                        <input type="hidden" name="shop_id" value="{{ $shop->shop->id }}">
+                        <button class="button__review">レビューを投稿</button>
+                    </form>
+                </div>
             </div>
             @endforeach
         </div>
