@@ -31,8 +31,12 @@
                 <div class="inner__button">
                     <button class="button">ログイン</button>
                 </div>
-                <div class="email__validation"><span class="validation">※メールアドレスを入力してください</span></div>
-                <div class="password__validation"><span class="validation">※パスワードを入力してください</span></div>
+                @error('email')
+                <div class="email__validation"><span class="validation">{{ $errors->first('email') }}</span></div>
+                @enderror
+                @error('password')
+                <div class="password__validation"><span class="validation">{{ $errors->first('password') }}</span></div>
+                @enderror
             </div>
         </form>
     </div>
