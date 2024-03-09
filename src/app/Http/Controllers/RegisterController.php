@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Support\Str;
+use App\Http\Requests\RegisterRequest;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\RegisterViewResponse;
@@ -49,7 +50,7 @@ class RegisterController extends Controller
      * @param  \Laravel\Fortify\Contracts\CreatesNewUsers  $creator
      * @return \Laravel\Fortify\Contracts\RegisterResponse
      */
-    public function store(Request $request,
+    public function store(RegisterRequest $request,
                         CreatesNewUsers $creator): RegisterResponse
     {
         if (config('fortify.lowercase_usernames')) {

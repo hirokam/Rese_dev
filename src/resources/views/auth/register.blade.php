@@ -39,9 +39,15 @@
                 <div class="inner__button">
                     <button class="button">登録</button>
                 </div>
-                <div class="name__validation"><span class="validation">※ユーザーネームを入力してください</span></div>
-                <div class="email__validation"><span class="validation">※メールアドレスを入力してください</span></div>
-                <div class="password__validation"><span class="validation">※パスワードを入力してください</span></div>
+                @error('name')
+                <div class="name__validation"><span class="validation">{{ $errors->first('name') }}</span></div>
+                @enderror
+                @error('email')
+                <div class="email__validation"><span class="validation">{{ $errors->first('email') }}</span></div>
+                @enderror
+                @error('password')
+                <div class="password__validation"><span class="validation">{{ $errors->first('password') }}</span></div>
+                @enderror
             </div>
         </form>
     </div>
