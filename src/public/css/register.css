@@ -21,6 +21,10 @@
     font-size: 14px;
 }
 
+.content__inner {
+    position: relative;
+}
+
 .inner__user {
     display: flex;
     margin: 20px 0 0 25px;
@@ -71,4 +75,27 @@
     width: 47px;
     height: 25px;
     cursor: pointer;
+}
+
+.name__validation {
+    position: absolute;
+        top: 12%;
+        left: 17.5%;
+}
+
+.email__validation {
+    position: absolute;
+        top: 38%;
+        left: 17.5%;
+}
+
+.password__validation {
+    position: absolute;
+        top: 64%;
+        left: 17.5%;
+}
+
+.validation {
+    font-size: 10px;
+    color: red;
 }

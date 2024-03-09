@@ -31,6 +31,8 @@
                 <div class="inner__button">
                     <button class="button">ログイン</button>
                 </div>
+                <div class="email__validation"><span class="validation">※メールアドレスを入力してください</span></div>
+                <div class="password__validation"><span class="validation">※パスワードを入力してください</span></div>
             </div>
         </form>
     </div>
