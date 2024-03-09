@@ -14,21 +14,23 @@ class FavoriteShopsController extends Controller
         $user_id = Auth::id();
 
         $favorite_existence = FavoriteShop::where('user_id', $user_id)->where('shop_id', $shop_id)->first();
-        if(!$favorite_existence){
+        if(!$favorite_existence) {
             $info = FavoriteShop::create ([
                 'user_id' => $user_id,
                 'shop_id' => $shop_id,
                 'is_active' => true,
             ]);
-            // return redirect('/');
-        }else{
-            if($favorite_existence->is_active) {
-                $favorite_existence->update(['is_active' => false]);
-            }else{
-                $favorite_existence->update(['is_active' => true]);
-            }
-            // return redirect('/');
+            return redirect('/');
         }
+        // } else {
+            // if($favorite_existence->is_active) {
+                $favorite_existence->update(['is_active' => !$favorite_existence->is_active]);
+                // $favorite_existence->update(['is_active' => false]);
+            // }else{
+            //     $favorite_existence->update(['is_active' => true]);
+            // }
+            // return redirect('/');
+        // }
 
         // $record_existence = FavoriteShop::where('user_id', $user_id)->get();
         // $shops = $request->session()->get('search_results');
@@ -50,7 +52,7 @@ class FavoriteShopsController extends Controller
         if($favorite_existence->is_active) {
             $favorite_existence->update(['is_active' => false]);
             }
-        
+
         return redirect('/mypage');
     }
 }
