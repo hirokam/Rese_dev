@@ -64,15 +64,15 @@
                         </div>
                         <div class="date-info">
                             <h4 class="info__header">Date</h4>
-                            <span class="date"></span>
+                            <span class="date">@error('reservation_date')<span class="validation">{{ $errors->first('reservation_date') }}</span>@enderror</span>
                         </div>
                         <div class="time-info">
                             <h4 class="info__header">Time</h4>
-                            <span class="time"></span>
+                            <span class="time">@error('reservation_time')<span class="validation">{{ $errors->first('reservation_time') }}</span>@enderror</span>
                         </div>
                         <div class="number-info">
                             <h4 class="info__header">Number</h4>
-                            <span class="number"></span>
+                            <span class="number">@error('reservation_number')<span class="validation">{{ $errors->first('reservation_number') }}</span>@enderror</span>
                         </div>
                     </div>
                     <div class="reservation-button__flame">

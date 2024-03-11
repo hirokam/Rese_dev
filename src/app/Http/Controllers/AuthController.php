@@ -63,13 +63,13 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function thanks()
-    {
-        return view('thanks');
-    }
+    // public function thanks()
+    // {
+    //     return view('thanks');
+    // }
 
-    public function done()
-    {
-        return view('done');
-    }
+    // public function done()
+    // {
+    //     return view('done');
+    // }
 }

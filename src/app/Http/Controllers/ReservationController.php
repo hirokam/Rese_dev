@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Shop;
 use App\Models\Reservation;
+use App\Http\Requests\ReservationRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class ReservationController extends Controller
         return view('shop_detail', compact('shop_detail', 'shop_id'));
     }
 
-    public function reservation(Request $request)
+    public function reservation(ReservationRequest $request)
     {
         $reservation_info = $request->all();
         $user_id = Auth::id();
