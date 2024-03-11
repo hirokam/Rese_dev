@@ -21,6 +21,13 @@ use App\Http\Controllers\ShopReviewController;
 |
 */
 
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/', [ShopController::class, 'index']);
+Route::get('/menu', [AuthController::class, 'menu']);
+Route::post('/close', [AuthController::class, 'closeMenu']);
+Route::post('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
+Route::post('/search', [ShopController::class, 'search']);
+
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
@@ -28,7 +35,7 @@ Route::get('/email/verify', function () {
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
 
-    return redirect('/login');
+    return redirect()->route('login');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::post('/email/verification-notification', function (Request $request) {
@@ -62,10 +69,3 @@ Route::middleware('auth')->group(function () {
     Route::post('review_post', [ShopReviewController::class, 'reviewCreate']);
 });
 
-Route::get('/login', [AuthController::class, 'login']);
-Route::get('/', [ShopController::class, 'index']);
-Route::get('/menu', [AuthController::class, 'menu']);
-Route::post('/close', [AuthController::class, 'closeMenu']);
-Route::post('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
-
-Route::post('/search', [ShopController::class, 'search']);
