@@ -21,7 +21,7 @@
                         <option>{{ $genre }}</option>
                     @endforeach
                 </select>
-                <div class="search-button__flame">
+                <div class="search-button__frame">
                     <input type="text" name="text" class="search" placeholder="Search ...">
                     <button class="search__button">
                         <span class="material-symbols-outlined">search </span>
@@ -34,12 +34,12 @@
 
 @section('content')
     @if (session('search_results'))
-    <div class="shop-all__flame">
+    <div class="shop-all__frame">
         @foreach (session('search_results') as $shop)
-            <div class="shop__flame">
+            <div class="shop__frame">
                 <!-- {{ $shop->is_favorite }} -->
                 <div class="shop-data">
-                    <div class="shop-image__flame">
+                    <div class="shop-image__frame">
                         <img src="{{ $shop->picture_url }}" alt="店舗イメージ" class="shop-image">
                     </div>
                     <h2 class="shop-name">{{ $shop->shop_name }}</h2>
@@ -87,12 +87,12 @@
         @endforeach
     </div>
     @else
-    <div class="shop-all__flame">
+    <div class="shop-all__frame">
         @foreach ($shops as $shop)
-            <div class="shop__flame">
+            <div class="shop__frame">
                 <!-- {{ $shop->is_favorite }} -->
                 <div class="shop-data">
-                    <div class="shop-image__flame">
+                    <div class="shop-image__frame">
                         <img src="{{ $shop->picture_url }}" alt="店舗イメージ" class="shop-image">
                     </div>
                     <h2 class="shop-name">{{ $shop->shop_name }}</h2>

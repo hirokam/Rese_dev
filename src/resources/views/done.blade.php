@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="content__flame">
+    <div class="content__frame">
         <div class="message-space">
             <span class="message">ご予約ありがとうございます</span>
         </div>

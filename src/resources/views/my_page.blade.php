@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="grid__parent">
-        <div class="reservation-status__flame">
+        <div class="reservation-status__frame">
             <form action="/visited" method="post">
             @csrf
                 <nav class="nav__visited">
@@ -19,7 +19,7 @@
             </form>
             <h2 class="reservation-status__header">予約状況</h2>
             @foreach ($reservations as $index => $reservation)
-            <div class="reservation-status__inner-flame">
+            <div class="reservation-status__inner-frame">
                 <div class="reservation-status__inner-header">
                     <div class="reservation-icon">
                         <span class="material-symbols-outlined">nest_clock_farsight_analog</span>
@@ -71,16 +71,16 @@
             </div>
             @endforeach
         </div>
-        <div class="favorite__flame">
+        <div class="favorite__frame">
             <span class="user-name">{{ $user_name }}さん</span>
             <div class="favorite__header">
                 <span class="header-title">お気に入り店舗</span>
             </div>
             <div class="favorite-shop-all">
                 @foreach ($favorites as $favorite)
-                <div class="shop__flame">
+                <div class="shop__frame">
                     <div class="shop-data">
-                        <div class="shop-image__flame">
+                        <div class="shop-image__frame">
                             <img src="{{ $favorite->shop->picture_url }}" alt="店舗イメージ" class="shop-image">
                         </div>
                         <h2 class="shop-name">{{ $favorite->shop->shop_name }}</h2>

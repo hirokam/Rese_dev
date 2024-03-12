@@ -115,7 +115,7 @@ body {
     margin: 35px 100px 0 100px;
 }
 
-.reservation__flame {
+.reservation__frame {
     width: 425px;
     height: 600px;
     background: #0066ff;
@@ -153,7 +153,7 @@ body {
     outline: none;
 }
 
-.reservation-info__flame {
+.reservation-info__frame {
     margin: 15px 0 0 15px;
     padding: 15px 0 0 15px;
     width: 360px;
@@ -195,7 +195,7 @@ body {
     font-size: 13px;
 }
 
-.reservation-button__flame {
+.reservation-button__frame {
     position: absolute;
         bottom: 0;
 }

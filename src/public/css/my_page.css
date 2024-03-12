@@ -4,7 +4,7 @@
     grid-template-columns: 2fr 3fr;
 }
 
-.reservation-status__flame {
+.reservation-status__frame {
     grid-column: 1/2;
     margin: 22px 0 0px 25px;
 }
@@ -25,7 +25,7 @@
     font-weight: bold;
 }
 
-.reservation-status__inner-flame {
+.reservation-status__inner-frame {
     margin: 20px 0;
     padding: 25px 0 0 25px;
     width: 400px;
@@ -117,7 +117,7 @@
     border: none;
 }
 
-.favorite__flame {
+.favorite__frame {
     grid-column: 2/3;
     margin: 30px 0 0 90px;
 }
@@ -142,7 +142,7 @@
     padding-top: 22px
 }
 
-.shop__flame {
+.shop__frame {
     width: 250px;
     height: 230px;
     background: white;

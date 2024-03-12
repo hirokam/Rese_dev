@@ -5,8 +5,8 @@
 @endsection
 
 @section('content')
-    <div class="content__flame">
-        <div class="content__login-flame">
+    <div class="content__frame">
+        <div class="content__login-frame">
             <span class="content__header">Login</span>
         </div>
         <form action="/login" method="post">

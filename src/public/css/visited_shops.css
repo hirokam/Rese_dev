@@ -18,7 +18,7 @@
     flex-wrap: wrap;
 }
 
-.visited-shop__flame {
+.visited-shop__frame {
     width: 250px;
     height: 230px;
     background: white;
@@ -84,7 +84,7 @@
     background: none;
 }
 
-.review__flame {
+.review__frame {
     position: absolute;
         bottom: 33%;
         right: 5%;

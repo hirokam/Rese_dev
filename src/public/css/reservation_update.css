@@ -115,7 +115,7 @@ body {
     margin: 35px 100px 0 100px;
 }
 
-.reservation__flame {
+.reservation__frame {
     width: 425px;
     height: 600px;
     background: #0066ff;
@@ -130,7 +130,7 @@ body {
     padding: 20px 0 0 15px;
 }
 
-.current-reservation-info__flame {
+.current-reservation-info__frame {
     margin: 15px 0 0 15px;
     padding: 15px 0 0 15px;
     width: 360px;
@@ -202,7 +202,7 @@ body {
 }
 
 
-.update-reservation-info__flame {
+.update-reservation-info__frame {
     margin: 15px 0 0 15px;
     padding: 15px 0 0 15px;
     width: 360px;
@@ -244,7 +244,7 @@ body {
     font-size: 13px;
 }
 
-.update-reservation-button__flame {
+.update-reservation-button__frame {
     position: absolute;
         bottom: 0;
 }

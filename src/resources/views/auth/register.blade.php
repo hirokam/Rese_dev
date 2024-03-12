@@ -5,8 +5,8 @@
 @endsection
 
 @section('content')
-    <div class="content__flame">
-        <div class="content__register-flame">
+    <div class="content__frame">
+        <div class="content__register-frame">
             <span class="content__header">Registration</span>
         </div>
         <form action="/register" method="post">

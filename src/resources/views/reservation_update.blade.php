@@ -30,7 +30,7 @@
                         </button>
                     </a>
                 </div>
-                <div class="shop-name__flame">
+                <div class="shop-name__frame">
                     <h2 class="shop-name">{{ $reservation->shop->shop_name }}</h2>
                 </div>
             </div>
@@ -42,9 +42,9 @@
             <p class="over-view">{{ $reservation->shop->overview }}</p>
         </div>
         <div class="reservation-group">
-            <div class="reservation__flame">
+            <div class="reservation__frame">
                 <h2 class="current-reservation-header">現在の予約内容</h2>
-                <div class="current-reservation-info__flame"></div>
+                <div class="current-reservation-info__frame"></div>
                 <div class="current-reservation-info__inner">
                     <div class="shop-info">
                         <h4 class="info__header">Shop</h4>
@@ -68,16 +68,16 @@
                 @method('PATCH')
                 @csrf
                     <input type="hidden" name="id" value="{{ $reservation->id }}">
-                    <div class="date__flame">
+                    <div class="date__frame">
                         <input type="date" name="reservation_date" class="input_date" value="input">
                     </div>
-                    <div class="time__flame">
+                    <div class="time__frame">
                         <input type="time" name="reservation_time" class="input_time">
                     </div>
-                    <div class="people__flame">
+                    <div class="people__frame">
                         <input type="number" name="reservation_number" class="input_people">
                     </div>
-                    <div class="update-reservation-info__flame"></div>
+                    <div class="update-reservation-info__frame"></div>
                     <div class="update-reservation-info__inner">
                         <div class="shop-info">
                             <h4 class="info__header">Shop</h4>
@@ -96,7 +96,7 @@
                             <span class="number"></span>
                         </div>
                     </div>
-                    <div class="update-reservation-button__flame">
+                    <div class="update-reservation-button__frame">
                         <button class="update-reservation__button">予約内容を変更する</button>
                     </div>
                 </form>

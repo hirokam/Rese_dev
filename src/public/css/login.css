@@ -1,4 +1,4 @@
-.content__flame {
+.content__frame {
     margin-top: 60px;
     width: 350px;
     height: 200px;
@@ -7,7 +7,7 @@
     box-shadow: 1.5px 1.5px 5px gray;
 }
 
-.content__login-flame {
+.content__login-frame {
     width: 350px;
     height: 50px;
     background: #0066ff;

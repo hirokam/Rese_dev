@@ -18,7 +18,7 @@
     cursor: pointer;
 }
 
-.search-button__flame {
+.search-button__frame {
     position: relative;
 }
 
@@ -42,14 +42,14 @@
     left: 250px;
 }
 
-.shop-all__flame {
+.shop-all__frame {
     display: flex;
     flex-wrap: wrap;
 }
 
 /* 各ショップ情報 */
 
-.shop__flame {
+.shop__frame {
     width: 250px;
     height: 230px;
     background: white;

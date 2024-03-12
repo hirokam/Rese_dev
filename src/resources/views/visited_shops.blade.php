@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="reservation-status__flame">
+    <div class="reservation-status__frame">
         <form action="/mypage" method="get">
         @csrf
             <nav class="nav__mypage-top">
@@ -19,8 +19,8 @@
         <h2 class="visited-shops__header">行ったお店</h2>
         <div class="visited-shops">
             @foreach ($visited_shops as $shop)
-            <div class="visited-shop__flame">
-                <div class="shop-image__flame">
+            <div class="visited-shop__frame">
+                <div class="shop-image__frame">
                     <img src="{{ $shop->shop->picture_url }}" alt="店舗イメージ" class="shop-image">
                 </div>
                 <h2 class="shop-name">{{ $shop->shop->shop_name }}</h2>
@@ -34,7 +34,7 @@
                         <button class="material-symbols-outlined">favorite</button>
                     </div>
                 </div>
-                <div class="review__flame">
+                <div class="review__frame">
                     <form action="review_form" method="post">
                     @csrf
                         <input type="hidden" name="shop_id" value="{{ $shop->shop->id }}">

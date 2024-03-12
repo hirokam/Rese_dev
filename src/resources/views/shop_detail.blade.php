@@ -30,7 +30,7 @@
                         </button>
                     </a>
                 </div>
-                <div class="shop-name__flame">
+                <div class="shop-name__frame">
                     <h2 class="shop-name">{{ $shop_detail->shop_name }}</h2>
                 </div>
             </div>
@@ -42,21 +42,21 @@
             <p class="over-view">{{ $shop_detail->overview }}</p>
         </div>
         <div class="reservation-group">
-            <div class="reservation__flame">
+            <div class="reservation__frame">
                 <h2 class="reservation-header">予約</h2>
                 <form action="/reservation" method="post">
                 @csrf
                     <input type="hidden" name="shop_id" value="{{ $shop_id }}">
-                    <div class="date__flame">
+                    <div class="date__frame">
                         <input type="date" name="reservation_date" class="input_date" value="input">
                     </div>
-                    <div class="time__flame">
+                    <div class="time__frame">
                         <input type="time" name="reservation_time" class="input_time">
                     </div>
-                    <div class="people__flame">
+                    <div class="people__frame">
                         <input type="number" name="reservation_number" class="input_people">
                     </div>
-                    <div class="reservation-info__flame"></div>
+                    <div class="reservation-info__frame"></div>
                     <div class="info__inner">
                         <div class="shop-info">
                             <h4 class="info__header">Shop</h4>
@@ -75,7 +75,7 @@
                             <span class="number">@error('reservation_number')<span class="validation">{{ $errors->first('reservation_number') }}</span>@enderror</span>
                         </div>
                     </div>
-                    <div class="reservation-button__flame">
+                    <div class="reservation-button__frame">
                         <button class="reservation__button">予約する</button>
                     </div>
                 </form>
