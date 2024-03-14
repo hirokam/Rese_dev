@@ -16,6 +16,14 @@ class ReservationRequest extends FormRequest
         return true;
     }
 
+    protected function prepareForValidation()
+    {
+        $reservation_date_time = ($this->filled(['date', 'time'])) ? $this->date . ' '. $this->time : '';
+        $this->merge([
+            'reservation_date_time' => $reservation_date_time
+        ]);
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,7 +32,7 @@ class ReservationRequest extends FormRequest
     public function rules()
     {
         return [
-            'reservation_date' => 'required|after:yesterday',
+            'reservation_date' => 'required|date|after:yesterday',
             'reservation_time' => 'required|after:now',
             'reservation_number' => 'required',
         ];

@@ -21,37 +21,54 @@ use App\Http\Controllers\ShopReviewController;
 |
 */
 
+// ユーザー登録後にログイン画面に遷移する為の記述
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+
+// ログインしていなくても店舗の一覧表示・メニュー表示・検索ができるようにする記述
 Route::get('/', [ShopController::class, 'index']);
 Route::get('/menu', [AuthController::class, 'menu']);
-Route::post('/close', [AuthController::class, 'closeMenu']);
-Route::post('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
 Route::post('/search', [ShopController::class, 'search']);
 
+// メニューをクローズするための記述→あまり機能していない
+Route::post('/close', [AuthController::class, 'closeMenu']);
+
+// これは多分不要。
+Route::post('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
+
+// ★以下メール認証
+// メール認証しないといけないことを通知するための記述
+// →'auth.verification.notice'データを作成していないため、これは不要？
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
 
+// 届いたメールでアドレスの確認をした際の挙動を記した記述
+// 確認したらログイン画面にリダイレクト
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
 
     return redirect()->route('login');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
+// ユーザーにメールアドレスの確認通知を再送するための記述
+// これも不要か？
 Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
 
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
+// メールアドレスの確認が完了したユーザーがプロフィールページにアクセスするための記述
 Route::get('/profile', function () {
 })->middleware('verified');
 
+// ユーザー登録後に遷移するページ
 Route::view('thanks', 'thanks')->name('thanks');
 
+// ログイン済みのユーザーがアクセスできるページ
 Route::middleware('auth')->group(function () {
-    Route::get('/', [ShopController::class, 'index']);
-    Route::get('/menu', [AuthController::class, 'menu']);
+    // Route::get('/', [ShopController::class, 'index']);
+    // Route::get('/menu', [AuthController::class, 'menu']);
     Route::post('/close', [AuthController::class, 'closeMenu']);
     Route::get('/mypage', [AuthController::class, 'myPage']);
     Route::get('/visited', [AuthController::class, 'visitedShop']);

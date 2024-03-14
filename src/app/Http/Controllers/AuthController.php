@@ -36,11 +36,6 @@ class AuthController extends Controller
         return view('visited_shops', compact('visited_shops'));
     }
 
-    
-
-
-
-
 
 
     public function menu()

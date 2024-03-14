@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Log;
 
 class ShopController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $shops = Shop::all();
         $unique_areas = array_unique($shops->pluck('area')->toArray());
@@ -21,6 +21,11 @@ class ShopController extends Controller
 
         $user_id = Auth::id();
         $records_existence = FavoriteShop::where('user_id', $user_id)->get();
+
+        $search_results = $request->session()->get('search_results');
+        if(!empty($search_results)) {
+            $shops = $search_results;
+        }
 
         foreach ($shops as $shop) {
             $record = $records_existence->where('shop_id', $shop->id)->first();
@@ -64,14 +69,12 @@ class ShopController extends Controller
 
         $user_id = Auth::id();
         $records_existence = FavoriteShop::where('user_id', $user_id)->get();
-
         foreach ($shops as $shop) {
             $record = $records_existence->where('shop_id', $shop->id)->first();
             $shop->is_favorite = $record ? $record->is_active : false;
         }
 
         $request->session()->put('search_results', $shops);
-
         return redirect('/');
     }
 }
