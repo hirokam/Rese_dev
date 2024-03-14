@@ -206,3 +206,16 @@
     border: none;
     background: none;
 }
+
+@media screen and (max-width: 768px){
+    .reservation-status__inner-frame {
+        margin: 20px 0;
+        padding: 25px 0 0 25px;
+        width: 300px;
+        height: 230px;
+        background: #0066ff;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px gray;
+        position: relative;
+    }
+}

@@ -126,3 +126,43 @@
     border: none;
     background: none;
 }
+
+@media screen and (max-width: 768px) {
+    .search-area__space {
+        display: flex;
+        background: white;
+        height: 40px;
+        width: 350px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px gray;
+        padding-top: 8px;
+    }
+
+    .search {
+        width: 50px;
+        height: 34px;
+        border: none;
+        outline: none;
+        position: absolute;
+        top: -32px;
+        left: 250px;
+    }
+
+    /* 各ショップ情報 */
+
+    .shop__frame {
+        width: 215px;
+        height: 230px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px gray;
+        margin: 10px 5px;
+    }
+
+    .shop-image {
+        width: 215px;
+        height: 115px;
+        object-fit: cover;
+        border-radius: 5px 5px 0 0;
+    }
+}

@@ -94,3 +94,22 @@
 .button__review {
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    .visited-shop__frame {
+        width: 215px;
+        height: 230px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px gray;
+        margin: 10px 5px;
+        position: relative;
+    }
+
+    .shop-image {
+        width: 215px;
+        height: 115px;
+        object-fit: cover;
+        border-radius: 5px 5px 0 0;
+    }
+}
