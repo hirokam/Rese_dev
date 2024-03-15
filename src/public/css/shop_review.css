@@ -65,10 +65,16 @@ body{
     justify-content: right;
 }
 
+.submit {
+    cursor: pointer;
+}
+
 .cancel {
     margin: 5px 15px;
     font-size: 14px;
     position: absolute;
         bottom: 2.5%;
         right: 20%;
+    text-decoration: none;
+    cursor: pointer;
 }

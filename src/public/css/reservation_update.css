@@ -258,3 +258,38 @@ body {
     border-radius: 0 0 5px 5px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    .header-group {
+        margin: 50px 0 0 50px;
+    }
+
+    .shop-image {
+        width: 255px;
+    }
+
+    .reservation-group {
+        margin: 35px 100px 0 35px;
+    }
+
+    .reservation__frame {
+        width: 325px;
+    }
+
+    .current-reservation-info__frame {
+        width: 295px;
+    }
+
+    .input_time,
+    .input_people {
+        width: 295px;
+    }
+
+    .update-reservation-info__frame {
+        width: 295px;
+    }
+
+    .update-reservation__button {
+        width: 325px;
+    }
+}

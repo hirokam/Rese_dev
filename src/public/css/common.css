@@ -50,5 +50,7 @@ main {
 }
 
 @media screen and (max-width: 768px){
-    
+    header {
+        margin: 50px 0 0 50px;
+    }
 }
