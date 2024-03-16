@@ -17,7 +17,9 @@ class UsersTableSeeder extends Seeder
     {
         $param = [
             'name' => '鈴木一郎',
+            'role' => 'admin',
             'email' => 'i.suzuki@example.com',
+            'email_verified_at' => now(),
             'password' => Hash::make(12345678),
             'created_at' => now(),
             'updated_at' => now(),
@@ -26,6 +28,7 @@ class UsersTableSeeder extends Seeder
         $param = [
             'name' => '鈴木花子',
             'email' => 'h.suzuki@example.com',
+            'email_verified_at' => now(),
             'password' => Hash::make(12345678),
             'created_at' => now(),
             'updated_at' => now(),
@@ -34,6 +37,7 @@ class UsersTableSeeder extends Seeder
         $param = [
             'name' => '鈴木次郎',
             'email' => 'j.suzuki@example.com',
+            'email_verified_at' => now(),
             'password' => Hash::make(12345678),
             'created_at' => now(),
             'updated_at' => now(),
@@ -42,6 +46,7 @@ class UsersTableSeeder extends Seeder
         $param = [
             'name' => '鈴木三郎',
             'email' => 's.suzuki@example.com',
+            'email_verified_at' => now(),
             'password' => Hash::make(12345678),
             'created_at' => now(),
             'updated_at' => now(),
@@ -50,6 +55,7 @@ class UsersTableSeeder extends Seeder
         $param = [
             'name' => '鈴木四郎',
             'email' => 'si.suzuki@example.com',
+            'email_verified_at' => now(),
             'password' => Hash::make(12345678),
             'created_at' => now(),
             'updated_at' => now(),
