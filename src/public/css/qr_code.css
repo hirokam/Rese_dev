@@ -1,0 +1,53 @@
+body{
+    background: #dcdcdc;
+    position: relative;
+}
+
+.qr-code__frame {
+    margin-top: 150px;
+    width: 550px;
+    height: 400px;
+    background: white;
+    position: absolute;
+        left: 50%;
+    transform: translate(-50%);
+    border-radius: 5px;
+    position: relative;
+}
+
+.qr-code__inner-frame {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.shop-name__frame {
+    margin: 10px 5px 0px;
+    padding: 5px 15px;
+    border-bottom: solid;
+}
+
+.shop-name {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.shop-name__after {
+    margin-left: 15px;
+}
+
+.cancel {
+    margin: 5px 15px;
+    font-size: 14px;
+    position: absolute;
+        bottom: 2.5%;
+        right: 10%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .qr-code__frame {
+        width: 350px;
+    }
+}

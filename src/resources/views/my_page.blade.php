@@ -67,6 +67,17 @@
                             <button class="material-symbols-outlined">cancel</button>
                         </div>
                     </form>
+                    <div class="qr-group">
+                        <span class="qr-description">来店時に下記QRコードを店舗に提示してください</span>
+                        <form action="/QRcode" method="post">
+                        @csrf
+                            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                            <input type="hidden" name="shop_id" value="{{ $reservation->shop->id }}">
+                            <input type="hidden" name="reservation_date" value="{{ $reservation->reservation_date }}">
+                            <input type="hidden" name="reservation_time" value="{{$reservation->reservation_time}}">
+                            <button class="qr-button">QRコードを表示</button>
+                        </form>
+                    </div>
                 </form>
             </div>
             @endforeach
