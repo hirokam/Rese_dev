@@ -11,10 +11,15 @@
 </head>
 <body>
     <header>
+        <script>
+            function closeMenuAndGoBack() {
+                window.history.back();
+            }
+        </script>
         <div class="header__close">
-            <form action="/close" method="post">
+            <form action="/menu" method="get">
             @csrf
-                <button class="close__button">
+                <button class="close__button" type="button" onclick="closeMenuAndGoBack()">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             </form>

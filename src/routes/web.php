@@ -30,12 +30,6 @@ Route::get('/', [ShopController::class, 'index']);
 Route::get('/menu', [AuthController::class, 'menu']);
 Route::post('/search', [ShopController::class, 'search']);
 
-// メニューをクローズするための記述→あまり機能していない
-Route::post('/close', [AuthController::class, 'closeMenu']);
-
-// これは多分不要。
-Route::post('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
-
 // ★以下メール認証
 // メール認証しないといけないことを通知するための記述
 // →'auth.verification.notice'データを作成していないため、これは不要？
@@ -69,7 +63,6 @@ Route::view('thanks', 'thanks')->name('thanks');
 // ログイン済みのユーザーがアクセスできるページ
 Route::middleware('auth')->group(function () {
     // Route::get('/', [ShopController::class, 'index']);
-    // Route::get('/menu', [AuthController::class, 'menu']);
     Route::post('/close', [AuthController::class, 'closeMenu']);
     Route::get('/mypage', [AuthController::class, 'myPage']);
     Route::get('/visited', [AuthController::class, 'visitedShop']);

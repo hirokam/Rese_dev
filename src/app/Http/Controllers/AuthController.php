@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-// use App\Models\Shop;
 use App\Models\FavoriteShop;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
@@ -21,7 +20,6 @@ class AuthController extends Controller
             $query->where('reservation_date', $current_date_time->toDateString())->where('reservation_time', '>=', $current_date_time->toDateString());
         })->orderBy('reservation_date', 'asc')->orderBy('reservation_time', 'asc')->get();
         $user_name = Auth::user()->name;
-        // $shops = Shop::all();
         $favorites = FavoriteShop::where('user_id', $user_id)->where('is_active', 1)->get();
 
         return view('my_page', compact('reservations', 'user_name', 'favorites'));
@@ -41,11 +39,6 @@ class AuthController extends Controller
     public function menu()
     {
         return view('menu');
-    }
-
-    public function closeMenu()
-    {
-        return back();
     }
 
     public function logout()

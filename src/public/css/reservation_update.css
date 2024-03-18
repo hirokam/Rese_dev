@@ -26,6 +26,7 @@ body {
     border-radius: 3px;
     box-shadow: 1px 1px 3px gray;
     position: relative;
+    cursor: pointer;
 }
 
 .menu__button .material-symbols-outlined {
