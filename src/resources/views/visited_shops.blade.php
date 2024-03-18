@@ -28,12 +28,6 @@
                     <h3 class="shop-area">#{{ $shop->shop->area }}</h3>
                     <h3 class="shop-genre">#{{ $shop->shop->genre }}</h3>
                 </div>
-                <div class="shop__detail-favorite">
-                    <button class="detail">詳しくみる</button>
-                    <div class="favorite-hart">
-                        <button class="material-symbols-outlined">favorite</button>
-                    </div>
-                </div>
                 <div class="review__frame">
                     <form action="review_form" method="post">
                     @csrf
