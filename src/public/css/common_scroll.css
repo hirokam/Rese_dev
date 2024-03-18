@@ -50,6 +50,16 @@ main {
     font-size: 24px;
 }
 
+.specialty {
+    margin: 5px 0 0 15px;
+}
+
+.specialty-button {
+    background: white;
+    border: solid 1px;
+    border-radius: 3px;
+}
+
 @media screen and (max-width: 768px) {
     header {
         margin: 50px 50px 0 50px;

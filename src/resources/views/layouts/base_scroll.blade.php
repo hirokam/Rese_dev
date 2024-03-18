@@ -23,6 +23,16 @@
             <div class="app-title__space">
                 <span class="app-title">Rese</span>
             </div>
+            @can('admin')
+            <div class="specialty">
+                <button class="specialty-button">管理者メニュー</button>
+            </div>
+            @endcan
+            @can('store-representative')
+            <div class="specialty">
+                <button class="specialty-button">店舗管理メニュー</button>
+            </div>
+            @endcan
         </div>
 
         @yield('header__right')

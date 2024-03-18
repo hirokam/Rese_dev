@@ -62,7 +62,6 @@ Route::view('thanks', 'thanks')->name('thanks');
 
 // ログイン済みのユーザーがアクセスできるページ
 Route::middleware('auth')->group(function () {
-    // Route::get('/', [ShopController::class, 'index']);
     Route::post('/close', [AuthController::class, 'closeMenu']);
     Route::get('/mypage', [AuthController::class, 'myPage']);
     Route::get('/visited', [AuthController::class, 'visitedShop']);
