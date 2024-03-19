@@ -25,7 +25,9 @@
             </div>
             @can('admin')
             <div class="specialty">
-                <button class="specialty-button">管理者メニュー</button>
+                <form action="admin/home" method="get">
+                    <button class="specialty-button">管理者メニュー</button>
+                </form>
             </div>
             @endcan
             @can('store-representative')

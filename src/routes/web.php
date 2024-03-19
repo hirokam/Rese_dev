@@ -10,6 +10,7 @@ use App\Http\Controllers\FavoriteShopsController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ShopReviewController;
 use App\Http\Controllers\QrCodeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,7 +77,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/reservation/update', [ReservationController::class, 'update']);
     Route::delete('/delete', [ReservationController::class, 'remove']);
     Route::post('/review_form', [ShopReviewController::class, 'review']);
+    Route::post('review_post', [ShopReviewController::class, 'reviewCreate']);
     Route::get('/QRcode', [QrCodeController::class, 'index']);
     Route::post('/QRcode', [QrCodeController::class, 'index']);
+    Route::get('/admin/home', [AdminController::class, 'adminHome']);
 });
-
