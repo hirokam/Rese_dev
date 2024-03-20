@@ -32,7 +32,9 @@
             @endcan
             @can('store-representative')
             <div class="specialty">
-                <button class="specialty-button">店舗管理メニュー</button>
+                <form action="store-representative/home" method="get">
+                    <button class="specialty-button">店舗管理メニュー</button>
+                </form>
             </div>
             @endcan
         </div>

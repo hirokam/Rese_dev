@@ -11,6 +11,7 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ShopReviewController;
 use App\Http\Controllers\QrCodeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StoreRepresentativeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,7 +63,8 @@ Route::get('/profile', function () {
 Route::view('thanks', 'thanks')->name('thanks');
 
 // ログイン済みのユーザーがアクセスできるページ
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('/', [ShopController::class, 'index']);
     Route::get('/mypage', [AuthController::class, 'myPage']);
     Route::get('/visited', [AuthController::class, 'visitedShop']);
     Route::post('/visited', [AuthController::class, 'visitedShop']);
@@ -78,6 +80,16 @@ Route::middleware('auth')->group(function () {
     Route::post('review_post', [ShopReviewController::class, 'reviewCreate']);
     Route::get('/QRcode', [QrCodeController::class, 'index']);
     Route::post('/QRcode', [QrCodeController::class, 'index']);
-    Route::get('/admin/home', [AdminController::class, 'adminHome']);
-    Route::post('/admin/register', [AdminController::class, 'adminRegister']);
+    Route::middleware('admin')->group(function () {
+        Route::prefix('/admin')->group(function () {
+            Route::get('/home', [AdminController::class, 'adminHome']);
+            Route::post('/register', [AdminController::class, 'adminRegister']);
+        });
+    });
+    Route::middleware('store')->group(function () {
+        Route::prefix('/store-representative')->group(function () {
+            Route::get('/home', [StoreRepresentativeController::class, 'storeRepresentativeHome']);
+            Route::post('/register', [StoreRepresentativeController::class, 'storeRepresentativeRegister']);
+        });
+    });
 });
