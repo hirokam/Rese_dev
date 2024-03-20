@@ -24,7 +24,7 @@ use App\Http\Controllers\AdminController;
 */
 
 // ユーザー登録後にログイン画面に遷移する為の記述
-Route::get('/login', [AuthController::class, 'login'])->name('login');
+// Route::get('/login', [AuthController::class, 'login'])->name('login');
 
 // ログインしていなくても店舗の一覧表示・メニュー表示・検索ができるようにする記述
 Route::get('/', [ShopController::class, 'index']);
@@ -63,7 +63,6 @@ Route::view('thanks', 'thanks')->name('thanks');
 
 // ログイン済みのユーザーがアクセスできるページ
 Route::middleware('auth')->group(function () {
-    Route::post('/close', [AuthController::class, 'closeMenu']);
     Route::get('/mypage', [AuthController::class, 'myPage']);
     Route::get('/visited', [AuthController::class, 'visitedShop']);
     Route::post('/visited', [AuthController::class, 'visitedShop']);
@@ -72,7 +71,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
     Route::post('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
     Route::post('/reservation', [ReservationController::class, 'reservation']);
-    // Route::get('/update', [ReservationController::class, 'updateView']);
     Route::post('/update', [ReservationController::class, 'updateView']);
     Route::patch('/reservation/update', [ReservationController::class, 'update']);
     Route::delete('/delete', [ReservationController::class, 'remove']);
@@ -81,4 +79,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/QRcode', [QrCodeController::class, 'index']);
     Route::post('/QRcode', [QrCodeController::class, 'index']);
     Route::get('/admin/home', [AdminController::class, 'adminHome']);
+    Route::post('/admin/register', [AdminController::class, 'adminRegister']);
 });
