@@ -13,12 +13,6 @@ class AdminController extends Controller
 {
     public function adminHome()
     {
-        // $random = Str::random(20);
-
-        // if(!auth()->role()->admin()) {
-        //     abort(403, 'Unauthorized action.');
-        // }
-        // return view('admin_home', compact('random'));
         return view('admin_home');
     }
 

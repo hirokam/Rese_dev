@@ -24,13 +24,8 @@ use App\Http\Controllers\StoreRepresentativeController;
 |
 */
 
-// ユーザー登録後にログイン画面に遷移する為の記述
-// Route::get('/login', [AuthController::class, 'login'])->name('login');
-
-// ログインしていなくても店舗の一覧表示・メニュー表示・検索ができるようにする記述
-Route::get('/', [ShopController::class, 'index']);
+// ログイン前にメニュー表示ができるようにする記述
 Route::get('/menu', [AuthController::class, 'menu']);
-Route::post('/search', [ShopController::class, 'search']);
 
 // ★メール認証の通知
 Route::get('/email/verify', function () {
@@ -44,10 +39,6 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 
     return redirect()->route('login');
 })->middleware(['auth', 'signed'])->name('verification.verify');
-
-// メールアドレスの確認が完了したユーザーがプロフィールページにアクセスするための記述
-Route::get('/profile', function () {
-})->middleware('verified');
 
 // ユーザー登録後に遷移するページ
 Route::view('thanks', 'thanks')->name('thanks');

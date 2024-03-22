@@ -33,30 +33,9 @@ class AuthController extends Controller
         return view('visited_shops', compact('visited_shops'));
     }
 
-
-
     public function menu()
     {
         return view('menu');
     }
 
-    public function logout()
-    {
-        return view('auth.login');
-    }
-
-    public function login()
-    {
-        return view('auth.login');
-    }
-
-    // public function thanks()
-    // {
-    //     return view('thanks');
-    // }
-
-    // public function done()
-    // {
-    //     return view('done');
-    // }
 }
