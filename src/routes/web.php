@@ -32,7 +32,11 @@ Route::get('/', [ShopController::class, 'index']);
 Route::get('/menu', [AuthController::class, 'menu']);
 Route::post('/search', [ShopController::class, 'search']);
 
-// ★メール認証
+// ★メール認証の通知
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
 // 届いたメールでアドレスの確認をした際の挙動を記した記述
 // 確認したらログイン画面にリダイレクト
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {

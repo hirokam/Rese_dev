@@ -37,7 +37,6 @@
     <div class="shop-all__frame">
         @foreach (session('search_results') as $shop)
             <div class="shop__frame">
-                <!-- {{ $shop->is_favorite }} -->
                 <div class="shop-data">
                     <div class="shop-image__frame">
                         <img src="{{ $shop->picture_url }}" alt="店舗イメージ" class="shop-image">
@@ -48,7 +47,6 @@
                         <h3 class="shop-genre">#{{ $shop->genre }}</h3>
                     </div>
                     @if($shop->is_favorite)
-                    {{ Log::info('is_favorite is true for shop ID: ' . $shop->id) }}
                     <div class="shop__detail-favorite">
                         <form action="/detail/:shop_id={{ $shop->id }}" method="post">
                         @csrf
@@ -66,7 +64,6 @@
                         </form>
                     </div>
                     @else
-                    {{ Log::info('is_favorite is false for shop ID: ' . $shop->id) }}
                     <div class="shop__detail-favorite">
                         <form action="/detail/:shop_id={{ $shop->id }}" method="post">
                         @csrf
@@ -92,7 +89,6 @@
     <div class="shop-all__frame">
         @foreach ($shops as $shop)
             <div class="shop__frame">
-                <!-- {{ $shop->is_favorite }} -->
                 <div class="shop-data">
                     <div class="shop-image__frame">
                         <img src="{{ $shop->picture_url }}" alt="店舗イメージ" class="shop-image">
@@ -103,7 +99,6 @@
                         <h3 class="shop-genre">#{{ $shop->genre }}</h3>
                     </div>
                     @if($shop->is_favorite)
-                    {{ Log::info('is_favorite is true for shop ID: ' . $shop->id) }}
                     <div class="shop__detail-favorite">
                         <form action="/detail/:shop_id={{ $shop->id }}" method="post">
                         @csrf
@@ -121,7 +116,6 @@
                         </form>
                     </div>
                     @else
-                    {{ Log::info('is_favorite is false for shop ID: ' . $shop->id) }}
                     <div class="shop__detail-favorite">
                         <form action="/detail/:shop_id={{ $shop->id }}" method="post">
                         @csrf

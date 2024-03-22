@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Shop;
 use App\Models\ShopReview;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ShopReviewController extends Controller

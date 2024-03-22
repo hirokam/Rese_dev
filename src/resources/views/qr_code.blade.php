@@ -16,7 +16,7 @@
             <div class="qr-code__inner-frame">
                 <div class="qr-code">{!! QrCode::generate('$reservation_info->user->name') !!}</div>
             </div>
-            <a href="/mypage" class="cancel">キャンセル</a>
+            <a href="/mypage" class="cancel">戻る</a>
         </div>
     </div>
 </body>

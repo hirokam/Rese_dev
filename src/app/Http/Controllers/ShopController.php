@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Shop;
 use App\Models\FavoriteShop;
-use App\Models\Reservation;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Shop;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class ShopController extends Controller

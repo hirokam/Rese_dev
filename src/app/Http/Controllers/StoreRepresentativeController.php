@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
+use App\Models\Shop;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Models\Shop;
-use App\Models\Reservation;
-use App\Models\User;
 
 class StoreRepresentativeController extends Controller
 {

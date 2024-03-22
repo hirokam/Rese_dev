@@ -11,8 +11,4 @@ class ShopReview extends Model
 
     protected $fillable =['user_id', 'shop_id', 'stars', 'comment'];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 }

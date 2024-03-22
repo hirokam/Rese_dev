@@ -13,16 +13,12 @@ class Reservation extends Model
 
     public function user()
     {
-        return $this->belongsTo(user::class);
-    }
-
-    public function users()
-    {
-        return $this->hasMany(user::class);
+        return $this->belongsTo(User::class);
     }
 
     public function shop()
     {
-        return $this->belongsTo(shop::class);
+        return $this->belongsTo(Shop::class);
     }
+
 }
