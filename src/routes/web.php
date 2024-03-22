@@ -1,17 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FavoriteShopsController;
+use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ShopReviewController;
+use App\Http\Controllers\StoreRepresentativeController;
+use App\Http\Controllers\QrCodeController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
-use App\Http\Controllers\RegisteredUserController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ShopController;
-use App\Http\Controllers\FavoriteShopsController;
-use App\Http\Controllers\ReservationController;
-use App\Http\Controllers\ShopReviewController;
-use App\Http\Controllers\QrCodeController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\StoreRepresentativeController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
