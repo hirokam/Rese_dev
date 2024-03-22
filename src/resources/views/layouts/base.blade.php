@@ -22,6 +22,9 @@
         <div class="app-title__space">
             <span class="app-title">Rese</span>
         </div>
+
+        @yield('header__right')
+        
     </header>
 
     <main>

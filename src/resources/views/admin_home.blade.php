@@ -20,7 +20,7 @@
                         <label>メールアドレス：<input type="email" name="email" class="input-email"></label>
                     </div>
                     <div class="input-area">
-                        <label>パスワード：<input type="text" name="password" class="input-password" value="{{ $random }}" readonly></label>
+                        <label>パスワード：<input type="text" name="password" class="input-password" value="12345678" readonly></label>
                     </div>
                     <div class="button__area">
                         <button class="register-button">登録</button>

@@ -1,0 +1,40 @@
+.reservation__frame {
+    margin-top: 20px;
+    width: 800px;
+    height: 600px;
+    background: white;
+    text-align: center;
+    position: relative;
+}
+
+.content__header {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.content__info {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+    margin-top: 25px;
+    width: 600px;
+}
+
+.td-content {
+    line-height: 30px;
+}
+
+.back {
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+        bottom: 10%;
+}

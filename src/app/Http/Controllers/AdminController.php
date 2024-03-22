@@ -13,12 +13,13 @@ class AdminController extends Controller
 {
     public function adminHome()
     {
-        $random = Str::random(20);
+        // $random = Str::random(20);
 
         // if(!auth()->role()->admin()) {
         //     abort(403, 'Unauthorized action.');
         // }
-        return view('admin_home', compact('random'));
+        // return view('admin_home', compact('random'));
+        return view('admin_home');
     }
 
     public function adminRegister(Request $request)
@@ -39,11 +40,11 @@ class AdminController extends Controller
 
             DB::commit();
 
-            return response()->json(['message' => 'ユーザーが作成されました'], 200, [], JSON_UNESCAPED_UNICODE);
+            return view('success');
         } catch (\Exception $e) {
             DB::rollBack();
 
-            return response()->json(['message' => 'エラーが発生しました'], 500);
+            return view('failure');
         }
     }
 }

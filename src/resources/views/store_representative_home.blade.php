@@ -4,6 +4,16 @@
 <link rel="stylesheet" href="{{ asset('css/store_representative_home.css') }}">
 @endsection
 
+@section('header__right')
+    <nav>
+        <ul class="header__right-ul">
+            <form action="/store-representative/reservation" method="get">
+                <button><li>予約状況表示</li></button>
+            </form>
+        </ul>
+    </nav>
+@endsection
+
 @section('content')
     <div class="register__frame">
         <div class="register__inner-frame">

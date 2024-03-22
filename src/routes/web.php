@@ -32,13 +32,7 @@ Route::get('/', [ShopController::class, 'index']);
 Route::get('/menu', [AuthController::class, 'menu']);
 Route::post('/search', [ShopController::class, 'search']);
 
-// ★以下メール認証
-// メール認証しないといけないことを通知するための記述
-// →'auth.verification.notice'データを作成していないため、これは不要？
-Route::get('/email/verify', function () {
-    return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
-
+// ★メール認証
 // 届いたメールでアドレスの確認をした際の挙動を記した記述
 // 確認したらログイン画面にリダイレクト
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
@@ -46,14 +40,6 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 
     return redirect()->route('login');
 })->middleware(['auth', 'signed'])->name('verification.verify');
-
-// ユーザーにメールアドレスの確認通知を再送するための記述
-// これも不要か？
-Route::post('/email/verification-notification', function (Request $request) {
-    $request->user()->sendEmailVerificationNotification();
-
-    return back()->with('message', 'Verification link sent!');
-})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 // メールアドレスの確認が完了したユーザーがプロフィールページにアクセスするための記述
 Route::get('/profile', function () {
@@ -80,6 +66,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::post('review_post', [ShopReviewController::class, 'reviewCreate']);
     Route::get('/QRcode', [QrCodeController::class, 'index']);
     Route::post('/QRcode', [QrCodeController::class, 'index']);
+
     Route::middleware('admin')->group(function () {
         Route::prefix('/admin')->group(function () {
             Route::get('/home', [AdminController::class, 'adminHome']);
@@ -88,8 +75,9 @@ Route::middleware('auth', 'verified')->group(function () {
     });
     Route::middleware('store')->group(function () {
         Route::prefix('/store-representative')->group(function () {
-            Route::get('/home', [StoreRepresentativeController::class, 'storeRepresentativeHome']);
-            Route::post('/register', [StoreRepresentativeController::class, 'storeRepresentativeRegister']);
+            Route::get('/home', [StoreRepresentativeController::class, 'home']);
+            Route::post('/register', [StoreRepresentativeController::class, 'register']);
+            Route::get('/reservation', [StoreRepresentativeController::class, 'reservationCheck']);
         });
     });
 });
