@@ -33,9 +33,10 @@ class StoreRepresentativeController extends Controller
 
     public function reservationCheck()
     {
-        $reservations = Reservation::all();
+        // $reservations = Reservation::all();
         $user_id = Auth::id();
-        $shops = Shop::where('user_id', $user_id)->get();
+        $shops = Shop::where('user_id', $user_id)->with('reservations')->get();
+        // $reservations = $shops->reservations->all();
         // foreach($shops as $shop) {
         //     $shop->reservations = $shop->reservations()->get();
         // }
@@ -45,6 +46,6 @@ class StoreRepresentativeController extends Controller
         //     $users = User::where('id', $reservation->user_id)->get();
         // }
 
-        return view('reservation_check', compact('shops', 'reservations'));
+        return view('reservation_check', compact('shops'));
     }
 }

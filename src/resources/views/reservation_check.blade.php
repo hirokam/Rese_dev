@@ -18,12 +18,14 @@
                     <th>予約時間</th>
                     <th>予約人数</th>
                 </tr>
+                @foreach($shop->users as $user)
                 <tr class="tr-content">
-                    <td class="td-content">{{ $shop->reservation->user->name }}様</td>
-                    <td class="td-content">{{ $shop->reservation->reservation_date }}</td>
-                    <td class="td-content">{{ $shop->reservation->reservation_time }}</td>
-                    <td class="td-content">{{ $shop->reservation->reservation_number }}名</td>
+                    <td class="td-content">{{ $user->name }} 様</td>
+                    <td class="td-content">{{ $user->pivot->reservation_date }}</td>
+                    <td class="td-content">{{ $user->pivot->reservation_time }}</td>
+                    <td class="td-content">{{ $user->pivot->reservation_number }} 名</td>
                 </tr>
+                @endforeach
             </table>
         </div>
         @endforeach
