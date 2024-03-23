@@ -48,11 +48,9 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/', [ShopController::class, 'index']);
     Route::post('/search', [ShopController::class, 'search']);
     Route::get('/mypage', [AuthController::class, 'myPage']);
-    Route::get('/visited', [AuthController::class, 'visitedShop']);
     Route::post('/visited', [AuthController::class, 'visitedShop']);
     Route::post('/create_favorite', [FavoriteShopsController::class, 'createFavorite']);
     Route::post('/delete_favorite', [FavoriteShopsController::class, 'myPageDeleteFavorite']);
-    Route::get('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
     Route::post('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
     Route::post('/reservation', [ReservationController::class, 'reservation']);
     Route::post('/update', [ReservationController::class, 'updateView']);
@@ -60,7 +58,6 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::delete('/delete', [ReservationController::class, 'remove']);
     Route::post('/review_form', [ShopReviewController::class, 'review']);
     Route::post('review_post', [ShopReviewController::class, 'reviewCreate']);
-    Route::get('/QRcode', [QrCodeController::class, 'index']);
     Route::post('/QRcode', [QrCodeController::class, 'index']);
 
     Route::middleware('admin')->group(function () {
