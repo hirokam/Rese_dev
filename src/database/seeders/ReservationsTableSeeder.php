@@ -15,7 +15,7 @@ class ReservationsTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'user_id' => '1',
+            'user_id' => '22',
             'shop_id' => '1',
             'reservation_date' => '2024/3/10',
             'reservation_time' => '21:00',
@@ -35,7 +35,7 @@ class ReservationsTableSeeder extends Seeder
         ];
         DB::table('reservations')->insert($param);
         $param = [
-            'user_id' => '1',
+            'user_id' => '22',
             'shop_id' => '7',
             'reservation_date' => '2024/3/30',
             'reservation_time' => '18:00',
@@ -55,7 +55,7 @@ class ReservationsTableSeeder extends Seeder
         ];
         DB::table('reservations')->insert($param);
         $param = [
-            'user_id' => '21',
+            'user_id' => '22',
             'shop_id' => '1',
             'reservation_date' => '2024/3/28',
             'reservation_time' => '20:00',
