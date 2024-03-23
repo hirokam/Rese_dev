@@ -1,5 +1,7 @@
 # RESE
 飲食店の予約サービスを提供するアプリケーション。
+![image]()
+![image]()
 
 ## 作成の経緯
 外部の飲食店予約サービスは手数料を取られる為、自社で予約サービスを持つことでなるべく経費を抑えたいということから。
@@ -20,4 +22,12 @@
 ・バリデーション（会員登録時／ログイン時／予約時） ・レスポンシブデザイン（ブレイクポイント：768px）
 
 ## 使用技術（実行環境）
-<img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=plastic"><img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=plastic"><img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"><img src="https://img.shields.io/badge/-Linux-FCC624.svg?logo=linux&style=plastic"><img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=plastic"><img src="https://img.shields.io/badge/-Nginx-269539.svg?logo=nginx&style=plastic">
+<img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=plastic"> ver:7.4.9  <img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=plastic"> ver:8.1  <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic">   <img src="https://img.shields.io/badge/-Linux-FCC624.svg?logo=linux&style=plastic">   <img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=plastic"> ver:8.0.26  <img src="https://img.shields.io/badge/-Nginx-269539.svg?logo=nginx&style=plastic"> ver:1.21.1
+
+## テーブル設計
+
+## ER図
+
+# 環境構築
+
+## その他
