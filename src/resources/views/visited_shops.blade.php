@@ -25,8 +25,8 @@
                 </div>
                 <h2 class="shop-name">{{ $shop->shop->shop_name }}</h2>
                 <div class="shop__area-genre">
-                    <h3 class="shop-area">#{{ $shop->shop->area }}</h3>
-                    <h3 class="shop-genre">#{{ $shop->shop->genre }}</h3>
+                    <h3 class="shop-area">#{{ $shop->shop->area->area }}</h3>
+                    <h3 class="shop-genre">#{{ $shop->shop->genre->genre }}</h3>
                 </div>
                 <div class="review__frame">
                     <form action="review_form" method="post">

@@ -96,8 +96,8 @@
                         </div>
                         <h2 class="shop-name">{{ $favorite->shop->shop_name }}</h2>
                         <div class="shop__area-genre">
-                            <h3 class="shop-area">#{{ $favorite->shop->area }}</h3>
-                            <h3 class="shop-genre">#{{ $favorite->shop->genre }}</h3>
+                            <h3 class="shop-area">#{{ $favorite->shop->area->area }}</h3>
+                            <h3 class="shop-genre">#{{ $favorite->shop->genre->genre }}</h3>
                         </div>
                         <div class="shop__detail-favorite">
                             <form action="/detail/:shop_id={{ $favorite->shop->id }}" method="post">
