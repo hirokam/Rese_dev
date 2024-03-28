@@ -17,8 +17,8 @@ class CreateShopsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->comment('店舗代表者')->constrained()->cascadeOnDelete();
             $table->string('shop_name');
-            $table->string('area');
-            $table->string('genre');
+            $table->foreignId('area_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('genre_id')->constrained()->cascadeOnDelete();
             $table->string('overview');
             $table->string('picture_url');
             $table->timestamps();
