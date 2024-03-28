@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
-use App\Models\ShopReview;
+use App\Models\ReviewShop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +18,7 @@ class ShopReviewController extends Controller
 
     public function reviewCreate(Request $request)
     {
-        $shop_review = ShopReview::create([
+        $shop_review = ReviewShop::create([
             'user_id' => Auth::id(),
             'shop_id' => $request->shop_id,
             'stars' => $request->stars,

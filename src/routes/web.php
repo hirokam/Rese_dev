@@ -48,6 +48,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/', [ShopController::class, 'index']);
     Route::post('/search', [ShopController::class, 'search']);
     Route::get('/mypage', [AuthController::class, 'myPage']);
+    Route::get('/visited', [AuthController::class, 'visitedShop']);
     Route::post('/visited', [AuthController::class, 'visitedShop']);
     Route::post('/create_favorite', [FavoriteShopsController::class, 'createFavorite']);
     Route::post('/delete_favorite', [FavoriteShopsController::class, 'myPageDeleteFavorite']);
