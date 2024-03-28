@@ -11,14 +11,14 @@
             @csrf
                 <select name="area" id="" class="select">
                     <option value="">All area</option>
-                    @foreach ($unique_areas as $area)
-                        <option>{{ $area }}</option>
+                    @foreach ($areas as $area)
+                        <option>{{ $area->area }}</option>
                     @endforeach
                 </select>
                 <select name="genre" id="" class="select">
                     <option value="">All genre</option>
-                    @foreach ($unique_genres as $genre)
-                        <option>{{ $genre }}</option>
+                    @foreach ($genres as $genre)
+                        <option>{{ $genre->genre }}</option>
                     @endforeach
                 </select>
                 <div class="search-button__frame">
@@ -43,8 +43,8 @@
                     </div>
                     <h2 class="shop-name">{{ $shop->shop_name }}</h2>
                     <div class="shop__area-genre">
-                        <h3 class="shop-area">#{{ $shop->area }}</h3>
-                        <h3 class="shop-genre">#{{ $shop->genre }}</h3>
+                        <h3 class="shop-area">#{{ $shop->area->area }}</h3>
+                        <h3 class="shop-genre">#{{ $shop->genre->genre }}</h3>
                     </div>
                     @if($shop->is_favorite)
                     <div class="shop__detail-favorite">
@@ -95,8 +95,8 @@
                     </div>
                     <h2 class="shop-name">{{ $shop->shop_name }}</h2>
                     <div class="shop__area-genre">
-                        <h3 class="shop-area">#{{ $shop->area }}</h3>
-                        <h3 class="shop-genre">#{{ $shop->genre }}</h3>
+                        <h3 class="shop-area">#{{ $shop->area->area }}</h3>
+                        <h3 class="shop-genre">#{{ $shop->genre->genre }}</h3>
                     </div>
                     @if($shop->is_favorite)
                     <div class="shop__detail-favorite">

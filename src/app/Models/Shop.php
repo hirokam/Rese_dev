@@ -9,15 +9,25 @@ class Shop extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'shop_name', 'area', 'genre', 'overview', 'picture_url'];
+    protected $fillable = ['user_id', 'shop_name', 'area_id', 'genre_id', 'overview', 'picture_url'];
 
     public function users()
     {
         return $this->belongsToMany(User::class, 'reservations')->withPivot('reservation_date', 'reservation_time', 'reservation_number');
     }
 
-    public function Reservations()
+    public function reservations()
     {
         return $this->hasMany(Reservation::class);
+    }
+
+    public function area()
+    {
+        return $this->belongsTo(Area::class);
+    }
+
+    public function genre()
+    {
+        return $this->belongsTo(Genre::class);
     }
 }

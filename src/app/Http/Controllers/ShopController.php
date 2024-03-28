@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Area;
+use App\Models\Genre;
 use App\Models\FavoriteShop;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class ShopController extends Controller
@@ -13,8 +16,10 @@ class ShopController extends Controller
     public function index(Request $request)
     {
         $shops = Shop::all();
-        $unique_areas = array_unique($shops->pluck('area')->toArray());
-        $unique_genres = array_unique($shops->pluck('genre')->toArray());
+        $areas = Area::all();
+        $genres = Genre::all();
+        // $unique_areas = array_unique($shops->pluck('area')->toArray());
+        // $unique_genres = array_unique($shops->pluck('genre')->toArray());
 
         $user_id = Auth::id();
         $records_existence = FavoriteShop::where('user_id', $user_id)->get();
@@ -29,35 +34,39 @@ class ShopController extends Controller
             $shop->is_favorite = $record ? $record->is_active : false;
         }
 
-        return view('shop_all', compact('shops', 'unique_areas', 'unique_genres', 'records_existence'));
+        return view('shop_all', compact('shops', 'areas', 'genres', 'records_existence'));
+        // return view('shop_all', compact('shops', 'unique_areas', 'unique_genres', 'records_existence'));
     }
 
     public function search(Request $request)
     {
+        $area = Area::where('area', $request->area)->first();
+        $genre = Genre::where('genre', $request->genre)->first();
+
         if($request->area) {
             if($request->genre) {
                 if($request->text) {
-                    $shops = Shop::where('area', $request->area)->Where('genre', $request->genre)->Where('shop_name', 'LIKE',"%{$request->text}%")->get();
+                    $shops = Shop::where('area_id', $area->id)->where('genre_id', $genre->id)->where('shop_name', 'LIKE', "%{$request->text}%")->get();
                 }elseif(empty($request->text)) {
-                    $shops = Shop::where('area', $request->area)->Where('genre', $request->genre)->get();
+                    $shops = Shop::where('area_id', $area->id)->Where('genre_id', $genre->id)->get();
                 }
             }elseif(empty($request->genre)) {
                 if($request->text) {
-                    $shops = Shop::where('area', $request->area)->Where('shop_name', 'LIKE',"%{$request->text}%")->get();
+                    $shops = Shop::where('area_id', $area->id)->Where('shop_name', 'LIKE',"%{$request->text}%")->get();
                 }elseif(empty($request->text)) {
-                    $shops = Shop::where('area', $request->area)->get();
+                    $shops = Shop::where('area_id', $area->id)->get();
                 }
             }
         }elseif(empty($request->area)) {
             if($request->genre) {
                 if($request->text) {
-                    $shops = Shop::where('genre', $request->genre)->Where('shop_name', 'LIKE',"%{$request->text}%")->get();
+                    $shops = Shop::where('genre_id', $genre->id)->Where('shop_name', 'LIKE',"%{$request->text}%")->get();
                 }elseif(empty($request->text)) {
-                    $shops = Shop::where('genre', $request->genre)->get();
+                    $shops = Shop::where('genre_id', $genre->id)->get();
                 }
             }elseif(empty($request->genre)) {
                 if($request->text) {
-                    $shops = Shop::Where('shop_name', 'LIKE',"%{$request->text}%")->get();
+                    $shops = Shop::where('shop_name', 'LIKE', "%{$request->text}%")->get();
                 }elseif(empty($request->text)) {
                     $shops = Shop::all();
                 }
