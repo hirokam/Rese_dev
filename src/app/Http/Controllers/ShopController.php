@@ -9,7 +9,6 @@ use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 
 class ShopController extends Controller
 {
@@ -18,8 +17,6 @@ class ShopController extends Controller
         $shops = Shop::all();
         $areas = Area::all();
         $genres = Genre::all();
-        // $unique_areas = array_unique($shops->pluck('area')->toArray());
-        // $unique_genres = array_unique($shops->pluck('genre')->toArray());
 
         $user_id = Auth::id();
         $records_existence = FavoriteShop::where('user_id', $user_id)->get();
@@ -35,7 +32,6 @@ class ShopController extends Controller
         }
 
         return view('shop_all', compact('shops', 'areas', 'genres', 'records_existence'));
-        // return view('shop_all', compact('shops', 'unique_areas', 'unique_genres', 'records_existence'));
     }
 
     public function search(Request $request)

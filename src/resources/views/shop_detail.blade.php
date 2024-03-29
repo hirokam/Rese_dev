@@ -38,8 +38,8 @@
             </div>
             <img src="{{$shop_detail->picture_url}}" alt="店舗イメージ" class="shop-image" >
             <div class="shop__area-genre">
-                <h3 class="shop-area">#{{ $shop_detail->area }}</h3>
-                <h3 class="shop-genre">#{{ $shop_detail->genre }}</h3>
+                <h3 class="shop-area">#{{ $shop_detail->area->area }}</h3>
+                <h3 class="shop-genre">#{{ $shop_detail->genre->genre }}</h3>
             </div>
             <p class="over-view">{{ $shop_detail->overview }}</p>
         </div>

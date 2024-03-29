@@ -38,8 +38,8 @@
             </div>
             <img src="{{$reservation->shop->picture_url}}" alt="店舗イメージ" class="shop-image" >
             <div class="shop__area-genre">
-                <h3 class="shop-area">#{{ $reservation->shop->area }}</h3>
-                <h3 class="shop-genre">#{{ $reservation->shop->genre }}</h3>
+                <h3 class="shop-area">#{{ $reservation->shop->area->area }}</h3>
+                <h3 class="shop-genre">#{{ $reservation->shop->genre->genre }}</h3>
             </div>
             <p class="over-view">{{ $reservation->shop->overview }}</p>
         </div>
