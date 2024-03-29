@@ -1,37 +1,8 @@
 # RESE
 飲食店の予約サービスを提供するアプリケーション。
 ## UI画像
-会員登録画面
-![image](user-register-view.png)
-ログイン画面
-![image](user-login-view.png)
-ゲストメニュー
-![image](guest-menu.png)
 会員ホーム（店舗一覧）
 ![image](user-home.png)
-会員メニュー
-![image](user-menu.png)
-マイページ
-![image](user-mypage.png)
-店舗詳細
-![image](shop-detail.png)
-予約更新画面
-![image](reservation-update.png)
-行ったお店一覧
-![image](user-visited.png)
-レビュー投稿画面
-![image](review.png)
-管理者専用ホーム（店舗一覧+管理者メニューボタン）
-![image](admin-home.png)
-管理者による店舗代表者登録画面
-![image](store-representative-register.png)
-店舗代表者専用ホーム（店舗一覧+店舗管理メニューボタン）
-![image](store-representative-home.png)
-予約状況確認画面
-![image](reservation-check.png)
-店舗登録画面
-![image](store-register.png)
-
 ## 作成の経緯
 外部の飲食店予約サービスは手数料を取られる為、自社で予約サービスを持つことでなるべく経費を抑えたいということから。
 
