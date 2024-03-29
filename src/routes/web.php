@@ -52,6 +52,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::post('/visited', [AuthController::class, 'visitedShop']);
     Route::post('/create_favorite', [FavoriteShopsController::class, 'createFavorite']);
     Route::post('/delete_favorite', [FavoriteShopsController::class, 'myPageDeleteFavorite']);
+    Route::get('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
     Route::post('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
     Route::post('/reservation', [ReservationController::class, 'reservation']);
     Route::post('/update', [ReservationController::class, 'updateView']);
