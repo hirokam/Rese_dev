@@ -43,17 +43,34 @@ Mysql -ver: 8.0.26
 nginx -ver: 1.21.1
 
 ## コマンド
-SSH用githubクローンURL : git@github.com:hirokam/Rese_dev.git
+### GitHubリポジトリのクローン
+※SSH用githubクローンリンク : git@github.com:hirokam/Rese_dev.git
 
-リポジトリの紐付け先変更 : git remote set-url origin 作成したリポジトリのurl
+1.クローン : git clone git@github.com:hirokam/Rese_dev.git
 
-dockerコンテナの生成と起動 : docker-compose up -d --build
+2.リポジトリの紐付け先変更 : git remote set-url #変更前のリンク #新しい紐付け先リンク
 
-PHPコンテナのコマンド操作 : docker-compose exec php bash
+3.リポジトリの紐付け先の変更確認 : git remote -v
 
-キー生成 : php artisan key:generate
+### dockerコンテナの生成と起動
+1.dockerコンテナの生成と起動 : docker-compose up -d --build
 
-スケジュールの実行 : php artisan schedule:work
+### Laravelの環境構築
+1.PHPコンテナのコマンド操作 : docker-compose exec php bash
+
+2.composerのインストール : composer install
+
+3.composerのバージョン確認 : composer -v
+
+4.(.env)ファイルの作成 : cp .env.example .env ->環境変数を変更
+
+5.APP_KEYの生成 : php artisan key:generate
+
+6.マイグレーションの実行 : php artisan migrate
+
+7.シーディングの実行 : php artisan db:seed
+
+8.スケジュールの実行 : php artisan schedule:work
 
 ## 環境変数
 MYSQL_ROOT_PASSWORD : root
