@@ -59,7 +59,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::patch('/reservation/update', [ReservationController::class, 'update']);
     Route::delete('/delete', [ReservationController::class, 'remove']);
     Route::post('/review_form', [ShopReviewController::class, 'review']);
-    Route::post('review_post', [ShopReviewController::class, 'reviewCreate']);
+    Route::post('/review_post', [ShopReviewController::class, 'reviewCreate']);
     Route::post('/QRcode', [QrCodeController::class, 'index']);
 
     Route::middleware('admin')->group(function () {

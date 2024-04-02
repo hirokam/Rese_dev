@@ -2,13 +2,13 @@ body {    background: #dcdcdc;
 }
 
 header {
-    margin: 50px 0 0 100px;
+    margin: 50px 100px 0 100px;
     display: flex;
+    justify-content: space-between;
 }
 
-main {
+.header__menu-title {
     display: flex;
-    justify-content: center;
 }
 
 .menu__button {
@@ -45,8 +45,8 @@ main {
     font-size: 24px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     header {
-        margin: 50px 0 0 50px;
+        margin: 50px 20px 0 20px;
     }
 }

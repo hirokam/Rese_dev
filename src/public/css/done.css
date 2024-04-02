@@ -1,3 +1,8 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
 .content__frame {
     margin-top: 130px;
     width: 350px;

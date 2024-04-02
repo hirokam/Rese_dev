@@ -12,15 +12,15 @@
 </head>
 <body>
     <header>
-        <div class="header__menu">
+        <div class="header__menu-title">
             <form action="/menu" method="get">
                 <button class="menu__button">
                     <span class="material-symbols-outlined">menu</span>
                 </button>
             </form>
-        </div>
-        <div class="app-title__space">
-            <span class="app-title">Rese</span>
+            <div class="app-title__space">
+                <span class="app-title">Rese</span>
+            </div>
         </div>
 
         @yield('header__right')
