@@ -20,7 +20,9 @@ class CreateShopsTable extends Migration
             $table->foreignId('area_id')->constrained()->cascadeOnDelete();
             $table->foreignId('genre_id')->constrained()->cascadeOnDelete();
             $table->string('overview');
-            $table->string('picture_url');
+            $table->string('file_name')->comment('店舗画像')->nullable();
+            $table->string('file_path')->nullable();
+            $table->string('picture_url')->nullable();
             $table->timestamps();
         });
     }

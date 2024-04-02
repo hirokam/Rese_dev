@@ -9,7 +9,7 @@ class Shop extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'shop_name', 'area_id', 'genre_id', 'overview', 'picture_url'];
+    protected $fillable = ['user_id', 'shop_name', 'area_id', 'genre_id', 'overview', 'file_name', 'file_path', 'picture_url'];
 
     public function users()
     {

@@ -33,7 +33,7 @@ class ReservationRequest extends FormRequest
     {
         return [
             'reservation_date' => 'required|date|after:yesterday',
-            'reservation_time' => 'required|after:now',
+            'reservation_time' => 'required',
             'reservation_number' => 'required',
         ];
     }
