@@ -1,6 +1,10 @@
+main {
+    margin: 25px 95px 0 95px;
+}
+
 .grid__parent {
     display: grid;
-    height: auto;
+    /* height: auto; */
     grid-template-columns: 2fr 3fr;
 }
 

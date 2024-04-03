@@ -1,4 +1,4 @@
-@extends('layouts.base_scroll')
+@extends('layouts.base')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/my_page.css') }}">

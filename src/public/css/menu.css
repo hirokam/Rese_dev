@@ -1,15 +1,10 @@
-body {
-    height: 100vh;
-}
-
 header {
-    height: 15%;
     margin: 50px 0 0 100px;
 }
 
 main {
-    height: 85%;
-    padding: 75px;
+    margin: 75px;
+    padding: 75px 0;
 }
 
 .close__button {
