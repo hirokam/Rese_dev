@@ -104,3 +104,38 @@ main {
     font-size: 10px;
     color: red;
 }
+
+@media screen and (max-width: 480px) {
+    .content__frame {
+        margin-top: 50px;
+        width: 320px;
+    }
+
+    .content__register-frame {
+        width: 320px;
+    }
+
+    .inner__user {
+        margin: 20px 0 0 10px;
+    }
+
+    .inner__email {
+        margin: 7px 0 0 10px;
+    }
+
+    .inner__password {
+        margin: 7px 0 0 10px;
+    }
+
+    .name__validation {
+        left: 14%;
+    }
+
+    .email__validation {
+        left: 14%;
+    }
+
+    .password__validation {
+        left: 14%;
+    }
+}

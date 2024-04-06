@@ -2,7 +2,7 @@ body {    background: #dcdcdc;
 }
 
 header {
-    margin: 50px 100px 0 100px;
+    margin: 25px 100px 0 100px;
     display: flex;
     justify-content: space-between;
 }
@@ -47,6 +47,25 @@ header {
 
 @media screen and (max-width: 768px) {
     header {
-        margin: 50px 100px 0 100px;
+        display: block;
+        margin: 50px 0 0 0;
+    }
+
+    .header__menu-title {
+        /* justify-content: center;
+        margin-right: 240px; */
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        display: block;
+        margin: 50px 0 0 0;
+    }
+
+    .header__menu-title {
+        justify-content: center;
+        margin: 0 215px 0 0;
     }
 }

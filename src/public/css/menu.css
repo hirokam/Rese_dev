@@ -56,3 +56,16 @@ main {
         margin: 50px 0 0 50px;
     }
 }
+
+@media screen and (max-width: 480px ) {
+    header {
+        display: flex;
+        justify-content: center;
+        margin: 50px 294px 0 0;
+    }
+
+    main {
+        margin: 50px;
+        padding: 0 0;
+    }
+}

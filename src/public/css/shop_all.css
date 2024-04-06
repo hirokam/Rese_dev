@@ -144,28 +144,27 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-    main {
+    .header__right {
         display: flex;
         justify-content: center;
-        margin: 25px 95px 0 95px;
     }
 
     .search-area__space {
-        width: 210px;
-        height: 75px;
-    }
-
-    .search__button {
-        position: absolute;
-        top: 15%;
-        left: 85%;
+        width: 420px;
+        height: 45px;
+        margin-top: 20px;
     }
 
     .search {
         padding-left: 10px;
         width: 150px;
         height: 34px;
-        position: static;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        margin: 25px 95px 0 95px;
     }
 
     /* 各ショップ情報 */
@@ -180,26 +179,31 @@ main {
 }
 
 @media screen and (max-width: 480px) {
+    .header__right {
+        display: flex;
+        justify-content: center;
+    }
+
     .search-area__space {
-        width: 150px;
-        height: 100px;
+        width: 320px;
+        height: 70px;
+        margin-top: 20px;
     }
 
     .select {
-        width: 137px;
+        width: 150px;
         height: 27px;
-        border-right: none;
     }
 
     .search__button {
         position: absolute;
             top: 15%;
-            left: 75%;
+            left: 92%;
     }
 
     .search {
         padding-left: 10px;
-        width: 150px;
+        width: 280px;
         height: 34px;
         position: static;
     }
