@@ -4,7 +4,7 @@ main {
 }
 
 .content__frame {
-    margin-top: 130px;
+    margin-top: 100px;
     width: 350px;
     height: 235px;
     background: white;
@@ -108,11 +108,11 @@ main {
 @media screen and (max-width: 480px) {
     .content__frame {
         margin-top: 50px;
-        width: 320px;
+        width: 310px;
     }
 
     .content__register-frame {
-        width: 320px;
+        width: 310px;
     }
 
     .inner__user {

@@ -1,6 +1,9 @@
 body{
     background: #dcdcdc;
+    display: flex;
+    justify-content: center;
     position: relative;
+    margin: 25px 25px 30px;
 }
 
 .review__frame {
@@ -77,4 +80,59 @@ body{
         right: 20%;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .review__frame {
+        width: 431px;
+    }
+
+    .shop_image {
+        width: 431px;
+    }
+
+    .comment__frame {
+        width: 230px;
+    }
+
+    .comment {
+        width: 230px;
+    }
+
+    .cancel {
+        position: absolute;
+            right: 22%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .review__frame {
+            width: 310px;
+            height: 430px;
+            margin-top: 50px;
+        }
+
+        .shop_image {
+            width: 310px;
+        }
+
+        .star-rating__frame {
+            margin: 10px 0 0 10px;
+        }
+
+        .comment__frame {
+            width: 170px;
+            margin: 10px 0 0 20px;
+        }
+
+        .comment {
+            width: 170px;
+            height: 95px;
+        }
+
+        .cancel {
+            position: absolute;
+            right: 25%;
+            bottom: 2%;
+        }
 }

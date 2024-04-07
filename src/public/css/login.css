@@ -96,11 +96,11 @@ main {
 @media screen and (max-width: 480px ) {
     .content__frame {
         margin-top: 50px;
-        width: 320px;
+        width: 310px;
     }
 
     .content__login-frame {
-        width: 320px;
+        width: 310px;
     }
 
     .inner__email {

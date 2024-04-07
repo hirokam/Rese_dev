@@ -1,14 +1,23 @@
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__menu-title {
+    margin: 0 250px 0 0;
+}
+
 main {
     display: flex;
     justify-content: center;
-    margin: 25px 95px 0 95px;
+    margin: 25px 0 0 0;
 }
 
 .search-area__space {
     display: flex;
     background: white;
     height: 40px;
-    width: 515px;
+    width: 350px;
     border-radius: 5px;
     box-shadow: 1px 1px 3px gray;
     padding-top: 8px;
@@ -39,7 +48,7 @@ main {
 }
 
 .search {
-    width: 250px;
+    width: 50px;
     height: 34px;
     border: none;
     outline: none;
@@ -51,12 +60,13 @@ main {
 .shop-all__frame {
     display: flex;
     flex-wrap: wrap;
+    width: 719px;
 }
 
 /* 各ショップ情報 */
 
 .shop__frame {
-    width: 250px;
+    width: 169px;
     height: 230px;
     background: white;
     border-radius: 5px;
@@ -65,7 +75,7 @@ main {
 }
 
 .shop-image {
-    width: 250px;
+    width: 169px;
     height: 115px;
     object-fit: cover;
     border-radius: 5px 5px 0 0;
@@ -75,12 +85,12 @@ main {
     font-weight: bold;
     font-size: 16px;
     margin: 15px 0 0 0;
-    padding-left: 15px;
+    padding-left: 8px;
 }
 
 .shop__area-genre {
     display: flex;
-    margin: 3px 0 0 15px;
+    margin: 3px 0 0 8px;
 }
 
 .shop-area,
@@ -94,7 +104,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 5px 15px 0 15px;
+    margin: 5px 8px 0 8px;
 }
 
 .detail {
@@ -133,52 +143,45 @@ main {
     background: none;
 }
 
-@media screen and (max-width: 889px) {
-    .search-area__space {
-        width: 350px;
-    }
-
-    .search {
-        width: 50px;
-    }
-}
-
 @media screen and (max-width: 768px) {
+    header {
+        display: block;
+    }
+
+    .header__menu-title {
+        margin: 0 320px 0 0;
+    }
+
     .header__right {
+        margin-top: 20px;
         display: flex;
         justify-content: center;
     }
 
     .search-area__space {
-        width: 420px;
-        height: 45px;
-        margin-top: 20px;
+        width: 425px;
     }
 
-    .search {
-        padding-left: 10px;
-        width: 150px;
-        height: 34px;
-    }
-
-    main {
-        display: flex;
-        justify-content: center;
-        margin: 25px 95px 0 95px;
+    .shop-all__frame {
+    width: 430px;
     }
 
     /* 各ショップ情報 */
 
     .shop__frame {
-        width: 182px;
+        width: 205px;
     }
 
     .shop-image {
-        width: 182px;
+        width: 205px;
     }
 }
 
 @media screen and (max-width: 480px) {
+    .header__menu-title {
+        margin: 0 200px 0 0;
+    }
+
     .header__right {
         display: flex;
         justify-content: center;
@@ -187,7 +190,6 @@ main {
     .search-area__space {
         width: 320px;
         height: 70px;
-        margin-top: 20px;
     }
 
     .select {
@@ -209,16 +211,16 @@ main {
     }
 
     .shop-all__frame {
-        display: block;
+        width: 325px;
     }
 
     /* 各ショップ情報 */
 
     .shop__frame {
-        width: 320px;
+        width: 315px;
     }
 
     .shop-image {
-        width: 320px;
+        width: 315px;
     }
 }

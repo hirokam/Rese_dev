@@ -1,3 +1,12 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.reservation-status__frame {
+    width: 719px;
+}
+
 .button__mypage-top {
     border: none;
     background: #c0c0c0;
@@ -16,20 +25,21 @@
 .visited-shops {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .visited-shop__frame {
-    width: 250px;
+    width: 225px;
     height: 230px;
     background: white;
     border-radius: 5px;
     box-shadow: 1px 1px 5px gray;
-    margin: 10px 5px;
+    margin: 10px 0;
     position: relative;
 }
 
 .shop-image {
-    width: 250px;
+    width: 225px;
     height: 115px;
     object-fit: cover;
     border-radius: 5px 5px 0 0;
@@ -67,11 +77,33 @@
 }
 
 @media screen and (max-width: 768px) {
+    .reservation-status__frame {
+        width: 431px;
+    }
+
     .visited-shop__frame {
-        width: 215px;
+        width: 200px;
     }
 
     .shop-image {
-        width: 215px;
+        width: 200px;
+    }
+
+    .button__review {
+        width: 110px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .reservation-status__frame {
+            width: 310px;
+        }
+
+    .visited-shop__frame {
+        width: 310px;
+    }
+
+    .shop-image {
+        width: 310px;
     }
 }

@@ -1,12 +1,12 @@
 body {
     background: #dcdcdc;
-    margin: 0 25px;
+    margin: 25px 25px 30px;
 }
 
 .header-group {
     display: flex;
     justify-content: center;
-    margin: 25px 600px 0 0;
+    margin: 0 600px 0 0;
 }
 
 .menu__button {
@@ -214,28 +214,24 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    body {
-        margin: 0 12px 30px;
-    }
-
     .header-group {
-        margin: 25px 350px 0 0;
+        margin: 0 320px 0 0;
     }
 
     .shop-detail__frame {
-        margin: 0 12.5px 0 0;
+        margin: 0 10px 0 0;
     }
 
     .shop-image {
-        width: 230px;
+        width: 210px;
     }
 
     .over-view {
-        width: 230px;
+        width: 210px;
     }
 
     .reservation-group {
-        margin: -50px 0 0 12.5px;
+        margin: -50px 0 0 10px;
     }
 
     .reservation__frame {
@@ -266,7 +262,6 @@ body {
     .date-info,
     .time-info,
     .number-info {
-        position: relative;
         width: 160px;
     }
 
@@ -288,16 +283,14 @@ body {
     body {
         display: flex;
         justify-content: center;
-        margin: 0 0 30px 0;
     }
 
     .header-group {
-        margin: 25px 220px 0 0;
+        margin: 0 200px 0 0;
     }
 
     .content {
         display: block;
-        margin: 0 10px;
     }
 
     .shop-detail__frame {
@@ -306,19 +299,19 @@ body {
     }
 
     .shop-image {
-        width: 320px;
+        width: 315px;
     }
 
     .over-view {
-        width: 320px;
+        width: 315px;
     }
 
     .reservation-group {
-        margin: 35px 0 0 0;
+        margin: 20px 0 0 0;
     }
 
     .reservation__frame {
-        width: 325px;
+        width: 315px;
         height: 300px;
     }
 
@@ -335,7 +328,7 @@ body {
     .input_date {
         margin-left: 0;
         padding-left: 5px;
-        width: 305px;
+        width: 295px;
         height: 20px;
         font-size: 9.5px;
     }
@@ -344,7 +337,7 @@ body {
     .input_people {
         margin: 10px 0 0 0;
         padding-left: 10px;
-        width: 305px;
+        width: 295px;
         height: 20px;
         font-size: 9.5px;
     }
@@ -352,7 +345,7 @@ body {
     .reservation-info__frame {
         margin: 15px 10px;
         padding: 0 0 0 0;
-        width: 305px;
+        width: 295px;
     }
 
     .info__inner {
@@ -373,13 +366,12 @@ body {
     .date,
     .time,
     .number {
-        font-size: 9.5px;
         position: absolute;
             left: 60px;
     }
 
     .reservation__button {
-        width: 325px;
+        width: 315px;
         height: 25px;
         font-size: 9.5px;
     }

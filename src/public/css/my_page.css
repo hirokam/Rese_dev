@@ -1,16 +1,11 @@
 main {
-    margin: 25px 95px 0 95px;
+    display: flex;
+    justify-content: center;
 }
 
-.grid__parent {
-    display: grid;
-    /* height: auto; */
-    grid-template-columns: 2fr 3fr;
-}
-
-.reservation-status__frame {
-    grid-column: 1/2;
-    margin: 22px 0 0px 25px;
+.all {
+    display: flex;
+    width: 719px;
 }
 
 .visited-button {
@@ -25,15 +20,15 @@ main {
 
 .reservation-status__header {
     margin: 0;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 .reservation-status__inner-frame {
     margin: 20px 0;
-    padding: 25px 0 0 25px;
-    width: 400px;
-    height: 230px;
+    padding: 15px 0 0 25px;
+    width: 300px;
+    height: 160px;
     background: #0066ff;
     border-radius: 5px;
     box-shadow: 2px 2px 5px gray;
@@ -44,6 +39,10 @@ main {
     display: flex;
 }
 
+.reservation-icon {
+    height: 20px;
+}
+
 .reservation-icon .material-symbols-outlined {
     font-variation-settings:
         'FILL' 1,
@@ -51,14 +50,24 @@ main {
         'GRAD' -25,
         'opsz' 20;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
+}
+
+.reservation-number {
+    height: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .reservation-number__inner {
     color: white;
-    line-height: 30px;
+    line-height: 20px;
     padding-left: 25px;
     font-size: 13px;
+}
+
+.status__inner {
+    margin-top: 20px;
 }
 
 .shop-info,
@@ -66,8 +75,8 @@ main {
 .time-info,
 .number-info {
     display: flex;
-    margin: 15px 0;
-    font-size: 13px;
+    margin: 7px 0;
+    font-size: 11px;
     position: relative;
 }
 
@@ -81,6 +90,7 @@ main {
 .date,
 .time,
 .number {
+    font-size: 11px;
     position: absolute;
         left: 90px;
     color: white;
@@ -91,11 +101,12 @@ main {
 
 .reservation-update {
     position: absolute;
-    top: 28px;
-    right: 85px;
+        top: 12px;
+        right: 45px;
 }
 
 .update {
+    font-size: 13px;
     background: white;
     border: none;
     border-radius: 3px;
@@ -105,8 +116,8 @@ main {
 
 .reservation-cancel {
     position: absolute;
-        top: 28px;
-        right: 30px;
+        top: 12px;
+        right: 5px;
 }
 
 .reservation-cancel .material-symbols-outlined {
@@ -122,18 +133,20 @@ main {
 }
 
 .qr-group {
+    width: 100px;
     position: absolute;
-        bottom: 33px;
-        left: 250px;
-    padding-right: 19px;
+        bottom: 10px;
+        right: 5px;
 }
 
 .qr-description {
     color: white;
-    font-size: 11px;
+    font-size: 9.5px;
 }
 
 .qr-button {
+    font-size: 9.5px;
+    width: 55px;
     background: white;
     border: none;
     border-radius: 3px;
@@ -142,21 +155,20 @@ main {
 }
 
 .favorite__frame {
-    grid-column: 2/3;
-    margin: 30px 0 0 90px;
+    margin: 28px 0 0 40px;
 }
 
 .user-name {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .favorite__header {
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .header-title {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -167,8 +179,8 @@ main {
 }
 
 .shop__frame {
-    width: 250px;
-    height: 230px;
+    width: 174px;
+    height: 160px;
     background: white;
     border-radius: 5px;
     box-shadow: 1px 1px 5px gray;
@@ -176,46 +188,59 @@ main {
 }
 
 .shop-image {
-    width: 250px;
-    height: 115px;
+    width: 174px;
+    height: 85px;
     object-fit: cover;
     border-radius: 5px 5px 0 0;
 }
 
 .shop-name {
     font-weight: bold;
-    font-size: 16px;
-    margin: 15px 0 0 0;
-    padding-left: 15px;
+    font-size: 12px;
+    margin: 7px 0 0 0;
+    padding-left: 7px;
 }
 
 .shop__area-genre {
     display: flex;
-    margin: 3px 0 0 15px;
+    margin: 3px 0 0 7px;
 }
 
 .shop-area,
 .shop-genre {
     margin: 0 3px 0 0;
     font-weight: normal;
-    font-size: 10px;
+    font-size: 8px;
 }
 
 .shop__detail-favorite {
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 5px 15px 0 15px;
+    margin: 2px 7px 0 7px;
 }
 
 .detail {
+    font-size: 12px;
     width: 95px;
-    height: 30px;
+    height: 25px;
     background: #0066ff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.favorite,
+.favorite-hart {
+    height: 30px;
+}
+
+.favorite__active {
+    height: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .favorite__active .material-symbols-outlined {
@@ -232,12 +257,22 @@ main {
 }
 
 @media screen and (max-width: 768px){
+    .all {
+        width: 431px;
+    }
+
     .reservation-status__inner-frame {
-        width: 300px;
+        width: 200px;
+        height: 270px;
+        padding: 15px 0 0 10px;
     }
 
     .reservation-number__inner {
         padding-left: 10px;
+    }
+
+    .status__inner {
+        margin-top: 10px;
     }
 
     .shop,
@@ -249,23 +284,68 @@ main {
     }
 
     .reservation-update {
-        position: absolute;
-            right: 70px;
+        position: static;
     }
 
     .reservation-cancel {
         position: absolute;
-            right: 15px;
+            right: 10px;
     }
 
     .qr-group {
-        position: absolute;
-            top: 80px;
-            left: 200px;
-        padding-right: 20.5px;
+        position: static;
+        width: 170px;
     }
 
     .qr-description {
         font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .all {
+        display: block;
+        width: 310px;
+    }
+
+    .reservation-status__inner-frame {
+        width: 310px;
+        height: 160px;
+        padding: 15px 0 0 25px;
+    }
+
+    .reservation-number__inner {
+        padding-left: 25px;
+    }
+
+    .reservation-update {
+        position: absolute;
+    }
+
+    .reservation-cancel {
+        position: absolute;
+            right: 5px;
+    }
+
+    .qr-group {
+        width: 100px;
+        position: absolute;
+    }
+
+    .qr-description {
+        font-size: 9.5px;
+    }
+
+    .favorite__frame {
+        margin: 15px 0 0 0;
+    }
+
+    .shop__frame {
+        width: 310px;
+        margin: 0 0 20px 0;
+    }
+
+    .shop-image {
+        width: 310px;
     }
 }

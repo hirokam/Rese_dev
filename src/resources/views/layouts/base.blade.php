@@ -24,7 +24,7 @@
         </div>
 
         @yield('header__right')
-        
+
     </header>
 
     <main>

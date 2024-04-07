@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="grid__parent">
+    <div class="all">
         <div class="reservation-status__frame">
             <form action="/visited" method="post">
             @csrf
