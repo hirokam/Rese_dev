@@ -79,7 +79,7 @@
                 <span class="store-title">店舗データ登録</span>
             </div>
             <div class="store-register__inner">
-                <form action="/store-representative/confirm" method="post" enctype="multipart/form-data">
+                <form action="/store-representative/register" method="post" enctype="multipart/form-data">
                 @csrf
                     <div class="store-input-area">
                         <label class="store-label-shop">店舗名：<input type="text" name="shop_name" class="store-name"></label>

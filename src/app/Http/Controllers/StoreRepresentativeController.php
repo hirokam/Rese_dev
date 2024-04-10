@@ -28,7 +28,7 @@ class StoreRepresentativeController extends Controller
         $area = Area::find($request->area);
         $genre = Genre::find($request->genre);
 
-        return view('confirm_shop_info', compact('shop_info', 'area', 'genre'));
+        return redirect('/');
     }
 
     public function register(Request $request)
@@ -47,7 +47,7 @@ class StoreRepresentativeController extends Controller
             'file_path' => 'storage/' . $dir . '/' . $file_name,
         ]);
 
-        return redirect('/store-representative/home');
+        return redirect('/');
     }
 
     public function reservationCheck()

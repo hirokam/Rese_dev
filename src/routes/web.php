@@ -55,11 +55,11 @@ Route::middleware('auth', 'verified')->group(function () {
     });
     Route::middleware('store')->group(function () {
         Route::prefix('/store-representative')->group(function () {
-            Route::get('/', [StoreRepresentativeController::class, 'storeRepresentativeHome']);
+            // Route::get('/', [StoreRepresentativeController::class, 'storeRepresentativeHome']);
             // Route::get('/home', [StoreRepresentativeController::class, 'home']);
-            // Route::post('/confirm', [StoreRepresentativeController::class, 'confirm']);
-            // Route::post('/register', [StoreRepresentativeController::class, 'register']);
-            // Route::get('/reservation', [StoreRepresentativeController::class, 'reservationCheck']);
+            Route::post('/confirm', [StoreRepresentativeController::class, 'confirm']);
+            Route::post('/register', [StoreRepresentativeController::class, 'register']);
+            Route::get('/reservation', [StoreRepresentativeController::class, 'reservationCheck']);
         });
     });
     Route::post('/search', [ShopController::class, 'search']);
