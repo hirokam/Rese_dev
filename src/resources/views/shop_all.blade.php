@@ -109,7 +109,7 @@
                         </label>
                     </div>
                     <div class="store-button__area">
-                        <button class="store-register-button">確認</button>
+                        <button class="store-register-button">登録</button>
                     </div>
                 </form>
             </div>
