@@ -46,6 +46,22 @@ Route::view('thanks', 'thanks')->name('thanks');
 // ログイン済みのユーザーがアクセスできるページ
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/', [ShopController::class, 'index']);
+    Route::middleware('admin')->group(function () {
+        Route::prefix('/admin')->group(function () {
+            // Route::get('/', [AdminController::class, 'adminHome']);
+            // Route::get('/home', [AdminController::class, 'adminHome']);
+            Route::post('/register', [AdminController::class, 'adminRegister']);
+        });
+    });
+    Route::middleware('store')->group(function () {
+        Route::prefix('/store-representative')->group(function () {
+            Route::get('/', [StoreRepresentativeController::class, 'storeRepresentativeHome']);
+            // Route::get('/home', [StoreRepresentativeController::class, 'home']);
+            // Route::post('/confirm', [StoreRepresentativeController::class, 'confirm']);
+            // Route::post('/register', [StoreRepresentativeController::class, 'register']);
+            // Route::get('/reservation', [StoreRepresentativeController::class, 'reservationCheck']);
+        });
+    });
     Route::post('/search', [ShopController::class, 'search']);
     Route::get('/mypage', [AuthController::class, 'myPage']);
     Route::get('/visited', [AuthController::class, 'visitedShop']);
@@ -61,19 +77,4 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::post('/review_form', [ShopReviewController::class, 'review']);
     Route::post('/review_post', [ShopReviewController::class, 'reviewCreate']);
     Route::post('/QRcode', [QrCodeController::class, 'index']);
-
-    Route::middleware('admin')->group(function () {
-        Route::prefix('/admin')->group(function () {
-            Route::get('/home', [AdminController::class, 'adminHome']);
-            Route::post('/register', [AdminController::class, 'adminRegister']);
-        });
-    });
-    Route::middleware('store')->group(function () {
-        Route::prefix('/store-representative')->group(function () {
-            Route::get('/home', [StoreRepresentativeController::class, 'home']);
-            Route::post('/confirm', [StoreRepresentativeController::class, 'confirm']);
-            Route::post('/register', [StoreRepresentativeController::class, 'register']);
-            Route::get('/reservation', [StoreRepresentativeController::class, 'reservationCheck']);
-        });
-    });
 });

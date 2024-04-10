@@ -10,7 +10,7 @@
             <span class="message">登録に失敗しました</span>
         </div>
         <div class="button-space">
-            <a href="/admin/home"><button class="button">戻る</button></a>
+            <a href="/"><button class="button">戻る</button></a>
         </div>
     </div>
 @endsection

@@ -11,10 +11,10 @@ use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
-    public function adminHome()
-    {
-        return view('admin_home');
-    }
+    // public function adminHome()
+    // {
+    //     return view('admin_home');
+    // }
 
     public function adminRegister(Request $request)
     {

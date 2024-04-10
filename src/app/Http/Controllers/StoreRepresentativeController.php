@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 
 class StoreRepresentativeController extends Controller
 {
-    public function home()
+    public function storeRepresentativeHome()
     {
         $areas = Area::all();
         $genres = Genre::all();

@@ -12,19 +12,20 @@
 </head>
 <body>
     <header>
-        <div class="header__menu-title">
-            <form action="/menu" method="get">
-                <button class="menu__button">
-                    <span class="material-symbols-outlined">menu</span>
-                </button>
-            </form>
-            <div class="app-title__space">
-                <span class="app-title">Rese</span>
+        <div class="header__all">
+            <div class="header__menu-title">
+                <form action="/menu" method="get">
+                    <button class="menu__button">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </form>
+                <div class="app-title__space">
+                    <span class="app-title">Rese</span>
+                </div>
             </div>
+
+            @yield('header__right')
         </div>
-
-        @yield('header__right')
-
     </header>
 
     <main>
