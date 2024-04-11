@@ -11,11 +11,6 @@ use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
-    // public function adminHome()
-    // {
-    //     return view('admin_home');
-    // }
-
     public function adminRegister(Request $request)
     {
         DB::beginTransaction();
@@ -25,6 +20,7 @@ class AdminController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
+            $user->email_verified_at = now();
             $user->save();
 
             if(Auth::user()->role === 'admin') {

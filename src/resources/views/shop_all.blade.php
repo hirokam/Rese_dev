@@ -122,7 +122,11 @@
                 <div class="shop__frame">
                     <div class="shop-data">
                         <div class="shop-image__frame">
+                            @if ($shop->picture_url)
                             <img src="{{ $shop->picture_url }}" alt="店舗イメージ" class="shop-image">
+                            @else
+                            <img src="{{ asset($shop->file_path) }}" alt="店舗イメージ" class="shop-image">
+                            @endif
                         </div>
                         <h2 class="shop-name">{{ $shop->shop_name }}</h2>
                         <div class="shop__area-genre">
@@ -174,7 +178,11 @@
                 <div class="shop__frame">
                     <div class="shop-data">
                         <div class="shop-image__frame">
+                            @if ($shop->picture_url)
                             <img src="{{ $shop->picture_url }}" alt="店舗イメージ" class="shop-image">
+                            @else
+                            <img src="{{ asset($shop->file_path) }}" alt="店舗イメージ" class="shop-image">
+                            @endif
                         </div>
                         <h2 class="shop-name">{{ $shop->shop_name }}</h2>
                         <div class="shop__area-genre">
