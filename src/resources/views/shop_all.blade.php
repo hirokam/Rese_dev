@@ -42,6 +42,14 @@
                 </form>
             </ul>
         </nav>
+    @else
+        <nav class="header__right-nav">
+            <ul class="header__right-email">
+                <form action="/admin/send_mail" method="get">
+                    <button class="email__button"><li>メールを送る</li></button>
+                </form>
+            </ul>
+        </nav>
     @endif
     </div>
 @endsection

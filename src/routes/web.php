@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FavoriteShopsController;
+use App\Http\Controllers\NotificationEmailController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ShopController;
@@ -49,6 +50,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::middleware('admin')->group(function () {
         Route::prefix('/admin')->group(function () {
             Route::post('/register', [AdminController::class, 'adminRegister']);
+            Route::get('/send_mail', [NotificationEmailController::class, 'sendMail']);
         });
     });
     Route::middleware('store')->group(function () {

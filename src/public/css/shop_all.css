@@ -20,6 +20,12 @@ main {
 }
 
 /* 管理者 */
+.header__right-email {
+    margin: 0;
+    display: flex;
+    justify-content: right;
+}
+
 .admin-register__frame {
     display: flex;
     justify-content: center;
@@ -84,7 +90,6 @@ main {
     display: flex;
     justify-content: right;
 }
-
 
 .store-register__frame {
     display: flex;
