@@ -17,7 +17,7 @@ class StoreRepresentativeCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->role === 'store')
+        if(Auth::user()->role->role === 'store')
         return $next($request);
     }
 }

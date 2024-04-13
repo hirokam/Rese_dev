@@ -23,7 +23,7 @@ class AdminController extends Controller
             $user->email_verified_at = now();
             $user->save();
 
-            if(Auth::user()->role === 'admin') {
+            if(Auth::user()->role->role === 'admin') {
                 $user->role = 'store';
                 $user->save();
             }

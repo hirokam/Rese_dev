@@ -6,7 +6,23 @@
 
 @section('header__right')
     <div class="header__right">
-    @if (Auth::user()->role === 'user')
+    @if (Auth::user()->role->role === 'admin')
+        <nav class="header__right-nav">
+            <ul class="header__right-email">
+                <form action="/admin/send_mail" method="get">
+                    <button class="email__button"><li>メールを送る</li></button>
+                </form>
+            </ul>
+        </nav>
+    @elseif (Auth::user()->role->role === 'store')
+        <nav class="header__right-nav">
+            <ul class="header__right-ul">
+                <form action="/store-representative/reservation" method="get">
+                    <button><li>予約状況表示</li></button>
+                </form>
+            </ul>
+        </nav>
+    @elseif (Auth::user()->role->role === 'user')
         <div class="header__right-inner">
             <div class="header__right-search">
                 <div class="search-area__space">
@@ -34,28 +50,12 @@
                 </div>
             </div>
         </div>
-    @elseif (Auth::user()->role === 'store')
-        <nav class="header__right-nav">
-            <ul class="header__right-ul">
-                <form action="/store-representative/reservation" method="get">
-                    <button><li>予約状況表示</li></button>
-                </form>
-            </ul>
-        </nav>
-    @else
-        <nav class="header__right-nav">
-            <ul class="header__right-email">
-                <form action="/admin/send_mail" method="get">
-                    <button class="email__button"><li>メールを送る</li></button>
-                </form>
-            </ul>
-        </nav>
     @endif
     </div>
 @endsection
 
 @section('content')
-    @if (Auth::user()->role === 'admin')
+    @if (Auth::user()->role->role === 'admin')
     <div class="admin-register__frame">
         <div class="admin-register__inner-frame">
             <div class="admin-register__header">
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-    @elseif (Auth::user()->role === 'store')
+    @elseif (Auth::user()->role->role === 'store')
     <div class="store-register__frame">
         <div class="store-register__inner-frame">
             <div class="store-register__header">
@@ -123,7 +123,7 @@
             </div>
         </div>
     </div>
-    @else
+    @elseif (Auth::user()->role->role === 'user')
         @if (session()->has('search_results'))
         <div class="shop-all__frame">
             @foreach (session('search_results') as $shop)

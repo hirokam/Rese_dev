@@ -30,7 +30,7 @@
                 </table>
             </div>
             @endforeach
-            <a href="/store-representative/home" class="back">戻る</a>
+            <a href="/" class="back">戻る</a>
         </div>
     </div>
 @endsection
