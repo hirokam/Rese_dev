@@ -8,12 +8,20 @@ main {
     width: 719px;
 }
 
+.ul__button {
+    display: flex;
+}
+
+.list__payment {
+    margin-left: 10px;
+}
+
 .visited-button {
     border: none;
     background: #0066ff;
     background: #c0c0c0;
     border-radius: 3px;
-    height: 35px;
+    height: 30px;
     box-shadow: 1px 1px 5px gray;
     cursor: pointer;
 }

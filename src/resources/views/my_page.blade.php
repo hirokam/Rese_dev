@@ -7,16 +7,32 @@
 @section('content')
     <div class="all">
         <div class="reservation-status__frame">
-            <form action="/visited" method="post">
-            @csrf
-                <nav class="nav__visited">
-                    <ul>
-                        <li class="list__visited">
-                            <button class="visited-button">行ったお店</button>
-                        </li>
+                <nav class="nav__button">
+                    <ul class="ul__button">
+                        <form action="/visited" method="post">
+                        @csrf
+                            <li class="list__visited">
+                                <button class="visited-button">行ったお店</button>
+                            </li>
+                        </form>
+                        <form action="/charge" method="post">
+                        @csrf
+                            <li class="list__payment">
+                                <script
+                                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                    data-key="{{ env('STRIPE_KEY') }}"
+                                    data-amount="1000"
+                                    data-name="お支払い画面"
+                                    data-label="決済をする"
+                                    data-description="デモ画面です"
+                                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                    data-locale="auto"
+                                    data-currency="JPY">
+                                </script>
+                            </li>
+                        </form>
                     </ul>
                 </nav>
-            </form>
             <h2 class="reservation-status__header">予約状況</h2>
             @foreach ($reservations as $index => $reservation)
             <div class="reservation-status__inner-frame">
