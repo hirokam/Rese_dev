@@ -3,7 +3,8 @@
 
 ## UI画像
 会員ホーム（店舗一覧）
-![image](user-home.png)
+<img width="931" alt="shop_all" src="https://github.com/hirokam/Rese_dev/assets/145309969/bddc16fb-eacd-48f1-8b45-d9895598c33e">
+
 
 ## 作成の経緯
 外部の飲食店予約サービスは手数料を取られる為、
@@ -11,7 +12,21 @@
 経費削減のために自社で予約サービスを提供する。
 
 ## アプリケーションURL
+### 本番環境
+
 http://35.72.13.191/
+
+### 開発環境
+
+http://localhost
+
+### phpmyadmin
+
+http://localhost:8080
+
+### mailhog
+
+http://localhost:8025
 
 ## 機能一覧
 ・会員登録 ・メール認証 ・ログイン／ログアウト ・ユーザー情報取得
@@ -38,10 +53,12 @@ http://35.72.13.191/
 <img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=plastic"> <img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Linux-FCC624.svg?logo=linux&style=plastic"> <img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=plastic"> <img src="https://img.shields.io/badge/-Nginx-269539.svg?logo=nginx&style=plastic">
 
 ## テーブル設計
-![テーブル設計](https://github.com/hirokam/Rese_dev/assets/145309969/8eac1d6e-3a6c-4861-bc72-c6461eb42305)
+![table_layout](https://github.com/hirokam/Rese_dev/assets/145309969/7835c526-3426-4695-932c-67cf626cc890)
+
 
 ## ER図
-![ER図](https://github.com/hirokam/Rese_dev/assets/145309969/46d11b95-47c9-4690-8dce-71c20a2b7140)
+![ER_drawing](https://github.com/hirokam/Rese_dev/assets/145309969/e34e1b66-08e8-4abb-a6e3-06208ce6b21f)
+
 
 
 # 環境構築
