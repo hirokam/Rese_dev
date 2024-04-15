@@ -85,19 +85,22 @@ nginx -ver: 1.21.1
 8.スケジュールの実行 : php artisan schedule:work
 
 ## 環境変数
-APP_NAME : Rese
+APP_NAME=Rese
 
-DB_HOST : mysql
+DB_HOST=mysql
 
-DB_DATABASE : laravel_db
+DB_DATABASE=laravel_db
 
-DB_USERNAME : laravel_user
+DB_USERNAME=laravel_user
 
-DB_PASSWORD : laravel_pass
+DB_PASSWORD=laravel_pass
 
-MAIL_PORT : 1025
+MAIL_FROM_ADDRESS=rese@test.com
 
-MAIL_FROM_ADDRESS : rese@test.com
+### STRIPE用公開キーと秘密キー
+STRIPE_KEY=#YourSTRIPE_KEY
+
+STRIPE_SECRET=#YourSTRIPE_SECRET
 
 ## その他
 ### テストアカウント
