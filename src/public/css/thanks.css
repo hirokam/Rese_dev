@@ -12,6 +12,18 @@ main {
     box-shadow: 1.5px 1.5px 5px gray;
 }
 
+.verify-content__frame {
+    margin-top: 100px;
+    width: 350px;
+    height: 235px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 1.5px 1.5px 5px gray;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
 .message-space {
     display: flex;
     justify-content: center;

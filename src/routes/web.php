@@ -4,7 +4,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FavoriteShopsController;
 use App\Http\Controllers\NotificationEmailController;
-use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShopReviewController;
