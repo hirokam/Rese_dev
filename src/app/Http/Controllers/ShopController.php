@@ -8,7 +8,6 @@ use App\Models\FavoriteShop;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class ShopController extends Controller
 {

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Charge;
 
@@ -13,7 +12,7 @@ class StripeController extends Controller
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
         $charge = Charge::create(array(
-            'amount' => 100,
+            'amount' => 1000,
             'currency' => 'jpy',
             'source' => request()->stripeToken,
         ));

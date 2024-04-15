@@ -38,7 +38,11 @@
                             <h2 class="shop-name">{{ $shop_detail->shop_name }}</h2>
                         </div>
                     </div>
-                    <img src="{{$shop_detail->picture_url}}" alt="店舗イメージ" class="shop-image" >
+                    @if ($shop_detail->picture_url)
+                    <img src="{{ $shop_detail->picture_url }}" alt="店舗イメージ" class="shop-image">
+                    @else
+                    <img src="{{ asset($shop_detail->file_path) }}" alt="店舗イメージ" class="shop-image">
+                    @endif
                     <div class="shop__area-genre">
                         <h3 class="shop-area">#{{ $shop_detail->area->area }}</h3>
                         <h3 class="shop-genre">#{{ $shop_detail->genre->genre }}</h3>

@@ -108,7 +108,11 @@
                 <div class="shop__frame">
                     <div class="shop-data">
                         <div class="shop-image__frame">
+                            @if ($favorite->shop->picture_url)
                             <img src="{{ $favorite->shop->picture_url }}" alt="店舗イメージ" class="shop-image">
+                            @else
+                            <img src="{{ asset($favorite->shop->file_path) }}" alt="店舗イメージ" class="shop-image">
+                            @endif
                         </div>
                         <h2 class="shop-name">{{ $favorite->shop->shop_name }}</h2>
                         <div class="shop__area-genre">

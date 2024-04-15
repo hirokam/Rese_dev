@@ -2,35 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Area;
-use App\Models\Genre;
-use App\Models\Reservation;
 use App\Models\Shop;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class StoreRepresentativeController extends Controller
 {
-    // public function storeRepresentativeHome()
-    // {
-    //     $areas = Area::all();
-    //     $genres = Genre::all();
-
-    //     return view('store_representative_home', compact('areas', 'genres'));
-    // }
-
-    // public function confirm(Request $request)
-    // {
-    //     $shop_info = $request->all();
-    //     unset($shop_info['_token']);
-    //     $area = Area::find($request->area);
-    //     $genre = Genre::find($request->genre);
-
-    //     return redirect('/');
-    // }
-
     public function register(Request $request)
     {
         $dir = 'image';

@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -24,7 +23,7 @@ class AdminController extends Controller
             $user->save();
 
             if(Auth::user()->role->role === 'admin') {
-                $user->role = 'store';
+                $user->role_id = '2';
                 $user->save();
             }
 

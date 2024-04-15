@@ -12,7 +12,6 @@ use App\Http\Controllers\StoreRepresentativeController;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\QrCodeController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// ログイン前にメニュー表示ができるようにする記述
+// メニュー表示
 Route::get('/menu', [AuthController::class, 'menu']);
 
 // ★メール認証の通知
