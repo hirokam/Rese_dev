@@ -1,10 +1,14 @@
-# RESE
+# Rese
 飲食店の予約サービスを提供するアプリケーション。
+
 ## UI画像
 会員ホーム（店舗一覧）
 ![image](user-home.png)
+
 ## 作成の経緯
-外部の飲食店予約サービスは手数料を取られる為、自社で予約サービスを持つことでなるべく経費を抑えたいということから。
+外部の飲食店予約サービスは手数料を取られる為、
+
+経費削減のために自社で予約サービスを提供する。
 
 ## アプリケーションURL
 http://35.72.13.191/
@@ -12,15 +16,23 @@ http://35.72.13.191/
 ## 機能一覧
 ・会員登録 ・メール認証 ・ログイン／ログアウト ・ユーザー情報取得
 
+・バリデーション（会員登録時／ログイン時／予約時） ・レスポンシブデザイン（ブレイクポイント：768px、480px）
+
+### ユーザー
 ・飲食店一覧取得／詳細取得 ・飲食店お気に入り追加／削除
 
 ・ユーザー飲食店お気に入り一覧取得 ・飲食店予約情報追加／変更／削除
 
-・予約リマインダー ・QRコード表示 ・ユーザー飲食店予約情報取得
+・予約リマインダー ・QRコード表示 ・ユーザー飲食店予約情報取得 ・決済機能
 
-・飲食店評価 ・エリア／ジャンル／店名検索 ・管理者専用画面 ・店舗代表者専用画面
+・飲食店評価 ・エリア／ジャンル／店名検索
 
-・バリデーション（会員登録時／ログイン時／予約時） ・レスポンシブデザイン（ブレイクポイント：768px）
+### 管理者
+・店舗代表者登録 ・メール送信機能
+
+### 店舗代表者
+・店舗代表者専用画面 ・予約状況確認
+
 
 ## 使用技術（実行環境）
 <img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=plastic"> <img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Linux-FCC624.svg?logo=linux&style=plastic"> <img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=plastic"> <img src="https://img.shields.io/badge/-Nginx-269539.svg?logo=nginx&style=plastic">
@@ -73,13 +85,19 @@ nginx -ver: 1.21.1
 8.スケジュールの実行 : php artisan schedule:work
 
 ## 環境変数
-MYSQL_ROOT_PASSWORD : root
+APP_NAME : Rese
 
-MYSQL_DATABASE : laravel_db
+DB_HOST : mysql
 
-MYSQL_USER : laravel_user
+DB_DATABASE : laravel_db
 
-MYSQL_PASSWORD : laravel_pass
+DB_USERNAME : laravel_user
+
+DB_PASSWORD : laravel_pass
+
+MAIL_PORT : 1025
+
+MAIL_FROM_ADDRESS : rese@test.com
 
 ## その他
 ### テストアカウント
