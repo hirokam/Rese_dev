@@ -53,7 +53,7 @@ http://localhost:8025
 <img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=plastic"> <img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Linux-FCC624.svg?logo=linux&style=plastic"> <img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=plastic"> <img src="https://img.shields.io/badge/-Nginx-269539.svg?logo=nginx&style=plastic">
 
 ## テーブル設計
-![table_layout](https://github.com/hirokam/Rese_dev/assets/145309969/7835c526-3426-4695-932c-67cf626cc890)
+![table_layout](https://github.com/hirokam/Rese_dev/assets/145309969/59d9dae1-860d-4502-bec0-0a2743c378af)
 
 
 ## ER図
