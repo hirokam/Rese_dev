@@ -55,11 +55,8 @@ http://localhost:8025
 ## テーブル設計
 ![table_layout](https://github.com/hirokam/Rese_dev/assets/145309969/59d9dae1-860d-4502-bec0-0a2743c378af)
 
-
 ## ER図
-![ER_drawing](https://github.com/hirokam/Rese_dev/assets/145309969/e34e1b66-08e8-4abb-a6e3-06208ce6b21f)
-
-
+<img width="520" alt="ER_drawing" src="https://github.com/hirokam/Rese_dev/assets/145309969/410c61c7-1211-4001-aded-d184cff2a1ea">
 
 # 環境構築
 ## 言語・フレームワーク:バージョン
