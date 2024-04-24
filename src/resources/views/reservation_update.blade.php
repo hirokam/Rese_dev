@@ -104,7 +104,7 @@
                             </div>
                         </div>
                         <div class="update-reservation-button__frame">
-                            <button class="update-reservation__button">予約内容を変更する</button>
+                            <button class="update-reservation__button" onclick='return confirm("予約内容を変更しますか？")'>予約内容を変更する</button>
                         </div>
                     </form>
                 </div>

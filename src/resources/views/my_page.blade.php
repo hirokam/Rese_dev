@@ -80,7 +80,7 @@
                         <input type="hidden" name="reservation_date" value="{{ $reservation->reservation_date }}">
                         <input type="hidden" name="reservation_time" value="{{$reservation->reservation_time}}">
                         <div class="reservation-cancel">
-                            <button class="material-symbols-outlined">cancel</button>
+                            <button class="material-symbols-outlined" onclick='return confirm("本当に削除しますか？")'>cancel</button>
                         </div>
                     </form>
                     <div class="qr-group">
