@@ -98,6 +98,8 @@ nginx -ver: 1.21.1
 
 8.スケジュールの実行 : php artisan schedule:work
 
+9.シンボリックリンクの実行 : php artisan storage:link
+
 ## 環境変数
 APP_NAME=Rese
 
