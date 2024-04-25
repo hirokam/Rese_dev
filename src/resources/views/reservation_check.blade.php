@@ -10,8 +10,15 @@
             <div class="content__reservation-check-header">
                 <span class="content__reservation-check-header-title">{{ $shop_name }}予約状況</span>
             </div>
-            <div class="content__pagination">
-                {{ $reservations->links('custom.pagination') }}
+            <div class="content__download-pagination-area">
+                <div class="content__download">
+                    <form action="/store-representative/csv-download" method="get">
+                        <button class="csv-button">CSVダウンロード</button>
+                    </form>
+                </div>
+                <div class="content__pagination">
+                    {{ $reservations->links('custom.pagination') }}
+                </div>
             </div>
             <div class="content__reservation-check-info">
                 <table class="content__reservation-check-table">

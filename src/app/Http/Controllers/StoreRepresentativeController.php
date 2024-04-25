@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Reservation;
 use App\Models\Shop;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class StoreRepresentativeController extends Controller
 {
@@ -36,5 +38,28 @@ class StoreRepresentativeController extends Controller
         $reservations = Reservation::where('shop_id', $shop->id)->orderBy('reservation_date', 'asc')->paginate(10);
 
         return view('reservation_check', compact('shop_name', 'reservations'));
+    }
+
+    public function downloadCsv()
+    {
+        $users = User::all();
+        $csvHeader = ['id', 'name', 'email', 'created_at', 'updated_at'];
+        $csvData = $users->toArray();
+
+        $response = new StreamedResponse(function () use ($csvHeader, $csvData) {
+            $handle = fopen('php://output', 'w');
+            fputcsv($handle, $csvHeader);
+
+            foreach ($csvData as $row) {
+            fputcsv($handle, $row);
+            }
+
+            fclose($handle);
+        }, 200, [
+            'Content-Type' => 'text/csv',
+            'content-Disposition' => 'attachment; filename="users.csv"',
+        ]);
+
+        return $response;
     }
 }

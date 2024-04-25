@@ -56,6 +56,7 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::prefix('/store-representative')->group(function () {
             Route::post('/register', [StoreRepresentativeController::class, 'register']);
             Route::get('/reservation', [StoreRepresentativeController::class, 'reservationCheck']);
+            Route::get('/csv-download', [StoreRepresentativeController::class, 'downloadCsv']);
         });
     });
     Route::post('/search', [ShopController::class, 'search']);

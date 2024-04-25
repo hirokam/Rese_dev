@@ -25,6 +25,16 @@
     font-weight: bold;
 }
 
+.content__download-pagination-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.csv-button {
+    font-size: 12px;
+}
+
 .content__pagination {
     text-align: right;
 }
@@ -33,8 +43,7 @@
     margin: 0;
 }
 
-svg.w-5.h-5 {
-    /*paginateメソッドの矢印の大きさ調整のために追加*/
+.w-5.h-5 {
     width: 30px;
     height: 30px;
 }
