@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,8 +31,10 @@ class StoreRepresentativeController extends Controller
     public function reservationCheck()
     {
         $user_id = Auth::id();
-        $shops = Shop::where('user_id', $user_id)->with('reservations')->get();
+        $shop = Shop::where('user_id', $user_id)->first();
+        $shop_name = $shop->shop_name;
+        $reservations = Reservation::where('shop_id', $shop->id)->orderBy('reservation_date', 'asc')->paginate(10);
 
-        return view('reservation_check', compact('shops'));
+        return view('reservation_check', compact('shop_name', 'reservations'));
     }
 }

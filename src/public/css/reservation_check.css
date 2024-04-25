@@ -1,71 +1,91 @@
-.reservation__frame-outside {
+.content__reservation-check-frame-outside {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
-.reservation__frame {
+.content__reservation-check-frame {
     width: 719px;
-    height: 450px;
+    height: 680px;
     background: white;
+    box-shadow: 25px 20px 10px gray;
     text-align: center;
     border-radius: 5px;
+    padding: 15px 50px;
     position: relative;
 }
 
-.content__header {
-    margin-top: 20px;
+.content__reservation-check-header {
+    margin-top: 15px;
     text-align: center;
 }
 
-.title {
+.content__reservation-check-header-title {
     font-size: 25px;
     font-weight: bold;
 }
 
-.content__info {
-    text-align: center;
+.content__pagination {
+    text-align: right;
+}
+
+.content__pagination-info {
+    margin: 0;
+}
+
+svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+}
+
+.content__reservation-check-info {
     display: flex;
     justify-content: center;
 }
 
-.table {
-    margin-top: 25px;
+.content__reservation-check-table {
+    /* margin-top: 0px; */
     width: 600px;
 }
 
-.td-content {
-    line-height: 30px;
+.content__reservation-check-tr-index {
+    line-height: 40px;
+}
+
+.content__reservation-check-tr-content {
+    line-height: 40px;
+    border-top: solid 0.3px gray;
 }
 
 .back {
     text-decoration: none;
     cursor: pointer;
     position: absolute;
-        bottom: 10%;
+        bottom: 5%;
     transform: translateX(-50%);
 }
 
 @media screen and (max-width: 768px) {
-    .reservation__frame {
+    .content__reservation-check-frame {
         width: 431px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .reservation__frame {
+    .content__reservation-check-frame {
         width: 310px;
     }
 
-    .title {
+    .content__reservation-check-header-title {
         font-size: 20px;
     }
 
-    .tr-index {
+    .content__reservation-check-tr-index {
         font-size: 14px;
     }
 
-    .tr-content {
+    .content__reservation-check-tr-content {
         font-size: 14px;
     }
 
