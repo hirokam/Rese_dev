@@ -63,7 +63,7 @@
                     </div>
                     <div class="content__button-frame">
                         <div class="submit-frame">
-                            <button class="submit">口コミを投稿</button>
+                            <button class="submit">口コミを更新</button>
                         </div>
                         <div class="cancel-frame">
                             <a href="/visited" class="cancel">キャンセル</a>

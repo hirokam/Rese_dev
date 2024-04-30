@@ -46,4 +46,20 @@ class ShopReviewController extends Controller
 
         return redirect()->route('detail', ['shop_id' => $shop_id]);
     }
+
+    public function deleteView($shop_id)
+    {
+        $old_shop_review = ReviewShop::where('user_id', Auth::id())->where('shop_id', $shop_id)->first();
+        $stars = $old_shop_review->stars;
+
+        return view('delete_shop_review', compact('old_shop_review', 'stars'));
+    }
+
+    public function reviewDelete(Request $request)
+    {
+        $shop_id = $request->shop_id;
+        ReviewShop::where('user_id', Auth::id())->where('shop_id', $request->shop_id)->delete();
+
+        return redirect()->route('detail', ['shop_id' => $shop_id]);
+    }
 }

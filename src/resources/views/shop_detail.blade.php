@@ -61,7 +61,7 @@
                         <div class="my-review-frame">
                             <div class="edit-delete-frame">
                                 <a href="/review_update_form/{{$shop_id}}" class="edit-button">口コミを編集</a>
-                                <a href="" class="delete-button">口コミを削除</a>
+                                <a href="/review_delete_form/{{$shop_id}}" class="delete-button">口コミを削除</a>
                             </div>
                             <div class="my-review">
                                 <div class="star-rating">
