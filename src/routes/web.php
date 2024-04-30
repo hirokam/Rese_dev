@@ -65,7 +65,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::post('/visited', [AuthController::class, 'visitedShop']);
     Route::post('/create_favorite', [FavoriteShopsController::class, 'createFavorite']);
     Route::post('/delete_favorite', [FavoriteShopsController::class, 'myPageDeleteFavorite']);
-    Route::get('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
+    Route::get('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail'])->name('detail');
     Route::post('/detail/:shop_id={shop_id?}', [ReservationController::class, 'shopDetail']);
     Route::post('/reservation', [ReservationController::class, 'reservation']);
     Route::post('/update', [ReservationController::class, 'updateView']);
@@ -73,6 +73,8 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::delete('/delete', [ReservationController::class, 'remove']);
     Route::post('/review_form', [ShopReviewController::class, 'review']);
     Route::post('/review_post', [ShopReviewController::class, 'reviewCreate']);
+    Route::get('/review_update_form/{shop_id?}', [ShopReviewController::class, 'updateView']);
+    Route::patch('/review_update_post', [ShopReviewController::class, 'reviewUpdate']);
     Route::post('/QRcode', [QrCodeController::class, 'index']);
     Route::post('/charge', [StripeController::class, 'charge']);
 });

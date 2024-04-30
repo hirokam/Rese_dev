@@ -16,7 +16,7 @@
                 </ul>
             </nav>
         </form>
-        <h2 class="visited-shops__header">行ったお店</h2>
+        <h2 class="visited-shops__header">行ったお店の口コミを投稿してください</h2>
         <div class="visited-shops">
             @foreach ($visited_shops as $shop)
             <div class="visited-shop__frame">
@@ -32,7 +32,7 @@
                     <form action="review_form" method="post">
                     @csrf
                         <input type="hidden" name="shop_id" value="{{ $shop->shop->id }}">
-                        <button class="button__review">レビューを投稿</button>
+                        <button class="button__review">口コミを投稿</button>
                     </form>
                 </div>
             </div>

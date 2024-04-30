@@ -109,6 +109,70 @@ body {
     margin: 0;
 }
 
+.post-review {
+    font-size: 12px;
+}
+
+.all-reviews-button-frame {
+    margin-top: 20px;
+    padding: 0 0 15px 0;
+    border-bottom: solid 1px gray;
+}
+
+.all-reviews-button {
+    background: #0066ff;
+    color: white;
+    font-size: 12px;
+    border: none;
+    width: 325px;
+    line-height: 25px;
+}
+
+.my-review-frame {
+    border-bottom: solid 1px gray;
+    padding-bottom: 15px;
+}
+
+.edit-delete-frame {
+    margin-top: 5px;
+    display: flex;
+    justify-content: right;
+}
+
+.edit-button {
+    /* border: none; */
+    /* border-bottom: solid 0.05px black; */
+    /* background: none; */
+    font-size: 9px;
+    /* padding: 0; */
+    margin-right: 10px;
+}
+
+.delete-button {
+    /* border: none; */
+    /* border-bottom: solid 0.05px black; */
+    /* background: none; */
+    font-size: 9px;
+    /* padding: 0; */
+}
+
+.my-review {
+    margin-top: 5px;
+}
+
+.star--blue {
+    color: #0066ff;
+}
+
+.star--gray {
+    color: #a09a9a;
+}
+
+.comment {
+    font-size: 9px;
+    width: 325px;
+}
+
 .reservation-group {
     margin: -50px 0 0 25px;
 }

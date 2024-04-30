@@ -48,6 +48,38 @@
                         <h3 class="shop-genre">#{{ $shop_detail->genre->genre }}</h3>
                     </div>
                     <p class="over-view">{{ $shop_detail->overview }}</p>
+                    <div class="content__review">
+                        @if (!$shop_review)
+                        <a href="/visited" class="post-review">口コミを投稿する</a>
+                        <div class="all-reviews-button-frame">
+                            <button class="all-reviews-button">全ての口コミ情報</button>
+                        </div>
+                        @elseif ($shop_review)
+                        <div class="all-reviews-button-frame">
+                            <button class="all-reviews-button">全ての口コミ情報</button>
+                        </div>
+                        <div class="my-review-frame">
+                            <div class="edit-delete-frame">
+                                <a href="/review_update_form/{{$shop_id}}" class="edit-button">口コミを編集</a>
+                                <a href="" class="delete-button">口コミを削除</a>
+                            </div>
+                            <div class="my-review">
+                                <div class="star-rating">
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        @if ($i <= $shop_review->stars)
+                                            <span class="star--blue">★</span>
+                                        @else
+                                            <span class="star--gray">★</span>
+                                        @endif
+                                    @endfor
+                                </div>
+                                <div class="comment">
+                                    {{$shop_review->comment}}
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                    </div>
                 </div>
             </div>
             <div class="reservation-group">

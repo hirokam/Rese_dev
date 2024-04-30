@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ReservationRequest;
 use App\Models\Reservation;
+use App\Models\ReviewShop;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,8 @@ class ReservationController extends Controller
     public function shopDetail(Request $request, $shop_id)
     {
         $shop_detail = Shop::find($shop_id);
-        return view('shop_detail', compact('shop_detail', 'shop_id'));
+        $shop_review = ReviewShop::where('shop_id', $shop_detail->id)->where('user_id', Auth::id())->first();
+        return view('shop_detail', compact('shop_detail', 'shop_id', 'shop_review'));
     }
 
     public function reservation(ReservationRequest $request)
