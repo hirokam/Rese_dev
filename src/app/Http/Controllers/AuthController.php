@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\FavoriteShop;
 use App\Models\Reservation;
+use App\Models\ReviewShop;
+use App\Models\Shop;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,8 +29,16 @@ class AuthController extends Controller
         $user_id = Auth::id();
         $current_date_time = Carbon::now();
         $visited_shops = Reservation::where('user_id', $user_id)->where('reservation_date', '<', $current_date_time->toDateString())->get();
+        // dump($visited_shops);
+
+        // foreach($visited_shops as $visited_shop) {
+        //     $shops_review_exist = ReviewShop::where('user_id', Auth::id())->where('shop_id', $visited_shop->shop_id)->get();
+        // }
+        // dump($shops_review_exist);
 
         return view('visited_shops', compact('visited_shops'));
+        // return view('visited_shops', compact('shops_review_exist'));
+        // return view('visited_shops', compact('visited_shops', 'shops_review_exist'));
     }
 
     public function menu()

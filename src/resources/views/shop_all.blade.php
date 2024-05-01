@@ -137,9 +137,12 @@
                             @endif
                         </div>
                         <h2 class="shop-name">{{ $shop->shop_name }}</h2>
-                        <div class="shop__area-genre">
-                            <h3 class="shop-area">#{{ $shop->area->area }}</h3>
-                            <h3 class="shop-genre">#{{ $shop->genre->genre }}</h3>
+                        <div class="shop__area-genre-review">
+                            <div class="shop__area-genre">
+                                <h3 class="shop-area">#{{ $shop->area->area }}</h3>
+                                <h3 class="shop-genre">#{{ $shop->genre->genre }}</h3>
+                            </div>
+                            <p class="shop-review"><span class="star--blue">★</span>:{{ number_format($shop->average_stars, 1) }}({{ $shop->count_reviews }})</p>
                         </div>
                         @if($shop->is_favorite)
                         <div class="shop__detail-favorite">
@@ -193,9 +196,12 @@
                             @endif
                         </div>
                         <h2 class="shop-name">{{ $shop->shop_name }}</h2>
-                        <div class="shop__area-genre">
-                            <h3 class="shop-area">#{{ $shop->area->area }}</h3>
-                            <h3 class="shop-genre">#{{ $shop->genre->genre }}</h3>
+                        <div class="shop__area-genre-review">
+                            <div class="shop__area-genre">
+                                <h3 class="shop-area">#{{ $shop->area->area }}</h3>
+                                <h3 class="shop-genre">#{{ $shop->genre->genre }}</h3>
+                            </div>
+                            <p class="shop-review"><span class="star--blue">★</span>:{{ number_format($shop->average_stars, 1) }}</p>
                         </div>
                         @if($shop->is_favorite)
                         <div class="shop__detail-favorite">

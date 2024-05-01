@@ -18,14 +18,29 @@ class ShopReviewController extends Controller
 
     public function reviewCreate(Request $request)
     {
-        $shop_review = ReviewShop::create([
+        if(!$request->upload_file) {
+            $shop_review = ReviewShop::create([
+                'user_id' => Auth::id(),
+                'shop_id' => $request->shop_id,
+                'stars' => $request->rating,
+                'comment' => $request->comment,
+            ]);
+        } else {
+            $dir = 'review';
+            $file_name = $request->file('upload_file')->getClientOriginalName();
+            $request->file('upload_file')->storeAs('public/' . $dir, $file_name);
+
+            $shop_review = ReviewShop::create([
             'user_id' => Auth::id(),
             'shop_id' => $request->shop_id,
             'stars' => $request->rating,
             'comment' => $request->comment,
-        ]);
+            'picture_name' => $file_name,
+            'path' => 'storage/' . $dir . '/' . $file_name,
+            ]);
+        }
 
-        return redirect('/visited');
+        return redirect()->route('detail', ['shop_id' => $request->shop_id]);
     }
 
     public function updateView($shop_id)
@@ -61,5 +76,15 @@ class ShopReviewController extends Controller
         ReviewShop::where('user_id', Auth::id())->where('shop_id', $request->shop_id)->delete();
 
         return redirect()->route('detail', ['shop_id' => $shop_id]);
+    }
+
+    public function allReviews($shop_id)
+    {
+        $shop = Shop::find($shop_id);
+        $reviews = ReviewShop::where('shop_id', $shop->id)->get();
+        $count_reviews = $reviews->count();
+        $average_stars = ReviewShop::select('shop_id')->selectRaw('AVG(stars) as stars')->groupBy('shop_id')->get();
+
+        return view('all_reviews', compact('shop', 'reviews'));
     }
 }

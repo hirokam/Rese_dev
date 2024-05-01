@@ -71,12 +71,13 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::post('/update', [ReservationController::class, 'updateView']);
     Route::patch('/reservation/update', [ReservationController::class, 'update']);
     Route::delete('/delete', [ReservationController::class, 'remove']);
-    Route::post('/review_form', [ShopReviewController::class, 'review']);
+    Route::get('/review_form/:shop_id={shop_id?}', [ShopReviewController::class, 'review']);
     Route::post('/review_post', [ShopReviewController::class, 'reviewCreate']);
     Route::get('/review_update_form/{shop_id?}', [ShopReviewController::class, 'updateView']);
     Route::patch('/review_update_post', [ShopReviewController::class, 'reviewUpdate']);
     Route::get('/review_delete_form/{shop_id?}', [ShopReviewController::class, 'deleteView']);
     Route::delete('/review_delete_post', [ShopReviewController::class, 'reviewDelete']);
+    Route::get('/all_reviews/:shop_id={shop_id?}', [ShopReviewController::class, 'allReviews']);
     Route::post('/QRcode', [QrCodeController::class, 'index']);
     Route::post('/charge', [StripeController::class, 'charge']);
 });

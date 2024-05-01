@@ -6,9 +6,6 @@
 @endsection
 
 @section('content')
-<!-- <php ?>
-@dump($shop_data)
-</php> -->
     <div class="content__left-right">
         <div class="content__left">
             <p class=content__left-message>今回のご利用はいかがでしたか？</p>
@@ -41,22 +38,6 @@
                             <span class="star" data-value="5">★</span>
                         </div>
                         <input type="hidden" name="rating" id="rating" value="">
-
-                        <!-- <div id="star" class="star-rating__frame">
-                            <span class="star" id="1"><input type="radio" name="stars" value="1" class="star-radio">★</span>
-                            <span class="star" id="2"><input type="radio" name="stars" value="2" class="star-radio">★</span>
-                            <span class="star" id="3"><input type="radio" name="stars" value="3" class="star-radio">★</span>
-                            <span class="star" id="4"><input type="radio" name="stars" value="4" class="star-radio">★</span>
-                            <span class="star" id="5"><input type="radio" name="stars" value="5" class="star-radio">★</span>
-                        </div> -->
-
-                        <!-- <div id="star" class="star-rating__frame">
-                            <div class="five-star"><input type="radio" name="stars" value="5"><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-                            <div class="four-star"><input type="radio" name="stars" value="4"><span class="star">&#9733;&#9733;&#9733;&#9733;</span></div>
-                            <div class="three-star"><input type="radio" name="stars" value="3"><span class="star">&#9733;&#9733;&#9733;</span></div>
-                            <div class="two-star"><input type="radio" name="stars" value="2"><span class="star">&#9733;&#9733;</span></div>
-                            <div class="one-star"><input type="radio" name="stars" value="1"><span class="star">&#9733;</span></div>
-                        </div> -->
                     </div>
                     <div class="content__comment-frame">
                         <p class="comment-header">口コミを投稿</p>

@@ -1,0 +1,46 @@
+.content__shop-picture-frame {
+    display: flex;
+    justify-content: center;
+}
+
+.picture {
+    width: 550px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.content__reviews-all-frame {
+    display: flex;
+    justify-content: center;
+}
+
+.star--blue {
+    color: #0066ff;
+}
+
+.star--gray {
+    color: #a09a9a;
+}
+
+.content__review-frame {
+    margin: 15px 0;
+    width: 550px;
+    border-bottom: solid 1.5px gray;
+}
+
+.content__reviews-all-frame-inner {
+    margin: 10px 0;
+}
+
+.comment-frame {
+    margin: 5px 0 10px;
+}
+
+.picture-frame {
+    margin: 5px 0 10px;
+}
+
+.picture {
+    width: 150px;
+    height: 100px;
+}

@@ -19,6 +19,8 @@ class CreateReviewShopsTable extends Migration
             $table->foreignId('shop_id')->default(0)->constrained()->cascadeOnDelete();
             $table->integer('stars')->default(0)->comment('星');
             $table->text('comment')->comment('コメント');
+            $table->string('picture_name')->nullable();
+            $table->string('path')->nullable();
             $table->timestamps();
         });
     }

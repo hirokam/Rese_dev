@@ -259,6 +259,11 @@ main {
     padding-left: 8px;
 }
 
+.shop__area-genre-review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .shop__area-genre {
     display: flex;
     margin: 3px 0 0 8px;
@@ -269,6 +274,15 @@ main {
     margin: 0 3px 0 0;
     font-weight: normal;
     font-size: 10px;
+}
+
+.shop-review {
+    font-size: 10px;
+    margin: 0 10px 0 0;
+}
+
+.star--blue {
+    color: #0066ff;
 }
 
 .shop__detail-favorite {

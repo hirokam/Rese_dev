@@ -50,13 +50,13 @@
                     <p class="over-view">{{ $shop_detail->overview }}</p>
                     <div class="content__review">
                         @if (!$shop_review)
-                        <a href="/visited" class="post-review">口コミを投稿する</a>
+                        <a href="/review_form/:shop_id={{$shop_id}}" class="post-review">口コミを投稿する</a>
                         <div class="all-reviews-button-frame">
-                            <button class="all-reviews-button">全ての口コミ情報</button>
+                            <a href="/all_reviews/:shop_id={{$shop_id}}" class="all-reviews-a"><button class="all-reviews-button">全ての口コミ情報</button></a>
                         </div>
                         @elseif ($shop_review)
                         <div class="all-reviews-button-frame">
-                            <button class="all-reviews-button">全ての口コミ情報</button>
+                            <a href="/all_reviews/:shop_id={{$shop_id}}" class="all-reviews-a"><button class="all-reviews-button">全ての口コミ情報</button></a>
                         </div>
                         <div class="my-review-frame">
                             <div class="edit-delete-frame">

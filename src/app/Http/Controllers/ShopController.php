@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\FavoriteShop;
+use App\Models\ReviewShop;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +18,9 @@ class ShopController extends Controller
         $areas = Area::all();
         $genres = Genre::all();
 
+        $average_stars = ReviewShop::select('shop_id')->selectRaw('AVG(stars) as stars')->groupBy('shop_id')->pluck('stars', 'shop_id');
+        $count_reviews = ReviewShop::select('shop_id')->selectRaw('COUNT(id) as shop_review')->groupBy('shop_id')->pluck('shop_review', 'shop_id');
+
         $user_id = Auth::id();
         $records_existence = FavoriteShop::where('user_id', $user_id)->get();
 
@@ -26,6 +30,8 @@ class ShopController extends Controller
         }
 
         foreach ($shops as $shop) {
+            $shop->count_reviews = $count_reviews[$shop->id] ?? 0;
+            $shop->average_stars = $average_stars[$shop->id] ?? 0;
             $record = $records_existence->where('shop_id', $shop->id)->first();
             $shop->is_favorite = $record ? $record->is_active : false;
         }
