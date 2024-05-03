@@ -118,25 +118,11 @@ class ShopController extends Controller
                 $shops = $shops->sortBy(function($shop) {
                     return $shop->average_stars == 0 ? PHP_INT_MAX : $shop->average_stars;
                 });
-                // $shops = $shops->sortBy('average_stars');
-                // 評価が低い順に並び替える
-                // $shops = $shops->sort(function($a, $b) {
-                    // 評価がない店舗（星が0）を最後尾に移動するためのロジック
-                    // if ($a->average_stars == 0 && $b->average_stars != 0) {
-                        // return 1; // $aが評価がない場合、$bを先に表示
-                    // } elseif ($a->average_stars != 0 && $b->average_stars == 0) {
-                        // return -1; // $bが評価がない場合、$aを先に表示
-                    // } else {
-                        // 評価がある場合は評価の低い順に並び替え
-                        // return $a->average_stars - $b->average_stars;
-                    // }
-                // });
                 break;
             case 'random':
                 $shops = $shops->shuffle();
                 break;
         }
-        // dd($shops);
 
         return view('shop_all', compact('shops', 'areas', 'genres', 'records_existence'));
     }
