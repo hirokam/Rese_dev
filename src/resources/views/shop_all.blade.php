@@ -28,6 +28,22 @@
                 </form>
             </ul>
         </nav>
+        <div class="register__alert">
+            <div class="register__alert--success">
+                {{ session('message') }}
+            </div>
+            @if (session('validation_errors'))
+            <div class="register__alert--validation">
+                <ul>
+                    @foreach (session('validation_errors') as $errors)
+                        @foreach ($errors as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+        </div>
     @elseif (Auth::user()->role->role === 'user')
         <form action="/sort" method="post" id="submit_form">
         @csrf

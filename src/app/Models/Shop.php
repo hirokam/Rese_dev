@@ -33,8 +33,18 @@ class Shop extends Model
         return $this->belongsTo(Area::class);
     }
 
+    public static function getAreaIdByName($areaName) {
+        $area = Area::where('area', $areaName)->first();
+        return $area ? $area->id : null;
+    }
+
     public function genre()
     {
         return $this->belongsTo(Genre::class);
+    }
+
+    public static function getGenreIdByName($genreName) {
+        $genre = Genre::where('genre', $genreName)->first();
+        return $genre ? $genre->id : null;
     }
 }

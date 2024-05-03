@@ -11,6 +11,7 @@ use Goodby\CSV\Import\Standard\LexerConfig;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Validator;
 
 class StoreRepresentativeController extends Controller
 {
@@ -45,7 +46,6 @@ class StoreRepresentativeController extends Controller
             // Goodby CSVの設定
             $config_in = new LexerConfig();
             $config_in
-                // ->setFromCharset("sjis-win") //CharsetがSJIS-winだった場合を想定
                 ->setToCharset("UTF-8") //CharsetをUTF-8に変換
                 ->setIgnoreHeaderLine(true); //CSVのヘッダーを無視
 
@@ -65,16 +65,41 @@ class StoreRepresentativeController extends Controller
             // TMPファイル削除
             unlink($tmp_path);
 
+            $validationMessages = [];
+
             //処理
             foreach($datalist as $row) {
                 // 各データ取り出し
                 $csv_shop = $this->get_csv_shop($row);
+
+                $validator = Validator::make($row, [
+                    '1' => 'required|max:50',
+                    '2' => 'required|in:東京,大阪,福岡',
+                    '3' => 'required|in:寿司,焼肉,イタリアン,居酒屋,ラーメン',
+                    '4' => 'required|max:400',
+                    '5' => 'required|mimes:jpeg,png',
+                ], [
+                    'required' => '※入力必須です。',
+                    '1.max' => '※店舗名は50文字以内で入力してください。',
+                    '2.in' => '※地域は東京・大阪・福岡のいずれかで登録してください。',
+                    '3.in' => '※ジャンルは寿司・焼肉・イタリアン・居酒屋・ラーメンのいずれかで登録してください。',
+                    '4.max' => '※店舗概要は400文字以内で入力してください。',
+                    '5.mimes' => '※画像の形式はjpegかpngのみとなります。',
+                ]);
+
+                if ($validator->fails()) {
+                    $validationMessages[] = $validator->errors()->all();
+                }
 
                 // user_idを追加
                 $csv_shop['user_id'] = $user_id;
 
                 // DBへの登録
                 $this->register_shop_csv($csv_shop);
+            }
+
+            if (!empty($validationMessages)) {
+                return redirect('/')->with('validation_errors', $validationMessages);
             }
 
             return redirect('/')->with('message','CSVのデータを読み込みました。');
@@ -86,8 +111,8 @@ class StoreRepresentativeController extends Controller
     {
         $shop = array(
             'shop_name' => $row[1],
-            'area_id' => $row[2],
-            'genre_id' => $row[3],
+            'area_id' => Shop::getAreaIdByName($row[2]),
+            'genre_id' => Shop::getGenreIdByName($row[3]),
             'overview' => $row[4],
             'picture_url' => $row[5],
         );

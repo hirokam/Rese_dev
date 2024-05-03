@@ -15,11 +15,11 @@ class CreateShopsTable extends Migration
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->comment('店舗代表者')->nullable()->constrained()->cascadeOnDelete();
-            $table->string('shop_name')->nullable();
-            $table->foreignId('area_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignId('genre_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->string('overview')->nullable();
+            $table->foreignId('user_id')->comment('店舗代表者')->constrained()->cascadeOnDelete();
+            $table->string('shop_name');
+            $table->foreignId('area_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('genre_id')->constrained()->cascadeOnDelete();
+            $table->string('overview');
             $table->string('file_name')->comment('店舗画像')->nullable();
             $table->string('file_path')->nullable();
             $table->string('picture_url')->nullable();
