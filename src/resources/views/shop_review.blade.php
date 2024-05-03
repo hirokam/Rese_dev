@@ -45,15 +45,20 @@
                             <textarea class="comment" name="comment" cols="45" rows="3"></textarea>
                         </div>
                         <div class="comment-constraints">
-                            <p class="constraints">0/400（最高文字数）</p>
+                            <p class="char-count constraints">0/400（最高文字数）</p>
                         </div>
-                        <p class="validation">※400字以内で記入してください</p>
+                        @error('comment')
+                        <p class="validation">{{$errors->first('comment')}}</p>
+                        @enderror
                     </div>
                     <div class="content__add-image-frame">
                         <p class="add-image-header">画像の追加</p>
                         <div class="upload-area">
                             <p class="upload-area-inner-message">クリックして写真を追加<br /><span class="upload-area-inner-message-sub">またはドロッグアンドドロップ</span></p>
                             <input type="file" name="upload_file" id="input-files">
+                            @error('upload_file')
+                            <p class="validation-picture">{{$errors->first('upload_file')}}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="content__button-frame">
@@ -61,7 +66,7 @@
                             <button class="submit">口コミを投稿</button>
                         </div>
                         <div class="cancel-frame">
-                            <a href="/visited" class="cancel">キャンセル</a>
+                            <a href="/detail/:shop_id={{$shop_data->id}}" class="cancel">キャンセル</a>
                         </div>
                     </div>
                 </div>
@@ -69,5 +74,6 @@
         </div>
     </div>
     <script src="{{ asset('/js/star-rating.js') }}"></script>
+    <script src="{{ asset('/js/comment-counter.js') }}"></script>
 
 @endsection

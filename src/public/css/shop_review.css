@@ -99,7 +99,7 @@
     text-align: right;
 }
 
-.validation {
+.validation-comment {
     margin: 0;
     font-size: 9px;
     text-align: left;
@@ -116,12 +116,14 @@
 .upload-area {
     border: dotted 1px black;
     background: white;
+    position: relative;
 }
 
 .upload-area-inner-message {
     font-size: 11px;
     text-align: center;
-    margin: 30px 0 0;
+    margin: 30px 0;
+    opacity: .8;
 }
 
 .upload-area-inner-message-sub {
@@ -129,8 +131,20 @@
 }
 
 #input-files {
+    position: absolute;
+    top: 0;
     opacity: 0;
     width: 400px;
+    height: 95px;
+}
+
+.validation-picture {
+    margin: 0;
+    font-size: 9px;
+    text-align: left;
+    position: absolute;
+    top: 102%;
+    color: red;
 }
 
 /* ボタン */

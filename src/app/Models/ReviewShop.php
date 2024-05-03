@@ -15,4 +15,6 @@ class ReviewShop extends Model
     {
         return $this->belongsTo(Shop::class);
     }
+
+    public $sortable =['stars'];
 }

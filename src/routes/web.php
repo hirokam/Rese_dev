@@ -57,9 +57,11 @@ Route::middleware('auth', 'verified')->group(function () {
             Route::post('/register', [StoreRepresentativeController::class, 'register']);
             Route::get('/reservation', [StoreRepresentativeController::class, 'reservationCheck']);
             Route::get('/csv-download', [StoreRepresentativeController::class, 'downloadCsv']);
+            Route::post('/csv-import', [StoreRepresentativeController::class, 'csvImport']);
         });
     });
     Route::post('/search', [ShopController::class, 'search']);
+    Route::post('/sort', [ShopController::class, 'sort']);
     Route::get('/mypage', [AuthController::class, 'myPage']);
     Route::get('/visited', [AuthController::class, 'visitedShop']);
     Route::post('/visited', [AuthController::class, 'visitedShop']);

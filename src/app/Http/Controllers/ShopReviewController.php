@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReviewRequest;
 use App\Models\Shop;
 use App\Models\ReviewShop;
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class ShopReviewController extends Controller
         return view('shop_review', compact('shop_data'));
     }
 
-    public function reviewCreate(Request $request)
+    public function reviewCreate(ReviewRequest $request)
     {
         if(!$request->upload_file) {
             $shop_review = ReviewShop::create([
@@ -51,13 +52,27 @@ class ShopReviewController extends Controller
         return view('update_shop_review', compact('old_shop_review', 'stars'));
     }
 
-    public function reviewUpdate(Request $request)
+    public function reviewUpdate(ReviewRequest $request)
     {
         $shop_id = $request->shop_id;
-        ReviewShop::where('user_id', Auth::id())->where('shop_id', $request->shop_id)->update([
+
+        if(!$request->upload_file) {
+            ReviewShop::where('user_id', Auth::id())->where('shop_id', $request->shop_id)->update([
+                'stars' => $request->rating,
+                'comment' => $request->comment,
+            ]);
+        } else {
+            $dir = 'review';
+            $file_name = $request->file('upload_file')->getClientOriginalName();
+            $request->file('upload_file')->storeAs('public/' . $dir, $file_name);
+
+            ReviewShop::where('user_id', Auth::id())->where('shop_id', $request->shop_id)->update([
             'stars' => $request->rating,
             'comment' => $request->comment,
-        ]);
+            'picture_name' => $file_name,
+            'path' => 'storage/' . $dir . '/' . $file_name,
+            ]);
+        }
 
         return redirect()->route('detail', ['shop_id' => $shop_id]);
     }

@@ -17,12 +17,26 @@
     @elseif (Auth::user()->role->role === 'store')
         <nav class="header__right-nav">
             <ul class="header__right-ul">
+                <form action="/store-representative/csv-import" method="post"  enctype="multipart/form-data">
+                @csrf
+                    <input type="file" name="csv">
+                    <button>CSVインポート</button>
+                </form>
                 <form action="/store-representative/reservation" method="get">
                     <button><li>予約状況表示</li></button>
                 </form>
             </ul>
         </nav>
     @elseif (Auth::user()->role->role === 'user')
+        <form action="/sort" method="post" id="submit_form">
+        @csrf
+            <select name="sort_by" id="sort_by_select">
+                <option value="" disabled selected style='display:none;'>並び替え：評価高/低</option>
+                <option value="random">ランダム</option>
+                <option value="high_rating">評価が高い順</option>
+                <option value="low_rating">評価が低い順</option>
+            </select>
+        </form>
         <div class="header__right-inner">
             <div class="header__right-search">
                 <div class="search-area__space">
@@ -201,7 +215,7 @@
                                 <h3 class="shop-area">#{{ $shop->area->area }}</h3>
                                 <h3 class="shop-genre">#{{ $shop->genre->genre }}</h3>
                             </div>
-                            <p class="shop-review"><span class="star--blue">★</span>:{{ number_format($shop->average_stars, 1) }}</p>
+                            <p class="shop-review"><span class="star--blue">★</span>:{{ number_format($shop->average_stars, 1) }}({{ $shop->count_reviews }})</p>
                         </div>
                         @if($shop->is_favorite)
                         <div class="shop__detail-favorite">
@@ -244,4 +258,5 @@
         </div>
         @endif
     @endif
+    <script src="{{ asset('js/custom.js') }}"></script>
 @endsection

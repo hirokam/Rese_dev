@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class Shop extends Model
 {
     use HasFactory;
+    use Sortable;
 
     protected $fillable = ['user_id', 'shop_name', 'area_id', 'genre_id', 'overview', 'file_name', 'file_path', 'picture_url'];
 
@@ -19,6 +21,11 @@ class Shop extends Model
     public function reservations()
     {
         return $this->hasMany(Reservation::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(ReviewShop::class);
     }
 
     public function area()
