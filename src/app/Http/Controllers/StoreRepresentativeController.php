@@ -45,7 +45,7 @@ class StoreRepresentativeController extends Controller
             // Goodby CSVの設定
             $config_in = new LexerConfig();
             $config_in
-                ->setFromCharset("SJIS-win") //CharsetがSJIS-winだった場合を想定
+                // ->setFromCharset("sjis-win") //CharsetがSJIS-winだった場合を想定
                 ->setToCharset("UTF-8") //CharsetをUTF-8に変換
                 ->setIgnoreHeaderLine(true); //CSVのヘッダーを無視
 
@@ -85,21 +85,26 @@ class StoreRepresentativeController extends Controller
     private function get_csv_shop($row)
     {
         $shop = array(
-            'shop_name' => $row[0],
-            'area_id' => $row[1],
-            'genre_id' => $row[2],
-            'overview' => $row[3],
-            'picture_url' => $row[4],
+            'shop_name' => $row[1],
+            'area_id' => $row[2],
+            'genre_id' => $row[3],
+            'overview' => $row[4],
+            'picture_url' => $row[5],
         );
+
         return $shop;
     }
 
     private function register_shop_csv($csv_shop)
     {
         $new_shop = new Shop();
-        foreach($new_shop as $key =>$value){
-            $new_shop->$key = $value;
-        }
+        $new_shop->user_id = $csv_shop['user_id'];
+        $new_shop->shop_name = $csv_shop['shop_name'];
+        $new_shop->area_id = $csv_shop['area_id'];
+        $new_shop->genre_id = $csv_shop['genre_id'];
+        $new_shop->overview = $csv_shop['overview'];
+        $new_shop->picture_url = $csv_shop['picture_url'];
+
         $new_shop->save();
     }
 
