@@ -50,6 +50,10 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::prefix('/admin')->group(function () {
             Route::post('/register', [AdminController::class, 'adminRegister']);
             Route::get('/send_mail', [NotificationEmailController::class, 'sendMail']);
+            Route::get('/shop_all', [AdminController::class, 'indexAdmin']);
+            Route::post('/search', [AdminController::class, 'searchAdmin']);
+            Route::post('/sort', [AdminController::class, 'sortAdmin']);
+            Route::delete('/delete/id={id?}', [AdminController::class, 'deleteAdmin']);
         });
     });
     Route::middleware('store')->group(function () {
@@ -79,7 +83,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::patch('/review_update_post', [ShopReviewController::class, 'reviewUpdate']);
     Route::get('/review_delete_form/{shop_id?}', [ShopReviewController::class, 'deleteView']);
     Route::delete('/review_delete_post', [ShopReviewController::class, 'reviewDelete']);
-    Route::get('/all_reviews/:shop_id={shop_id?}', [ShopReviewController::class, 'allReviews']);
+    Route::get('/all_reviews/:shop_id={shop_id?}', [ShopReviewController::class, 'allReviews'])->name('all_reviews');
     Route::post('/QRcode', [QrCodeController::class, 'index']);
     Route::post('/charge', [StripeController::class, 'charge']);
 });

@@ -30,6 +30,16 @@
                     <img src="{{ asset( $review->path ) }}" alt="撮影画像" class="picture">
                 </div>
                 @endif
+                @if (Auth::user()->role->role === 'admin')
+                <div class="delete-frame">
+                    <form action="/admin/delete/id={{$review->id}}" method="post">
+                    @method('DELETE')
+                    @csrf
+                        <input type="hidden" name="shop_id" value="{{$review->shop_id}}">
+                        <button class="delete" onclick='return confirm("管理者権限によって削除します")'>削除</button>
+                    </form>
+                </div>
+                @endif
             </div>
             @endforeach
         </div>

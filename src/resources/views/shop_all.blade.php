@@ -9,6 +9,7 @@
     @if (Auth::user()->role->role === 'admin')
         <nav class="header__right-nav">
             <ul class="header__right-email">
+                <a href="/admin/shop_all"><button>店舗一覧</button></a>
                 <form action="/admin/send_mail" method="get">
                     <button class="email__button"><li>メールを送る</li></button>
                 </form>

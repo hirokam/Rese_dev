@@ -26,6 +26,7 @@
     margin: 15px 0;
     width: 550px;
     border-bottom: solid 1.5px gray;
+    position: relative;
 }
 
 .content__reviews-all-frame-inner {
@@ -43,4 +44,11 @@
 .picture {
     width: 150px;
     height: 100px;
+}
+
+.delete-frame {
+    position: absolute;
+        top: 50%;
+        left: 90%;
+    transform: translateY(-50%);
 }
