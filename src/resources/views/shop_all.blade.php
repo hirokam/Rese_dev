@@ -74,7 +74,7 @@
                         <div class="search-button__frame">
                             <input type="text" name="text" class="search" placeholder="Search ...">
                             <button class="search__button">
-                                <span class="material-symbols-outlined">search </span>
+                                <span class="material-symbols-outlined">search</span>
                             </button>
                         </div>
                     </form>

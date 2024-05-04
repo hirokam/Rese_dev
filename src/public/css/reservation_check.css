@@ -82,8 +82,17 @@
 }
 
 @media screen and (max-width: 480px) {
+    .csv-button {
+        font-size: 10px;
+    }
+
+    .font-medium {
+        font-size: 12px;
+    }
+
     .content__reservation-check-frame {
         width: 310px;
+        padding: 15px 25px;
     }
 
     .content__reservation-check-header-title {
@@ -91,7 +100,7 @@
     }
 
     .content__reservation-check-tr-index {
-        font-size: 14px;
+        font-size: 10px;
     }
 
     .content__reservation-check-tr-content {

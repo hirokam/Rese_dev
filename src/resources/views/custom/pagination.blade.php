@@ -4,15 +4,12 @@
             <div>
                 <p class="content__pagination-info">
                     @if ($paginator->firstItem())
-                        <span class="font-medium">{{ $paginator->firstItem() }}</span>
-                        {!! __('〜') !!}
-                        <span class="font-medium">{{ $paginator->lastItem() }}件</span>
+                        <span class="font-medium">{{ $paginator->firstItem() }}
+                        {!! __('〜') !!}{{ $paginator->lastItem() }}件</span>
                     @else
                         {{ $paginator->count() }}
                     @endif
-                    {!! __('（全') !!}
-                    <span class="font-medium">{{ $paginator->total() }}</span>
-                    {!! __('件）') !!}
+                    <span class="font-medium">{!! __('（全') !!}{{ $paginator->total() }}{!! __('件）') !!}</span>
                 </p>
             </div>
 

@@ -13,7 +13,7 @@
             <div class="content__download-pagination-area">
                 <div class="content__download">
                     <form action="/store-representative/csv-download" method="get">
-                        <button class="csv-button">CSVダウンロード</button>
+                        <button class="csv-button">CSV<br />ダウンロード</button>
                     </form>
                 </div>
                 <div class="content__pagination">
