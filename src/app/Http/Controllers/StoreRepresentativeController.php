@@ -77,7 +77,7 @@ class StoreRepresentativeController extends Controller
 
                 // 画像URLの拡張子がjpegかpngでない場合はエラー
                 if (!in_array($extension, ['jpeg', 'jpg', 'png'])) {
-                    $validationMessages[] = ['picture_url' => '画像の形式はjpegかpngのみとなります。'];
+                    $validationMessages[] = ['picture_url' => '画像の形式はjpeg(jpg)かpngのみとなります。'];
                     continue;
                 }
 
