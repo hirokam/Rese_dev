@@ -72,39 +72,48 @@ class StoreRepresentativeController extends Controller
                 // 各データ取り出し
                 $csv_shop = $this->get_csv_shop($row);
 
-                $validator = Validator::make($row, [
-                    '1' => 'required|max:50',
-                    '2' => 'required|in:東京,大阪,福岡',
-                    '3' => 'required|in:寿司,焼肉,イタリアン,居酒屋,ラーメン',
-                    '4' => 'required|max:400',
-                    '5' => 'required|mimes:jpeg,png',
-                ], [
-                    'required' => '※入力必須です。',
-                    '1.max' => '※店舗名は50文字以内で入力してください。',
-                    '2.in' => '※地域は東京・大阪・福岡のいずれかで登録してください。',
-                    '3.in' => '※ジャンルは寿司・焼肉・イタリアン・居酒屋・ラーメンのいずれかで登録してください。',
-                    '4.max' => '※店舗概要は400文字以内で入力してください。',
-                    '5.mimes' => '※画像の形式はjpegかpngのみとなります。',
-                ]);
+                // $validator = Validator::make($row, [
+                //     '1' => 'required|max:50',
+                //     '2' => 'required|in:東京都,大阪府,福岡県',
+                //     '3' => 'required|in:寿司,焼肉,イタリアン,居酒屋,ラーメン',
+                //     '4' => 'required|max:400',
+                //     '5' => 'required|mimes:jpeg,png',
+                // ], [
+                //     'required' => '※入力していない項目があります。',
+                //     '1.max' => '※店舗名は50文字以内で入力してください。',
+                //     '2.in' => '※地域は東京都・大阪府・福岡県のいずれかで登録してください。',
+                //     '3.in' => '※ジャンルは寿司・焼肉・イタリアン・居酒屋・ラーメンのいずれかで登録してください。',
+                //     '4.max' => '※店舗概要は400文字以内で入力してください。',
+                //     '5.mimes' => '※画像の形式はjpegかpngのみとなります。',
+                // ]);
 
-                if ($validator->fails()) {
-                    $validationMessages[] = $validator->errors()->all();
-                }
+                // $validator->setAttributeNames([
+                //     '1' => '店舗名',
+                //     '2' => '地域',
+                //     '3' => 'ジャンル',
+                //     '4' => '店舗概要',
+                //     '5' => '画像',
+                // ]);
+                // dd($csv_shop);
+                // if ($validator->fails()) {
+                //     $validationMessages[] = $validator->errors()->all();
+                // } else {
+                    // user_idを追加
+                    $csv_shop['user_id'] = $user_id;
 
-                // user_idを追加
-                $csv_shop['user_id'] = $user_id;
-
-                // DBへの登録
-                $this->register_shop_csv($csv_shop);
+                    // DBへの登録
+                    $this->register_shop_csv($csv_shop);
+                // }
             }
 
-            if (!empty($validationMessages)) {
-                return redirect('/')->with('validation_errors', $validationMessages);
-            }
+            // if (!empty($validationMessages)) {
+            //     return redirect('/')->with('validation_errors', $validationMessages);
+            // }
 
             return redirect('/')->with('message','CSVのデータを読み込みました。');
+        } else {
+            return redirect('/')->with('message','登録に失敗しました。');
         }
-        return redirect('/')->with('message','登録に失敗しました。');
     }
 
     private function get_csv_shop($row)

@@ -34,13 +34,13 @@
             </div>
             @if (session('validation_errors'))
             <div class="register__alert--validation">
-                <ul>
+                <!-- <ul>
                     @foreach (session('validation_errors') as $errors)
                         @foreach ($errors as $error)
                             <li>{{ $error }}</li>
                         @endforeach
                     @endforeach
-                </ul>
+                </ul> -->
             </div>
             @endif
         </div>
