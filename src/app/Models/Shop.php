@@ -35,7 +35,7 @@ class Shop extends Model
 
     public static function getAreaIdByName($areaName) {
         $area = Area::where('area', $areaName)->first();
-        return $area ? $area->id : null;
+        return $area ? $area->id : "未登録";
     }
 
     public function genre()
@@ -45,6 +45,6 @@ class Shop extends Model
 
     public static function getGenreIdByName($genreName) {
         $genre = Genre::where('genre', $genreName)->first();
-        return $genre ? $genre->id : null;
+        return $genre ? $genre->id : "未登録";
     }
 }
