@@ -25,7 +25,6 @@ main {
 .visited-shops {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .visited-shop__frame {
@@ -34,7 +33,7 @@ main {
     background: white;
     border-radius: 5px;
     box-shadow: 1px 1px 5px gray;
-    margin: 10px 0;
+    margin: 10px 5px;
     position: relative;
 }
 

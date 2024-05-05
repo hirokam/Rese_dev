@@ -10,7 +10,6 @@
         @csrf
             <select name="sort_by" id="sort_by_select">
                 <option value="" disabled selected style='display:none;'>並び替え：評価高/低</option>
-                <!-- <option value="random">ランダム</option> -->
                 <option value="high_rating">評価が高い順</option>
                 <option value="low_rating">評価が低い順</option>
             </select>

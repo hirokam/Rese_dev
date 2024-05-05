@@ -132,7 +132,6 @@ class AdminController extends Controller
                 });
                 break;
         }
-        // dd($sortBy);
 
         return view('shop_all_admin', compact('shops', 'areas', 'genres'));
     }
