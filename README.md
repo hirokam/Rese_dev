@@ -3,8 +3,7 @@
 
 ## UI画像
 会員ホーム（店舗一覧）
-<img width="931" alt="shop_all" src="https://github.com/hirokam/Rese_dev/assets/145309969/bddc16fb-eacd-48f1-8b45-d9895598c33e">
-
+![店舗一覧](shop_all.png)
 
 ## 作成の経緯
 外部の飲食店予約サービスは手数料を取られる為、
@@ -58,7 +57,7 @@ http://localhost:8025
 ![table_layout](https://github.com/hirokam/Rese_dev/assets/145309969/59d9dae1-860d-4502-bec0-0a2743c378af)
 
 ## ER図
-<img width="520" alt="ER_drawing" src="https://github.com/hirokam/Rese_dev/assets/145309969/410c61c7-1211-4001-aded-d184cff2a1ea">
+![ER図](ER_drawing.png)
 
 # 環境構築
 ## 言語・フレームワーク:バージョン
