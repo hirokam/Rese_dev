@@ -56,6 +56,13 @@ body {
 .shop-name__group {
     display: flex;
     margin-top: 30px;
+    align-items: center;
+}
+
+.return {
+    height: 23px;
+    display: flex;
+    align-items: center;
 }
 
 .return__button {
@@ -144,20 +151,12 @@ body {
 }
 
 .edit-button {
-    /* border: none; */
-    /* border-bottom: solid 0.05px black; */
-    /* background: none; */
     font-size: 9px;
-    /* padding: 0; */
     margin-right: 10px;
 }
 
 .delete-button {
-    /* border: none; */
-    /* border-bottom: solid 0.05px black; */
-    /* background: none; */
     font-size: 9px;
-    /* padding: 0; */
 }
 
 .my-review {
@@ -178,7 +177,7 @@ body {
 }
 
 .reservation-group {
-    margin: -50px 0 0 25px;
+    margin: 50px 0 0 25px;
 }
 
 .reservation__frame {
@@ -298,8 +297,20 @@ body {
         width: 210px;
     }
 
+    .all-reviews-button {
+        width: 210px;
+    }
+
+    .my-review-frame {
+        width: 210px;
+    }
+
+    .comment {
+        width: 210px;
+    }
+
     .reservation-group {
-        margin: -50px 0 0 10px;
+        margin: 50px 0 0 10px;
     }
 
     .reservation__frame {
@@ -371,6 +382,18 @@ body {
     }
 
     .over-view {
+        width: 315px;
+    }
+
+    .all-reviews-button {
+        width: 315px;
+    }
+
+    .my-review-frame {
+        width: 315px;
+    }
+
+    .comment {
         width: 315px;
     }
 

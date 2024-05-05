@@ -27,13 +27,11 @@
             <div class="shop-detail__frame">
                 <div class="shop-detail">
                     <div class="shop-name__group">
-                        <div class="return">
-                            <a href="/">
-                                <button class="return__button">
-                                    <span class="material-symbols-outlined">chevron_left</span>
-                                </button>
-                            </a>
-                        </div>
+                        <a href="/" class="return">
+                            <button class="return__button">
+                                <span class="material-symbols-outlined">chevron_left</span>
+                            </button>
+                        </a>
                         <div class="shop-name__frame">
                             <h2 class="shop-name">{{ $shop_detail->shop_name }}</h2>
                         </div>

@@ -38,6 +38,9 @@
                             <span class="star" data-value="5">★</span>
                         </div>
                         <input type="hidden" name="rating" id="rating" value="">
+                        @error('rating')
+                        <p class="validation-rating">{{$errors->first('rating')}}</p>
+                        @enderror
                     </div>
                     <div class="content__comment-frame">
                         <p class="comment-header">口コミを投稿</p>
@@ -48,7 +51,7 @@
                             <p class="char-count constraints">0/400（最高文字数）</p>
                         </div>
                         @error('comment')
-                        <p class="validation">{{$errors->first('comment')}}</p>
+                        <p class="validation-comment">{{$errors->first('comment')}}</p>
                         @enderror
                     </div>
                     <div class="content__add-image-frame">

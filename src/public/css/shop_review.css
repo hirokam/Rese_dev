@@ -24,43 +24,13 @@
 
 .review__frame {
     padding: 0 50px;
-    /* margin-top: 150px; */
-    /* width: 550px; */
-    /* height: 450px; */
-    /* background: white; */
-    /* position: absolute; */
-        /* left: 50%; */
-    /* transform: translate(-50%); */
-    /* border-radius: 5px; */
-    /* position: relative; */
 }
 
-/* .shop-name__frame {
-    margin: 10px 5px 0px;
-    padding: 5px 15px;
-    border-bottom: solid;
-} */
-
-/* .shop-name {
-    font-size: 25px;
-    font-weight: normal;
-} */
-
-/* .shop-name__after {
-    margin-left: 15px;
-} */
-
-/* .content__star-rating-frame {
-    display: flex;
-    justify-content: center;
-} */
-
-/* .review__under-frame {
-    display: flex;
-} */
-
-
 /* スターレーティング */
+.content__star-rating-frame {
+    position: relative;
+}
+
 .star-rating-header {
     margin: 30px 0 8px;
 }
@@ -69,6 +39,15 @@
     font-size: 150%;
     color: #a09a9a;
     padding-left: 5px;
+}
+
+.validation-rating {
+    margin: 0;
+    font-size: 9px;
+    text-align: left;
+    position: absolute;
+    top: 95%;
+    color: red;
 }
 
 /* 口コミを投稿 */
@@ -174,85 +153,43 @@
     font-size: 12px;
 }
 
-/* .comment__frame {
-    margin: 10px 0 0 50px;
-} */
+@media screen and (max-width:768px) {
+    .content__left-right {
+        display: block;
+    }
 
-/* .comment {
-    resize: none;
-    outline: none;
-} */
+    .content__left {
+        border-right: none;
+    }
 
-/* .button__frame {
-    display: flex;
-    justify-content: right;
-} */
+    .content__left-shop-info {
+        display: flex;
+        justify-content: center;
+    }
 
-/* .submit {
-    cursor: pointer;
-} */
-
-/* .cancel {
-    margin: 5px 15px;
-    font-size: 14px;
-    position: absolute;
-        bottom: 2.5%;
-        right: 20%;
-    text-decoration: none;
-    cursor: pointer;
-} */
-
-/* @media screen and (max-width: 768px) {
     .review__frame {
-        width: 431px;
+        display: flex;
+        justify-content: center;
+        padding: 0 50px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    body {
+        margin: 15px 25px;
     }
 
-    .shop_image {
-        width: 431px;
+    .review__frame {
+        padding: 0;
     }
 
-    .comment__frame {
-        width: 230px;
+    .content__star-rating-frame,
+    .content__comment-frame {
+        width: 310px;
     }
 
+    .comment-textbox,
     .comment {
-        width: 230px;
+        width: 310px;
     }
-
-    .cancel {
-        position: absolute;
-            right: 22%;
-    }
-} */
-
-/* @media screen and (max-width: 480px) {
-    .review__frame {
-            width: 310px;
-            height: 430px;
-            margin-top: 50px;
-        }
-
-        .shop_image {
-            width: 310px;
-        }
-
-        .star-rating__frame {
-            margin: 10px 0 0 10px;
-        }
-
-        .comment__frame {
-            width: 170px;
-            margin: 10px 0 0 20px;
-        }
-
-        .comment {
-            width: 170px;
-            height: 95px;
-        }
-
-        .cancel {
-            position: absolute;
-            right: 25%;
-            bottom: 2%;
-        }
-} */
+}

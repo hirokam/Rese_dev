@@ -52,3 +52,36 @@
         left: 90%;
     transform: translateY(-50%);
 }
+
+@media screen and (max-width:768px) {
+    .content__review-frame {
+        width: 430px;
+    }
+
+    .comment-frame {
+        width: 350px;
+    }
+
+    .comment {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .content__review-frame {
+        width: 310px;
+    }
+
+    .comment-frame {
+        width: 250px;
+    }
+
+    .comment {
+        font-size: 12px;
+    }
+
+    .delete {
+        width: 40px;
+        font-size: 12px;
+    }
+}

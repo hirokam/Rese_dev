@@ -357,6 +357,11 @@ main {
     }
 
     /* 店舗代表者 */
+    .header__right-ul {
+        display: block;
+        justify-content: right;
+    }
+
     .store-register__frame {
         width: 431px;
     }

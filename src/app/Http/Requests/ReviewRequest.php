@@ -24,16 +24,18 @@ class ReviewRequest extends FormRequest
     public function rules()
     {
         return [
+            'rating' => 'required',
             'comment' => 'max:400',
-            'upload_file' => 'mimes:jpeg,png',
+            'upload_file' => 'mimes:jpeg,jpg,png',
         ];
     }
 
     public function messages()
     {
         return [
+            'rating.required' => '※星は必ず選択してください',
             'comment.max' => '※400字以内で記入してください',
-            'upload_file.mimes' => '※画像の形式はjpegかpngのみとなります'
+            'upload_file.mimes' => '※画像の形式はjpeg(jpg)かpngのみとなります'
         ];
     }
 }
